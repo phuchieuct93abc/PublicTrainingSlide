@@ -153,15 +153,23 @@ app.controller("hackathonDemo", function ($scope) {
         }
 
     ]
-    
+
     $scope.isShowList = true;
     $scope.addNew = function ($event) {
+        $scope.originalItem = null
         $event.stopPropagation();
-        $scope.addNote = {}
         $scope.isShowList = false;
         $scope.isShowAdd = true;
         $scope.isShowRead = false;
+        $scope.addNote = {}
 
+    }
+    $scope.edit = function (item) {
+        $scope.originalItem = item;
+        $scope.addNote = angular.copy(item);
+        $scope.isShowList = false;
+        $scope.isShowAdd = true;
+        $scope.isShowRead = false;
 
     }
 
@@ -173,7 +181,16 @@ app.controller("hackathonDemo", function ($scope) {
 
     }
     $scope.create = function () {
-        $scope.list.push($scope.addNote)
+        if (   $scope.originalItem == null) {
+            $scope.list.push($scope.addNote)
+
+        } else {
+            console.log("edit")
+            $scope.originalItem.note = $scope.addNote.note
+            $scope.originalItem.desc = $scope.addNote.desc
+            $scope.originalItem.color = $scope.addNote.color
+        }
+        $scope.originalItem = null
         $scope.showList();
     }
     $scope.showList = function () {

@@ -21,12 +21,12 @@
             <div class="container-fluid scroll">
 
                 <md-list class="note-list">
-                    <md-list-item class="md-3-line" ng-repeat="item in list track by $index" ng-click="read(item)"  ng-style="{'background-color':item.color}">
+                    <md-list-item class="md-3-line" ng-repeat="item in list " ng-click="read(item)"  ng-style="{'background-color':item.color}">
                         <div class="md-list-item-text">
                             <h3>{{item.note}}</h3>
                             <h4>{{item.desc}}</h4>
                         </div>
-                        <md-button class="md-secondary">Edit</md-button>
+                        <md-button class="md-secondary" ng-click="edit(item)"><i class="glyphicon glyphicon-pencil"></i></md-button>
 
                         <md-divider ng-if="!$last"></md-divider>
                     </md-list-item>

@@ -23,7 +23,9 @@
     "swiper": "^3.4.2",
     "highlightjs": "^9.10.0",
     "angular-material": "^1.1.4",
-    "bootstrap-material-design": "^4.0.2"
+    "bootstrap-material-design": "^4.0.2",
+    "angular-aria": "1.5.6",
+    "angular-messages": "1.5.6"
   },
   "repository": {
     "type": "git",
