@@ -1,10 +1,29 @@
-$width:1000px;
+$width:1200px;
 $height:650px;
 $background-color: white;
+$toolbar-height:50px;
 .hackathon-demo{
+
     [ng-click]{
         cursor: pointer;        
 
+    }
+    .demo{
+        display: inline-block;
+        position: relative;
+        float: left;
+        height: 100%;
+        width: 50%;
+
+    }
+    .notes{
+        display: inline-block;
+        position: relative;
+        float: left;
+        height: 100%;
+        width: 50%;
+        overflow: hidden;
+        padding: 0 0 0 40px;
     }
     height: $height;
     width:$width;
@@ -46,13 +65,13 @@ $background-color: white;
         text-align: left;
     }
     .wrapper{
-        width: 500px;
-        height: 399px;
-        color: black ;
-        background-color: $background-color;
-        position: relative;
+        width: 521px;
+        height: 405px;
+        color: black;
+        background-color: white;
+        position: absolute;
         top: 45px;
-        left: -26px;
+        left: 25px;
         margin: 0;
         display: inline-block;
         overflow-x: hidden;
@@ -69,9 +88,14 @@ $background-color: white;
         }
     }
     md-toolbar{
-        width: 500px;
-        margin: auto;
-        color: white; 
+        width: 100%;
+        height: auto;
+        min-height: 0px;
+        margin: 0;
+        color: white !important;
+        .md-toolbar-tools{
+            height:$toolbar-height;
+        }
         .md-icon-button{
             font-size: 29px;
             padding-left: 20px;
