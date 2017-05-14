@@ -39,7 +39,7 @@
       transition: all 1s linear;
       position: absolute;
       top: 0;
-      left: 0;
+      left: 50px;
       z-index: 99;
       width: 128px;
       height: 111px;
@@ -86,19 +86,19 @@
   from {
     transform: translateY(150px) rotate(1deg); }
   to {
-    transform: translate(-277px, 377px) rotate(-360deg); } }
+    transform: translate(-327px, 377px) rotate(-360deg); } }
 
 @keyframes go-center {
   from {
     transform: translateY(150px) rotate(1deg); }
   to {
-    transform: translate(97px, 377px) rotate(-360deg); } }
+    transform: translate(47px, 377px) rotate(-360deg); } }
 
 @keyframes go-right {
   from {
     transform: translateY(150px) rotate(1deg); }
   to {
-    transform: translate(473px, 377px) rotate(-360deg); } }
+    transform: translate(423px, 377px) rotate(-360deg); } }
 
 @keyframes my-directive {
   0%, 30%, 60%, 90% {

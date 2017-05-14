@@ -2,12 +2,16 @@ $color1:#F44336;
 $color2:#4CAF50;
 $color3:#03A9F4;
 .whoweare1{
+    height: 500px;
+    width: 1300px; 
     position:relative;
     .visible:not(.current-fragment){
-        display: none; 
+        display: none !important; 
+    }
+    .full-height{
+        height: 100%;
     }
     axon{
-
         position:absolute;
         left: 50px;
         top:50px; 
@@ -28,42 +32,52 @@ $color3:#03A9F4;
 
         .row.visible{
             &:nth-child(1){
+                text-align: left;
                 animation-name: flipInY;
             }
             &:nth-child(2){
+                text-align: right;
+
                 animation-name: flipInX;
 
             }
             &:nth-child(3){
+                text-align: left;
+
                 animation-name: flip;
 
             }
         }
 
         .row{
-            height: 150px;
+            /*height: 150px;*/
             display: flex;
             align-items: center;
             backface-visibility: visible !important;
             [class*=col-xs-]{
                 height: 100%;
-                display:flex;
+                /*display:flex;*/
                 justify-content: center;
                 align-items:center;
-                img{
-                    height: 90%;
-                    width: auto;
+                &.image-wrapper{
+                    text-align:center;
+                    img{
+                        height: 90%;
+                        width: auto;
+                    }
                 }
+
             }
 
 
         }
     }
     .slide-container {
-        padding: 14px 20px 20px 20px;
+        padding: 14px 00px 20px 0px;
         -webkit-border-radius: 30px;
         overflow: hidden; 
         h2 {
+            margin: 0 !important;
             font-size: 80px;
             animation-fill-mode: both;
 
@@ -74,7 +88,7 @@ $color3:#03A9F4;
             padding: 0;
             width: 200%;
             text-align: left;
-            animation-timing-function: linear;
+            animation-timing-function: cubic-bezier(0, 0, 0, 1);
 
         }
 
@@ -86,6 +100,7 @@ $color3:#03A9F4;
             }
         }
         &.slide-container-2{
+                  padding-left: 65px;
             h2{
                 animation-name: slidetounlock2;
                 background: -webkit-gradient(linear,left top,right top,color-stop(0, #4d4d4d),color-stop(0.25, #4d4d4d),color-stop(0.5, $color2),color-stop(0.75, #4d4d4d),color-stop(1, #4d4d4d)); 
@@ -93,6 +108,8 @@ $color3:#03A9F4;
             }
         }
         &.slide-container-3{
+                      
+
             h2{
                 animation-name: slidetounlock3;
                 background: -webkit-gradient(linear,left top,right top,color-stop(0, #4d4d4d),color-stop(0.25, #4d4d4d),color-stop(0.5, $color3),color-stop(0.75, #4d4d4d),color-stop(1, #4d4d4d)); 
@@ -107,7 +124,7 @@ $color3:#03A9F4;
 
 @-webkit-keyframes slidetounlock1 {
     0% {
-        background-position: -800px 0;
+        background-position: -1500px 0;
     }
     100% {
         background-position: 100px 0;
@@ -115,17 +132,18 @@ $color3:#03A9F4;
 }
 @-webkit-keyframes slidetounlock2 {
     0% {
-        background-position: -950px 0;
-    }
-    100% {
-        background-position: 200px 0;
-    }
-}
-@-webkit-keyframes slidetounlock3 {
-    0% {
-        background-position: -1200px 0;
+        background-position: -1800px 0;
     }
     100% {
         background-position: 300px 0;
+    }
+}
+@-webkit-keyframes slidetounlock3 {
+
+    0% {
+        background-position: -1500px 0; 
+    }
+    100% {
+        background-position: 200px 0;
     }
 }

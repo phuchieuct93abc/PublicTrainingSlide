@@ -87,7 +87,7 @@
             transition: all 1s linear;
             position: absolute;
             top: 0;
-            left: 0;
+            left:50px;
             z-index: 99;
             width: 128px;
             height: 111px;
@@ -149,7 +149,7 @@
         }
 
         to{
-            transform:   translate(-277px, $move-down) rotate(-360deg) ;        }
+            transform:   translate(-327px, $move-down) rotate(-360deg) ;        }
 
 
     }
@@ -160,7 +160,7 @@
         }
 
         to{
-            transform:   translate(97px, $move-down)  rotate(-360deg);
+            transform:   translate(47px, $move-down)  rotate(-360deg);
         }
 
 
@@ -172,7 +172,7 @@
         }
 
         to{
-            transform: translate(473px, $move-down) rotate(-360deg);    
+            transform: translate(423px, $move-down) rotate(-360deg);    
         }
 
 
