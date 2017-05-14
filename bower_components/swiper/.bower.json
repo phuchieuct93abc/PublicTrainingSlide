@@ -53,5 +53,6 @@
   },
   "_source": "https://github.com/nolimits4web/Swiper.git",
   "_target": "^3.4.2",
-  "_originalSource": "swiper"
+  "_originalSource": "swiper",
+  "_direct": true
 }

@@ -21,7 +21,11 @@
     "angular-touch": "1.5.6",
     "animate.css": "master",
     "swiper": "^3.4.2",
-    "highlightjs": "^9.10.0"
+    "highlightjs": "^9.10.0",
+    "angular-material": "^1.1.4",
+    "bootstrap-material-design": "^4.0.2",
+    "angular-aria": "1.5.6",
+    "angular-messages": "1.5.6"
   },
   "repository": {
     "type": "git",
@@ -36,6 +40,8 @@
   "resolutions": {
     "angular": "1.5.6",
     "angular-touch": "1.5.6",
-    "animate.css": "master"
+    "animate.css": "master",
+    "bootstrap": "3.3.7",
+    "jquery": "3.2.1"
   }
 }

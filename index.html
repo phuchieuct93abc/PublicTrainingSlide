@@ -7,7 +7,7 @@
 
         <!-- build:js lib.js -->
         <!-- bower:js -->
-        <script src="bower_components/jquery/jquery.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-animate/angular-animate.js"></script>
         <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
@@ -17,6 +17,11 @@
         <script src="bower_components/angular-carousel/dist/angular-carousel.js"></script>
         <script src="bower_components/swiper/dist/js/swiper.js"></script>
         <script src="bower_components/highlightjs/highlight.pack.js"></script>
+        <script src="bower_components/angular-aria/angular-aria.js"></script>
+        <script src="bower_components/angular-messages/angular-messages.js"></script>
+        <script src="bower_components/angular-material/angular-material.js"></script>
+        <script src="bower_components/tether/dist/js/tether.js"></script>
+        <script src="bower_components/bootstrap-material-design/dist/bootstrap-material-design.iife.js"></script>
         <!-- endbower -->    
         <script src="bower_components/swiper/dist/js/swiper.jquery.js"></script>
 
@@ -61,12 +66,15 @@
         <!-- bower:css -->
         <link rel="stylesheet" href="bower_components/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.css" />
         <link rel="stylesheet" href="bower_components/angular-carousel/dist/angular-carousel.css" />
+        <link rel="stylesheet" href="bower_components/animate.css/animate.css" />
         <link rel="stylesheet" href="bower_components/swiper/dist/css/swiper.css" />
         <link rel="stylesheet" href="bower_components/highlightjs/styles/default.css" />
+        <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
         <!-- endbower -->
         <link rel="stylesheet" href="bower_components/highlightjs/styles/agate.css" />
 
         <!-- injector:css -->
+        <link rel="stylesheet" href="/styles/css/axon_effect.css">
         <link rel="stylesheet" href="/styles/css/directive-animation.css">
         <link rel="stylesheet" href="/styles/css/dom_manipulation.css">
         <link rel="stylesheet" href="/styles/css/hackathon-demo.css">
@@ -83,6 +91,7 @@
         <link rel="stylesheet" href="/styles/css/slide5.css">
         <link rel="stylesheet" href="/styles/css/slides.css">
         <link rel="stylesheet" href="/styles/css/twoway.css">
+        <link rel="stylesheet" href="/styles/css/welcome.css">
         <!-- endinjector -->
 
         <!-- endbuild -->
@@ -99,6 +108,11 @@
     <body ng-controller="ctr">
         <div class="reveal">
             <div class="slides">
+                <section ng-include="'slides/welcome.html'" data-state="axon"></section> 
+
+                <section ng-include="'slides/whoweare_1.html'"></section>
+
+
                 <section ng-include="'slides/1.html'"></section>
                 <section ng-include="'slides/2.html'"></section>
                 <section ng-include="'slides/3.html'"></section>
@@ -129,6 +143,7 @@
 
                 <section ng-include="'slides/angular_2_1.html'"></section>  
                 <section ng-include="'slides/angular_2_2.html'"></section>  
+                <section ng-include="'slides/angular_2_3.html'"></section>  
 
 
 

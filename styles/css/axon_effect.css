@@ -1,0 +1,28 @@
+.slide_wrapper {
+  overflow: hidden;
+  position: relative;
+  width: 1000px;
+  margin: auto !important; }
+
+.slide_effect {
+  position: absolute;
+  top: 20px;
+  right: 33px;
+  width: 400px;
+  height: 96px;
+  z-index: -1;
+  background-image: -webkit-radial-gradient(32% 50%, 3em 2em, #069bfb 0%, transparent 100%);
+  animation-name: slide;
+  animation-duration: 2s;
+  animation-iteration-count: infinite; }
+
+img.axon_logo {
+  z-index: 999;
+  max-width: 100% !important; }
+
+@keyframes slide {
+  from {
+    right: 150px; }
+  
+  to {
+    right: -350px; } }
