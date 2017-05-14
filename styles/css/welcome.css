@@ -1,11 +1,15 @@
 .whoweare1 {
   position: relative; }
-  .whoweare1 [axon].visible:not(.current-fragment) {
+  .whoweare1 .visible:not(.current-fragment) {
     display: none; }
   .whoweare1 axon {
     position: absolute;
     left: 50px;
     top: 50px; }
+  .whoweare1 .visible.animate-lightSpeedIn {
+    animation-name: lightSpeedIn; }
+  .whoweare1 .visible.animate-tada {
+    animation-name: tada; }
   .whoweare1 .presenters .row.visible:nth-child(1) {
     animation-name: flipInY; }
   .whoweare1 .presenters .row.visible:nth-child(2) {
@@ -25,28 +29,48 @@
       .whoweare1 .presenters .row [class*=col-xs-] img {
         height: 90%;
         width: auto; }
+  .whoweare1 .slide-container {
+    padding: 14px 20px 20px 20px;
+    -webkit-border-radius: 30px;
+    overflow: hidden; }
+    .whoweare1 .slide-container h2 {
+      font-size: 80px;
+      animation-fill-mode: both;
+      -webkit-text-fill-color: transparent;
+      animation: 3s infinite;
+      font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+      font-weight: 300;
+      padding: 0;
+      width: 200%;
+      text-align: left;
+      animation-timing-function: linear; }
+    .whoweare1 .slide-container.slide-container-1 h2 {
+      animation-name: slidetounlock1;
+      background: -webkit-gradient(linear, left top, right top, color-stop(0, #4d4d4d), color-stop(0.25, #4d4d4d), color-stop(0.5, #F44336), color-stop(0.75, #4d4d4d), color-stop(1, #4d4d4d));
+      -webkit-background-clip: text; }
+    .whoweare1 .slide-container.slide-container-2 h2 {
+      animation-name: slidetounlock2;
+      background: -webkit-gradient(linear, left top, right top, color-stop(0, #4d4d4d), color-stop(0.25, #4d4d4d), color-stop(0.5, #4CAF50), color-stop(0.75, #4d4d4d), color-stop(1, #4d4d4d));
+      -webkit-background-clip: text; }
+    .whoweare1 .slide-container.slide-container-3 h2 {
+      animation-name: slidetounlock3;
+      background: -webkit-gradient(linear, left top, right top, color-stop(0, #4d4d4d), color-stop(0.25, #4d4d4d), color-stop(0.5, #03A9F4), color-stop(0.75, #4d4d4d), color-stop(1, #4d4d4d));
+      -webkit-background-clip: text; }
 
-#well {
-  padding: 14px 20px 20px 20px;
-  -webkit-border-radius: 30px;
-  overflow: hidden; }
-
-h2 {
-  font-size: 80px;
-  animation-fill-mode: both;
-  background: -webkit-gradient(linear, left top, right top, color-stop(0, #4d4d4d), color-stop(0.4, #4d4d4d), color-stop(0.5, white), color-stop(0.6, #4d4d4d), color-stop(1, #4d4d4d));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-animation: slidetounlock 5s infinite;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 300;
-  padding: 0;
-  width: 200%;
-  text-align: left;
-  animation-timing-function: linear; }
-
-@-webkit-keyframes slidetounlock {
+@-webkit-keyframes slidetounlock1 {
   0% {
-    background-position: -500px 0; }
+    background-position: -800px 0; }
   100% {
-    background-position: 80px 0; } }
+    background-position: 100px 0; } }
+
+@-webkit-keyframes slidetounlock2 {
+  0% {
+    background-position: -950px 0; }
+  100% {
+    background-position: 200px 0; } }
+
+@-webkit-keyframes slidetounlock3 {
+  0% {
+    background-position: -1200px 0; }
+  100% {
+    background-position: 300px 0; } }
