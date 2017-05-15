@@ -167,7 +167,7 @@ module.exports = function (grunt) {
         useminPrepare: {
             html: 'index.html',
             options: {
-                dest: 'target',
+                dest: 'docs',
                 flow: {
                     html: {
                         steps: {
@@ -181,17 +181,17 @@ module.exports = function (grunt) {
         },
 
         usemin: {
-            html: ['target/index.html'],
-            css: ['target/app.css'],
-            js: ['target/app.js']
+            html: ['docs/index.html'],
+            css: ['docs/app.css'],
+            js: ['docs/app.js']
         },
 //        ngmin: {
 //
 //            directives: {
 //                expand: true,
-//                cwd: 'target/',
+//                cwd: 'docs/',
 //                src: ['**/*.js'],
-//                dest: 'target/'
+//                dest: 'docs/'
 //            }
 //        },
         uglify: {
@@ -203,14 +203,14 @@ module.exports = function (grunt) {
             main: {
                 files: [
                     // includes files within path
-                    {expand: true, src: ['index.html'], dest: 'target/'},
-                    {expand: true, src: ['lib/**'], dest: 'target/'},
-                    {expand: true, src: ['js/**'], dest: 'target/'},
-                    {expand: true, src: ['resources/**'], dest: 'target/'},
-                    {expand: true, src: ['plugin/**'], dest: 'target/'},
-                    {expand: true, src: ['slides/**'], dest: 'target/'},
-                    {expand: true, cwd: "lib/font/source-sans-pro", src: ['**'], dest: 'target/'},
-                    {expand: true, cwd: "lib/", src: ['fonts/**/*.*'], dest: 'target/'},
+                    {expand: true, src: ['index.html'], dest: 'docs/'},
+                    {expand: true, src: ['lib/**'], dest: 'docs/'},
+                    {expand: true, src: ['js/**'], dest: 'docs/'},
+                    {expand: true, src: ['resources/**'], dest: 'docs/'},
+                    {expand: true, src: ['plugin/**'], dest: 'docs/'},
+                    {expand: true, src: ['slides/**'], dest: 'docs/'},
+                    {expand: true, cwd: "lib/font/source-sans-pro", src: ['**'], dest: 'docs/'},
+                    {expand: true, cwd: "lib/", src: ['fonts/**/*.*'], dest: 'docs/'},
                 ],
             },
         },

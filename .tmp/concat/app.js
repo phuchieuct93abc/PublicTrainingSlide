@@ -1,4 +1,4 @@
-var app = angular.module("app", ['ngAnimate', 'ngTouch', 'angular-carousel', 'frapontillo.bootstrap-switch', 'ngMaterial']);
+var app = angular.module("app", ['ngAnimate',  'angular-carousel', 'frapontillo.bootstrap-switch', 'ngMaterial']);
 app.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
             .primaryPalette('blue')
@@ -165,8 +165,6 @@ app.controller("hackathonDemo", function ($scope) {
 
         }
 
-
-
     ]
     $scope.colors = [
         {
@@ -195,6 +193,7 @@ app.controller("hackathonDemo", function ($scope) {
         $scope.isShowList = false;
         $scope.isShowAdd = true;
         $scope.isShowRead = false;
+        $scope.isShowEdit = false;
         $scope.addNote = {}
 
     }
@@ -202,8 +201,9 @@ app.controller("hackathonDemo", function ($scope) {
         $scope.originalItem = item;
         $scope.addNote = angular.copy(item);
         $scope.isShowList = false;
-        $scope.isShowAdd = true;
+        $scope.isShowAdd = false;
         $scope.isShowRead = false;
+        $scope.isShowEdit = true;
 
     }
 
@@ -212,23 +212,25 @@ app.controller("hackathonDemo", function ($scope) {
         $scope.isShowList = false;
         $scope.isShowAdd = false;
         $scope.isShowRead = true;
+        $scope.isShowEdit = false;
 
     }
     $scope.create = function () {
-        if (   $scope.originalItem == null) {
+        if ($scope.isShowAdd) {
             $scope.list.push($scope.addNote)
 
         } else {
-            console.log("edit")
             $scope.originalItem.note = $scope.addNote.note
             $scope.originalItem.desc = $scope.addNote.desc
             $scope.originalItem.color = $scope.addNote.color
+            $scope.originalItem = null
+
         }
-        $scope.originalItem = null
         $scope.showList();
     }
     $scope.showList = function () {
         $scope.isShowList = true;
+        $scope.isShowEdit= false;
         $scope.isShowAdd = false;
         $scope.isShowRead = false;
     }

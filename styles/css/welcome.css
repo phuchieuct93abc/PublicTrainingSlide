@@ -1,6 +1,6 @@
 .whoweare1 {
   height: 500px;
-  width: 1300px;
+  width: 1200px;
   position: relative; }
   .whoweare1 .visible:not(.current-fragment) {
     display: none !important; }

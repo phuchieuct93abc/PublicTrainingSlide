@@ -1,0 +1,11 @@
+.hackathon-require .bell {
+  animation-name: bell;
+  animation-duration: 500ms;
+  animation-iteration-count: infinite; }
+
+@keyframes bell {
+  from, to {
+    transform: rotate(12deg); }
+  
+  50% {
+    transform: rotate(-12deg); } }
