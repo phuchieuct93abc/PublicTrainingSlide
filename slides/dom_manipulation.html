@@ -5,8 +5,8 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Visibility manipulation</div>
                 <div class="panel-content text-left">
-                    <input ng-init="isHide=false" bs-switch type="checkbox" ng-model="isHide"/>
-                    <span ng-hide="isHide" class="hide-item">Show</span>
+                    <input ng-init="isShow=true" bs-switch type="checkbox" ng-model="isShow"/>
+                    <span ng-show="isShow" class="hide-item">Show</span>
                 </div>
             </div>
         </div>
@@ -15,8 +15,8 @@
             <div class="panel panel-primary">
                 <div class="panel-heading">Ability manipulation</div>
                 <div class="panel-content text-left">
-                    <input ng-init="isDisabled=false" bs-switch type="checkbox" ng-model="isDisabled"/>
-                    <button ng-init="count=0" class="btn btn-primary" ng-disabled="isDisabled" ng-click="count=count+1">
+                    <input ng-init="isEnabled=true" bs-switch type="checkbox" ng-model="isEnabled"/>
+                    <button ng-init="count=0" class="btn btn-primary" ng-disabled="!isEnabled" ng-click="count=count+1">
                         Count: <b >{{count}}</b></button>
                 </div>
             </div>
