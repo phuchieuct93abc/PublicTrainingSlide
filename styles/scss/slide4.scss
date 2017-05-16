@@ -1,40 +1,7 @@
-ul[rn-carousel]{
+.whatIsAngular{
+    .swiper-container{
 
-    height: 200px;
-    width: 100%;
-    margin:0 !important;
-
-    li{
-        text-align: center;
-    }
-}
-.reveal{
-    .rn-carousel-controls{
-        position: relative;
-        top: -190px;
-        font-size:2em ;
-        .rn-carousel-control{
-            &:hover{
-                animation-name: scale;
-                animation-duration: 1s;
-                animation-iteration-count: infinite;
-            }
-            &.rn-carousel-control-prev{
-                left: -30px ;
-            }
-            &.rn-carousel-control-next{
-                right:  -30px;
-            }
-        }
-    } 
-
-}
-@keyframes scale{
-    from,to{
-        transform: scale(1);
-    }
-    50%{
-        transform: scale(0.8);
-
+        width: 1200px;
+        margin: auto !important;
     }
 }

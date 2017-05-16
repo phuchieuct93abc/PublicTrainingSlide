@@ -3,6 +3,9 @@
     margin-bottom: 10px !important;
 }
 .reveal {
+    .progress{
+        margin: 0;
+    }
     h2,h3,h4.h5,h6{
         text-transform: initial;
     }
@@ -55,6 +58,8 @@
     }
 }
 
+
+
 ul{
     &.bounce{
         @include animate-list(bounceInLeft,bounceInRight,bounceInDown);  
@@ -71,4 +76,20 @@ ul{
         @include animate-list(jackInTheBox,jackInTheBox,jackInTheBox);  
 
     } 
+}
+.swiper-button-next,.swiper-button-prev{
+    animation-name: swiper-button;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes swiper-button{
+    from,to{
+        transform:scale(1);
+    },
+    50%{
+        transform:scale(1.5);
+
+    }
+
 }

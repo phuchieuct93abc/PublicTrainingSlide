@@ -1,0 +1,20 @@
+.letStart .flip-clock-divider .flip-clock-label {
+  font-size: 30px;
+  color: white; }
+
+.letStart .flip-clock-divider.hours .flip-clock-label {
+  right: -77px; }
+
+.letStart .flip-clock-divider.minutes .flip-clock-label {
+  right: -103px; }
+
+.letStart .flip-clock-divider.seconds .flip-clock-label {
+  right: -110px; }
+
+.letStart .my-clock {
+  margin: 0 auto;
+  display: block;
+  width: 500px;
+  height: 200px;
+  position: relative;
+  top: 50px; }

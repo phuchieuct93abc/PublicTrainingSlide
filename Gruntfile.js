@@ -206,7 +206,7 @@ module.exports = function (grunt) {
                     {expand: true, src: ['index.html'], dest: 'docs/'},
                     {expand: true, src: ['lib/**'], dest: 'docs/'},
                     {expand: true, src: ['js/**'], dest: 'docs/'},
-                    {expand: true, src: ['resources/**'], dest: 'docs/'},
+               
                     {expand: true, src: ['plugin/**'], dest: 'docs/'},
                     {expand: true, src: ['slides/**'], dest: 'docs/'},
                     {expand: true, cwd: "lib/font/source-sans-pro", src: ['**'], dest: 'docs/'},
@@ -220,6 +220,16 @@ module.exports = function (grunt) {
                 files: {
                     'index.html': ['controllers/*.js', 'styles/css/*.css'],
                 }
+            }
+        },
+        imagemin: {// Task
+
+            dynamic: {// Another target
+                files: [{
+                        expand: true, // Enable dynamic expansion
+                        src: ['resources/**/*.{png,jpg,gif}'], // Actual patterns to match
+                        dest: 'docs/'                  // Destination path prefix
+                    }]
             }
         }
 
@@ -260,7 +270,7 @@ module.exports = function (grunt) {
     grunt.registerTask('package', ['default', 'zip']);
 
     // Serve presentation locally
-    grunt.registerTask('serve', ['connect', 'wiredep','injector', 'watch']);
+    grunt.registerTask('serve', ['connect', 'wiredep', 'injector', 'watch']);
 
     // Run tests
     grunt.registerTask('test', ['jshint', 'qunit']);
@@ -268,6 +278,7 @@ module.exports = function (grunt) {
         'injector',
         'sass',
         'useminPrepare',
+        'imagemin',
         'copy',
         'concat:generated',
         'cssmin:generated',

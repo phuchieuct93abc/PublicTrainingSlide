@@ -36,8 +36,9 @@
       .whoweare1 .presenters .row [class*=col-xs-].image-wrapper {
         text-align: center; }
         .whoweare1 .presenters .row [class*=col-xs-].image-wrapper img {
-          height: 90%;
-          width: auto; }
+          height: auto;
+          width: 200px;
+          max-width: initial; }
   .whoweare1 .slide-container {
     padding: 14px 00px 20px 0px;
     -webkit-border-radius: 30px;

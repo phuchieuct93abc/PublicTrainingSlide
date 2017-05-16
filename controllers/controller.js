@@ -60,7 +60,7 @@ app.controller("ctr", function ($scope, $timeout) {
             history: true,
             width: 1200,
             height: 700,
-            transition: 'concave', // none/fade/slide/convex/concave/zoom
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
 
             // More info https://github.com/hakimel/reveal.js#dependencies
             dependencies: [

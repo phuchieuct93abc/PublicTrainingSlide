@@ -1,25 +1,3 @@
-ul[rn-carousel] {
-  height: 200px;
-  width: 100%;
-  margin: 0 !important; }
-  ul[rn-carousel] li {
-    text-align: center; }
-
-.reveal .rn-carousel-controls {
-  position: relative;
-  top: -190px;
-  font-size: 2em; }
-  .reveal .rn-carousel-controls .rn-carousel-control:hover {
-    animation-name: scale;
-    animation-duration: 1s;
-    animation-iteration-count: infinite; }
-  .reveal .rn-carousel-controls .rn-carousel-control.rn-carousel-control-prev {
-    left: -30px; }
-  .reveal .rn-carousel-controls .rn-carousel-control.rn-carousel-control-next {
-    right: -30px; }
-
-@keyframes scale {
-  from, to {
-    transform: scale(1); }
-  50% {
-    transform: scale(0.8); } }
+.whatIsAngular .swiper-container {
+  width: 1200px;
+  margin: auto !important; }

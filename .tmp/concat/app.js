@@ -60,7 +60,7 @@ app.controller("ctr", function ($scope, $timeout) {
             history: true,
             width: 1200,
             height: 700,
-            transition: 'concave', // none/fade/slide/convex/concave/zoom
+            transition: 'convex', // none/fade/slide/convex/concave/zoom
 
             // More info https://github.com/hakimel/reveal.js#dependencies
             dependencies: [
@@ -345,9 +345,6 @@ app.controller("liveCodeTwoWay", function ($timeout) {
 app.controller('ctrlMVC', function ($timeout) {
   
             $timeout(function () {
-                console.log()
-                console.log('run')
-
                 var link = $('.com__nav-link');
                 var linkParent = link.parent('li');
                 var section = $('.com__section');
@@ -401,7 +398,7 @@ app.controller('ctrlMVC', function ($timeout) {
                     //console.log(event.previousSlide, event.currentSlide, event.indexh, event.indexv);
                 });
 
-                $('img').off('mouseover').off('mouseout').on('mouseover', function () {
+                $('.com .img').off('mouseover').off('mouseout').on('mouseover', function () {
                     $('h2').css('color', '#404855')
                 }).on('mouseout', function () {
                     $('h2').css('color', 'white')
@@ -491,7 +488,7 @@ app.controller('otherFeatures', function ($timeout) {
 
             }
 
-        }, 2000);
+        }, 1000);
         // TODO: Sprinkle magic
     }, false);
 
@@ -505,4 +502,23 @@ app.controller("two_way_db",function($scope){
     $scope.changeModel = function(){
         $scope.name = "Everybody"
     }
+})
+app.controller("whatIsAngular", function ($timeout) {
+    var mySwiper;
+    Reveal.addEventListener('whatIsAngular', function () {
+        if (mySwiper == null) {
+            $timeout(function () {
+                new Swiper('.whatIsAngular .swiper-container', {
+                    speed: 1000,
+                    spaceBetween: 100,
+                    nextButton: ".whatIsAngular .swiper-button-next",
+                    prevButton: ".whatIsAngular .swiper-button-prev",
+
+                })
+            }, 1000);
+           
+        }
+    }, false);
+
+
 })

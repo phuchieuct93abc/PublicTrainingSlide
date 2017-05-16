@@ -13,7 +13,7 @@ app.controller('otherFeatures', function ($timeout) {
 
             }
 
-        }, 2000);
+        }, 1000);
         // TODO: Sprinkle magic
     }, false);
 

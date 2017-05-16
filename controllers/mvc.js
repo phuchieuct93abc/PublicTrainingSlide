@@ -1,9 +1,6 @@
 app.controller('ctrlMVC', function ($timeout) {
   
             $timeout(function () {
-                console.log()
-                console.log('run')
-
                 var link = $('.com__nav-link');
                 var linkParent = link.parent('li');
                 var section = $('.com__section');
@@ -57,7 +54,7 @@ app.controller('ctrlMVC', function ($timeout) {
                     //console.log(event.previousSlide, event.currentSlide, event.indexh, event.indexv);
                 });
 
-                $('img').off('mouseover').off('mouseout').on('mouseover', function () {
+                $('.com .img').off('mouseover').off('mouseout').on('mouseover', function () {
                     $('h2').css('color', '#404855')
                 }).on('mouseout', function () {
                     $('h2').css('color', 'white')
