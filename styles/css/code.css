@@ -1,16 +1,24 @@
-.code {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 100%;
-  overflow: visible;
-  transition: all 1s linear;
-  background-color: white; }
-  .code.open {
-    width: 100%; }
-    .code.open .transclude {
-      width: 100%;
-      overflow: hidden; }
-  .code .transclude {
-    width: 0;
-    overflow: hidden; }
+/*.code{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    overflow: visible;
+    transition: all 1s linear;
+    background-color:white;
+    &.open{
+        width: 100%;
+        .transclude{
+            width: 100%;
+            overflow: hidden;
+
+        }
+    }
+    .transclude{
+        width: 0;
+        overflow: hidden;
+
+    }
+
+
+}*/

@@ -88,6 +88,19 @@ app.controller("ctr", function ($scope, $timeout) {
 
 
 })
+//app.directive("code",function(){
+//    return{
+//        templateUrl:"slides/code.html",
+//        transclude:true,
+//        replace:true,
+//        controller:function($scope){
+//             $scope.open = function(){
+//                 $scope.isOpen=true;
+//             }
+//        }
+//    }
+//    
+//})
 app.controller("ctr4",function($scope){
 	$scope.click=function(feature,state){
 		$scope[feature]=state;
@@ -414,6 +427,7 @@ app.controller('ctrlMVC', function ($timeout) {
                 activeFirst();
 
                 Reveal.addEventListener('mvcState', function () {
+                    console.log('hi');
                     slides.css({"zoom": "1", "height": "100%"})
                     $('pre code').each(function (i, block) {
                         setTimeout(function () {
@@ -422,6 +436,7 @@ app.controller('ctrlMVC', function ($timeout) {
                     });
                 });
 
+                
                 Reveal.addEventListener('slidechanged', function (event) {
                     //console.log(event.previousSlide, event.currentSlide, event.indexh, event.indexv);
                 });
@@ -479,8 +494,8 @@ app.controller('ctrlMVC', function ($timeout) {
                     return self[(index + self.length) % self.length];
                 };
 
-                var mvcSlides = new TraversableArray(Array.prototype.slice.call(linkParent))
-
+                var mvcSlides = new TraversableArray(Array.prototype.slice.call(linkParent));
+                
             },1000)
 
 
@@ -523,6 +538,14 @@ app.controller('otherFeatures', function ($timeout) {
 
 
 
+})
+app.controller("routing",function($location,$scope){
+    $scope.move = function(){
+        $location.path("1")
+        
+    }
+    
+    
 })
 app.controller("two_way_db",function($scope){
 	$scope.name = "AngularJS";

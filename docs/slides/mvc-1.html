@@ -1,5 +1,5 @@
 <div class="com" ng-controller="ctrlMVC">
-    <div class="com__content">
+    <section class="com__content">
         <section class="com__section com__section--text ">
             <h2 class="animate slideInLeft ">MVC Architecture</h2>
             <img src="resources/MVC.png" class="animate slideInRight delay-3" />
@@ -17,7 +17,7 @@
         &lt;/button&gt;
 &lt;/div&gt;
 
-					</code></pre>
+                    </code></pre>
                 </div>
             </div>
         </section>
@@ -31,7 +31,7 @@
         action: function
 }
 
-				</code></pre>
+                </code></pre>
             </div>
         </section>
         <section class="com__section com__section--text">
@@ -46,16 +46,54 @@ function MyController($scope) {
         $scope.name = 'world';
 }
 
-					</code></pre>
+                    </code></pre>
             </div>
         </section>
         <section class="com__section com__section--text ">
             <h2 class="animate slideInLeft ">How it work?</h2>
             <img src="resources/mvc-work.png" class="animate slideInRight delay-3" />
         </section>
-        <section class="com__section com__section--text ">
-            <h2 class="animate slideInLeft ">$scope is glue</h2>
-            <img src="resources/mvc-scope.png" class="animate slideInRight delay-3" />
+        <section class="com__section com__section--text wrapper-view-model-control">
+           
+            <div class="fragment animate slideInLeft" data-fragment-index="0">
+                <pre><code data-trim data-noescape class="javascript">
+<strong>View (DOM)</strong>
+&lt;div ng-controller="MyController"&gt;
+        Hello { {name} }!
+        &lt;button ng-click="action()"&gt;
+                OK
+        &lt;/button&gt;
+&lt;/div&gt;
+
+                    </code></pre>
+            </div>
+           
+            <div class="fragment animate slideInLeft" data-fragment-index="1">
+                 <pre><code data-trim data-noescape class="javascript">
+<strong>Controller</strong>
+function MyController($scope) {
+        $scope.action = function() {
+                // do something
+        }
+        $scope.name = 'world';
+}
+
+                    </code></pre>
+            </div>
+           
+            <div class="fragment animate slideInLeft" data-fragment-index="2">
+            <pre><code data-trim data-noescape class="javascript">
+<strong>Scope</strong>
+{
+        name: 'world',
+        action: function
+}
+
+                </code></pre>
+            </div>
+            
+        
+            <img src="resources/arrow-310635_640.png" class="mvc-image" />
         </section>
         <section class="com__section com__section--text ">
             <h2 class="animate slideInLeft ">How it work?</h2>
@@ -70,14 +108,8 @@ function MyController($scope) {
         $scope.name = 'world';
 }
 
-						</code></pre>
-                    <div class="controller popup">
-                        <div>Imperative
-                            <br/> behavior </div>
-                        <svg height="50" width="100">
-                            <path d="M0 50 L40 0 L65 0 Z" />
-                        </svg>
-                    </div>
+                        </code></pre>
+                   
                 </div>
                 <div class="animate scaleIn delay-3 col-sm-5">
                     <pre><code data-trim data-noescape class="javascript">
@@ -87,20 +119,12 @@ function MyController($scope) {
         action: function
 }
 
-					</code></pre>
-                    <div class="scope popup">
-                        <div>scope is
-                            <br/> the glue </div>
-                        <svg height="50" width="100">
-                            <path d="M0 50 L40 0 L65 0 Z" />
-                        </svg>
-                    </div>
+                    </code></pre>
+
                 </div>
-                
             </div>
-            
         </section>
-    </div>
+    </section>
     <nav class="com__nav">
         <ul class="com__nav-list">
             <li class="com__nav-item">
@@ -151,8 +175,6 @@ function MyController($scope) {
                     </div>
                 </a>
             </li>
-           
         </ul>
     </nav>
 </div>
-
