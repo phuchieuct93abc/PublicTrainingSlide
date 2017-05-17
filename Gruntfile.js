@@ -218,7 +218,7 @@ module.exports = function (grunt) {
             options: {},
             local_dependencies: {
                 files: {
-                    'index.html': ['controllers/*.js', 'styles/css/*.css'],
+                    'index.html': ['controllers/controller.js','controllers/*.js', 'styles/css/*.css'],
                 }
             }
         },

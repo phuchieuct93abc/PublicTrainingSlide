@@ -1,0 +1,20 @@
+.routing .wrapper {
+  height: 300px;
+  display: flex;
+  align-items: center; }
+
+.routing .route-result {
+  padding-left: 20px;
+  display: inline-block; }
+
+.routing .route-arrow {
+  display: inline-block; }
+  .routing .route-arrow img {
+    border: none;
+    background-color: transparent;
+    width: 200px;
+    box-shadow: none; }
+
+.routing .routes {
+  width: 600px;
+  display: inline-block; }
