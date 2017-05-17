@@ -42,6 +42,7 @@ app.controller('ctrlMVC', function ($timeout) {
                 activeFirst();
 
                 Reveal.addEventListener('mvcState', function () {
+                    console.log('hi');
                     slides.css({"zoom": "1", "height": "100%"})
                     $('pre code').each(function (i, block) {
                         setTimeout(function () {
@@ -50,6 +51,7 @@ app.controller('ctrlMVC', function ($timeout) {
                     });
                 });
 
+                
                 Reveal.addEventListener('slidechanged', function (event) {
                     //console.log(event.previousSlide, event.currentSlide, event.indexh, event.indexv);
                 });
@@ -107,8 +109,8 @@ app.controller('ctrlMVC', function ($timeout) {
                     return self[(index + self.length) % self.length];
                 };
 
-                var mvcSlides = new TraversableArray(Array.prototype.slice.call(linkParent))
-
+                var mvcSlides = new TraversableArray(Array.prototype.slice.call(linkParent));
+                
             },1000)
 
 

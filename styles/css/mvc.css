@@ -226,32 +226,16 @@ pre {
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
-
-.arrow_box {
-  position: relative;
-  background: #88b7d5;
-  border: 2px solid #c2e1f5 !important;
+.wrapper-view-model-controller {
+   position: relative;
 }
-.arrow_box:after, .arrow_box:before {
-  right: 100%;
-  top: 50%;
-  border: solid transparent;
-  content: " ";
-  height: 0;
-  width: 0;
+.mvc-image {
   position: absolute;
-  pointer-events: none;
-}
-
-.arrow_box:after {
-  border-color: rgba(136, 183, 213, 0);
-  border-right-color: #88b7d5;
-  border-width: 5px;
-  margin-top: -5px;
-}
-.arrow_box:before {
-  border-color: rgba(194, 225, 245, 0);
-  border-right-color: #c2e1f5;
-  border-width: 8px;
-  margin-top: -8px;
+  border: none !important;
+  background: none !important;
+  box-shadow: none !important;
+  transform: rotate(68deg) !important;
+    height: 3.6em;
+    left: 5em;
+    bottom: 10em
 }
