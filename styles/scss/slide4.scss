@@ -1,7 +1,8 @@
 .whatIsAngular{
-    .swiper-container{
-
-        width: 1200px;
-        margin: auto !important;
+    li{
+        &.visible{
+            animation-name: fadeInUp;
+            animation-duration: 1s;
+        }
     }
 }

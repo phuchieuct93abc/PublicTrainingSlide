@@ -46,8 +46,8 @@
   transform: translate(-400px, 0); }
 
 .why-choose .reuseFeature img {
-  left: -140px;
-  width: 600px; }
+  left: -50px;
+  width: 400px; }
 
 .why-choose .reuseFeature.visible:not(.current-fragment) {
   transform: translate(400px, 0); }
