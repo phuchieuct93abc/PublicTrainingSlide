@@ -1,0 +1,17 @@
+.directive-example{
+    .row{
+        padding-top: 30px;
+        .wrapper{
+            position: relative;
+            .title{
+                position: absolute;
+                top: -30px;
+                left: 60px;
+                background-color: #222222;
+
+            }
+        }
+
+    }
+
+}

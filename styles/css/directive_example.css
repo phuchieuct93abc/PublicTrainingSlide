@@ -1,0 +1,9 @@
+.directive-example .row {
+  padding-top: 30px; }
+  .directive-example .row .wrapper {
+    position: relative; }
+    .directive-example .row .wrapper .title {
+      position: absolute;
+      top: -30px;
+      left: 60px;
+      background-color: #222222; }

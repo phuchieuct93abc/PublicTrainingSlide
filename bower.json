@@ -15,7 +15,6 @@
     "jquery": "3.2.1",
     "angular": "1.5.6",
     "angular-animate": "1.5.6",
-    "bootstrap": "3.3.7",
     "angular-bootstrap-switch": "^0.5.2",
     "angular-carousel": "^1.0.1",
     "angular-touch": "1.5.6",

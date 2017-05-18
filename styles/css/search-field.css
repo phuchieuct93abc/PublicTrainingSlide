@@ -1,4 +1,14 @@
 search-field {
   display: inline-block;
   border: 1px solid blue;
-  padding: 10px; }
+  padding: 30px 10px; }
+  search-field .input-group-lg {
+    position: relative;
+    height: 46px; }
+    search-field .input-group-lg input {
+      float: left; }
+    search-field .input-group-lg .btn {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%; }

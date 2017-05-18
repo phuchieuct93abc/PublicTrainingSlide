@@ -19,7 +19,8 @@
     height: 100%;
     width: 50%;
     overflow: hidden;
-    padding: 0 0 0 40px; }
+    padding: 0 0 0 40px;
+    font-size: 40px; }
   .hackathon-demo .imac {
     width: 800px;
     height: auto;

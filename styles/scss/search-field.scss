@@ -1,5 +1,18 @@
 search-field{
-        display: inline-block;
+    display: inline-block;
     border: 1px solid blue;
-    padding: 10px;
+    padding: 30px 10px;
+    .input-group-lg{
+        position: relative;
+        height: 46px;
+        input{
+            float: left;
+        }
+        .btn{
+            position: absolute;
+            top:0;
+            right:0;
+            height:100%
+        }
+    }
 }
