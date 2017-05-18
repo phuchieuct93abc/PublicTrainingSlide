@@ -540,8 +540,11 @@ app.controller('otherFeatures', function ($timeout) {
 
 })
 app.controller("routing",function($location,$scope){
+    var url = $location.absUrl();
+    $scope.url = url.replace($location.path(),"/");
+   
     $scope.move = function(){
-        $location.path("1")
+        $location.path("")
         
     }
     

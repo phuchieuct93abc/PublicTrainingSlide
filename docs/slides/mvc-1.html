@@ -53,77 +53,11 @@ function MyController($scope) {
             <h2 class="animate slideInLeft ">How it work?</h2>
             <img src="resources/mvc-work.png" class="animate slideInRight delay-3" />
         </section>
-        <section class="com__section com__section--text wrapper-view-model-control">
-           
-            <div class="fragment animate slideInLeft" data-fragment-index="0">
-                <pre><code data-trim data-noescape class="javascript">
-<strong>View (DOM)</strong>
-&lt;div ng-controller="MyController"&gt;
-        Hello { {name} }!
-        &lt;button ng-click="action()"&gt;
-                OK
-        &lt;/button&gt;
-&lt;/div&gt;
-
-                    </code></pre>
-            </div>
-           
-            <div class="fragment animate slideInLeft" data-fragment-index="1">
-                 <pre><code data-trim data-noescape class="javascript">
-<strong>Controller</strong>
-function MyController($scope) {
-        $scope.action = function() {
-                // do something
-        }
-        $scope.name = 'world';
-}
-
-                    </code></pre>
-            </div>
-           
-            <div class="fragment animate slideInLeft" data-fragment-index="2">
-            <pre><code data-trim data-noescape class="javascript">
-<strong>Scope</strong>
-{
-        name: 'world',
-        action: function
-}
-
-                </code></pre>
-            </div>
-            
-        
-            <img src="resources/arrow-310635_640.png" class="mvc-image" />
-        </section>
         <section class="com__section com__section--text ">
-            <h2 class="animate slideInLeft ">How it work?</h2>
-            <div class="col-sm-12 wrapper-code">
-                <div class="animate scaleIn delay-3 col-sm-7">
-                    <pre><code data-trim data-noescape class="javascript">
-<strong>Controller</strong>
-function MyController($scope) {
-        $scope.action = function() {
-                // do something
-        }
-        $scope.name = 'world';
-}
-
-                        </code></pre>
-                   
-                </div>
-                <div class="animate scaleIn delay-3 col-sm-5">
-                    <pre><code data-trim data-noescape class="javascript">
-<strong>Scope</strong>
-{
-        name: 'world',
-        action: function
-}
-
-                    </code></pre>
-
-                </div>
-            </div>
+            <h2 class="animate slideInLeft ">Scope is glue</h2>
+            <img src="resources/mvc-scope.png" class="animate slideInRight delay-3" />
         </section>
+               
     </section>
     <nav class="com__nav">
         <ul class="com__nav-list">
