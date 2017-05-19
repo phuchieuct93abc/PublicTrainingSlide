@@ -1,0 +1,114 @@
+<div class="com" ng-controller="ctrlMVC">
+    <section class="com__content">
+        <section class="com__section com__section--text ">
+            <h2 class="animate slideInLeft ">MVC Architecture</h2>
+            <img src="resources/MVC.png" class="animate slideInRight delay-3" />
+        </section>
+        <section class="com__section com__section--text centered">
+            <div class="com__section-half">
+                <h2 class="animate slideInLeft">View</h2>
+                <div class="animate slideInLeft delay-2">
+                    <pre><code data-trim data-noescape class="javascript">
+<strong>View (DOM)</strong>
+&lt;div ng-controller="MyController"&gt;
+        Hello { {name} }!
+        &lt;button ng-click="action()"&gt;
+                OK
+        &lt;/button&gt;
+&lt;/div&gt;
+
+                    </code></pre>
+                </div>
+            </div>
+        </section>
+        <section class="com__section com__section--text">
+            <h2 class="animate scaleIn">Model</h2>
+            <div class="animate scaleIn delay-3">
+                <pre><code data-trim data-noescape class="javascript">
+<strong>Scope</strong>
+{
+        name: 'world',
+        action: function
+}
+
+                </code></pre>
+            </div>
+        </section>
+        <section class="com__section com__section--text">
+            <h2 class="animate slideInLeft ">Controller</h2>
+            <div class="animate scaleIn delay-3">
+                <pre><code data-trim data-noescape class="javascript">
+<strong>Controller</strong>
+function MyController($scope) {
+        $scope.action = function() {
+                // do something
+        }
+        $scope.name = 'world';
+}
+
+                    </code></pre>
+            </div>
+        </section>
+        <section class="com__section com__section--text ">
+            <h2 class="animate slideInLeft ">How it work?</h2>
+            <img src="resources/mvc-work.png" class="animate slideInRight delay-3" />
+        </section>
+        <section class="com__section com__section--text ">
+            <h2 class="animate slideInLeft ">Scope is glue</h2>
+            <img src="resources/mvc-scope.png" class="animate slideInRight delay-3" />
+        </section>
+               
+    </section>
+    <nav class="com__nav">
+        <ul class="com__nav-list">
+            <li class="com__nav-item">
+                <a href="" class="com__nav-link">
+                    <span class="blue-line animate scaleInLeft delay-2"></span>
+                    <span class="white-line animate scaleInLeft delay-4"></span>
+                    <span class="white-line animate scaleInLeft delay-5"></span>
+                </a>
+            </li>
+            <li class="com__nav-item">
+                <a href="" class="com__nav-link flex-row">
+                    <div class="com__section-half">
+                        <span class="blue-line animate scaleInLeft delay-3"></span>
+                        <span class="white-line animate scaleInLeft delay-4"></span>
+                    </div>
+                    <div class="com__section-half">
+                        <span class="white-circle animate slideInRight delay-5"></span>
+                    </div>
+                </a>
+            </li>
+            <li class="com__nav-item">
+                <a href="" class="com__nav-link centered">
+                    <span class="blue-line animate scaleIn delay-3"></span>
+                    <span class="white-circle animate scaleIn delay-5"></span>
+                </a>
+            </li>
+            <li class="com__nav-item">
+                <a href="" class="com__nav-link">
+                    <span class="blue-line animate scaleInLeft delay-2"></span>
+                    <span class="white-line animate scaleInLeft delay-4"></span>
+                    <span class="white-line animate scaleInLeft delay-5"></span>
+                </a>
+            </li>
+            <li class="com__nav-item">
+                <a href="" class="com__nav-link centered">
+                    <span class="blue-line animate scaleInLeft delay-2"></span>
+                    <span class="white-circle animate scaleIn delay-5"></span>
+                </a>
+            </li>
+            <li class="com__nav-item">
+                <a href="" class="com__nav-link flex-row">
+                    <div class="com__section-half">
+                        <span class="blue-line animate scaleInLeft delay-3"></span>
+                        <span class="white-line animate scaleInLeft delay-4"></span>
+                    </div>
+                    <div class="com__section-half">
+                        <span class="white-circle animate slideInRight delay-5"></span>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>

@@ -20,7 +20,10 @@
     width: 50%;
     overflow: hidden;
     padding: 0 0 0 40px;
-    font-size: 40px; }
+    font-size: 40px;
+    text-align: left; }
+    .hackathon-demo .notes h3 {
+      text-align: center; }
   .hackathon-demo .imac {
     width: 800px;
     height: auto;

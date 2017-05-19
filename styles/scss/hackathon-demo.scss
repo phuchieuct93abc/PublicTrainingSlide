@@ -25,6 +25,10 @@ $toolbar-height:50px;
         overflow: hidden;
         padding: 0 0 0 40px;
          font-size: 40px;
+         text-align: left;
+         h3{
+             text-align: center;
+         }
     }
     height: $height;
     width:$width;

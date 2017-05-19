@@ -69,17 +69,24 @@
             <div ng-if="isShowRead" class="animate animate-left read-note"  ng-style="{'background-color':selectedNote.color}">
                 <h2>{{selectedNote.note}}</h2>
                 <p>{{selectedNote.desc}}</p>
+
+
             </div>
+
         </div>
+
     </div>
     <div class="notes">
         <div ng-if="isShowList" class="animate animate-right">
 
             <h3>List view</h3>
             <ul>
-                <li>Show a list of notes</li>
+                <li>Show a list of notes we created</li>
                 <li>Display title, description, color for each note</li>
-                <li>Ability to create, edit or view a note</li>
+                <li>Click on each view, move to <b>Display view</b></li>
+                <li>Have a <b>Add</b> button to move to <b>Add view</b></li>
+                <li>Have a <b>Edit</b> button to move to <b>Edit view</b> for each note</li>
+
             </ul>
         </div>
 
@@ -88,7 +95,6 @@
             <h3>Display view</h3>
             <ul>
                 <li>Display the detail of selected note</li>
-                <li>Able to back to list view</li>
 
 
             </ul>
@@ -107,8 +113,6 @@
             <h3>Add view</h3>
             <ul>
                 <li>Add a new note</li>
-                <li>Title and descript are plain text</li>
-                <li>Select a color to category the note</li>
 
 
             </ul>

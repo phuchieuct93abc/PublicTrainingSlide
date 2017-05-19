@@ -1,0 +1,54 @@
+<div ng-controller="domManipulation" class="container-fluid dom-manipulation">
+    <h2>DOM manipulation</h2>
+    <div class="row">
+        <div class="col-xs-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Visibility manipulation</div>
+                <div class="panel-content text-left">
+                    <input ng-init="isShow=true" bs-switch type="checkbox" ng-model="isShow"/>
+                    <span ng-show="isShow" class="hide-item">Show</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Ability manipulation</div>
+                <div class="panel-content text-left">
+                    <input ng-init="isEnabled=true" bs-switch type="checkbox" ng-model="isEnabled"/>
+                    <button ng-init="count=0" class="btn btn-primary" ng-disabled="!isEnabled" ng-click="count=count+1">
+                        Count: <b >{{count}}</b></button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Class manipulation</div>
+                <div class="panel-content text-left form-group-lg">
+                    <div class="row">
+                        <div ng-class="class"  class="col-xs-12">Custom class</div>
+
+                        <div class=" col-xs-12"><select ng-options="item as item for item in classes  " ng-model="class"
+                                                       class="form-control"></select>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">Style manipulation</div>
+                <div class="panel-content text-left form-group-lg container-fluid">
+
+                        <div class="row">
+                            <span class="col-xs-12" ng-style="getClass(customStyle)">Custom style</span>
+                            <div class="col-xs-12"> <textarea rows="1" class="form-control " ng-model="customStyle"></textarea></div>
+
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>

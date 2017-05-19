@@ -1,0 +1,48 @@
+<h2>Two-way data binding</h2>
+<div class="live-code-twoway fragment" ng-controller="liveCodeTwoWay">
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+             <div class="swiper-slide">
+                 <div class="text">In controller, <b>$scope</b> is the glue that connects view and model together
+                    <pre>
+<code data-trim class="javascript">
+    app.controller('myController',function($scope){
+        $scope.modelName="Value 1";
+        $scope.getValue = function(){
+            alert($scope.modelName);
+        };                        
+    })
+</code>
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="swiper-slide">
+                <div class="text">1. From view to model by using <b>ng-model="modelName"</b> or <b>ng-click="getValue()"</b>
+                    <pre>
+<code data-trim data-noescape class="html">
+    &lt;input ng-model="modelName"&gt;
+    &lt;button ng-click=&quot;getValue()&quot;&gt;Get value&lt;/button&gt;
+    
+</code>
+
+                       
+                    </pre>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="text">2. From model to view by using <b ng-non-bindable>{{modelName}}</b>
+                    <pre>
+<code data-trim data-noescape class="html">
+    &lt;div&gt;<span ng-non-bindable>{{modelName}}</span>&lt;/div&gt;                      
+</code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
