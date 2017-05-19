@@ -37,13 +37,20 @@
 
             </div>
             <div ng-if="isShowAdd || isShowEdit" class="animate animate-left add-note"  ng-style="{'background-color':addNote.color}">
-                <form name="form">
+               
+    
+                
+                <form name="edit.form">
                     <md-button class="md-fab  md-primary" ng-click="create()">
                         <i class="glyphicon  glyphicon-ok"></i>
                     </md-button>      
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Title</label>
-                        <input name="title" ng-model="addNote.note" >
+                        <input name="title" required ng-model="addNote.note" />
+                         <div ng-messages="edit.form.title.$error" class="mes-wrapper">
+          <div ng-message="required">This is required.</div>
+        </div>
+                        
                         <!--                    <div ng-messages="form.title.$error">
                                                 <div ng-message="required">This is required.</div>
                                             </div>-->
@@ -69,24 +76,17 @@
             <div ng-if="isShowRead" class="animate animate-left read-note"  ng-style="{'background-color':selectedNote.color}">
                 <h2>{{selectedNote.note}}</h2>
                 <p>{{selectedNote.desc}}</p>
-
-
             </div>
-
         </div>
-
     </div>
     <div class="notes">
         <div ng-if="isShowList" class="animate animate-right">
 
             <h3>List view</h3>
             <ul>
-                <li>Show a list of notes we created</li>
+                <li>Show a list of notes</li>
                 <li>Display title, description, color for each note</li>
-                <li>Click on each view, move to <b>Display view</b></li>
-                <li>Have a <b>Add</b> button to move to <b>Add view</b></li>
-                <li>Have a <b>Edit</b> button to move to <b>Edit view</b> for each note</li>
-
+                <li>Ability to create, edit or view a note</li>
             </ul>
         </div>
 
@@ -95,6 +95,7 @@
             <h3>Display view</h3>
             <ul>
                 <li>Display the detail of selected note</li>
+                <li>Able to back to list view</li>
 
 
             </ul>
@@ -113,6 +114,8 @@
             <h3>Add view</h3>
             <ul>
                 <li>Add a new note</li>
+                <li>Title and descript are plain text</li>
+                <li>Select a color to category the note</li>
 
 
             </ul>

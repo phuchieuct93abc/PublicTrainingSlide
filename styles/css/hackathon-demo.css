@@ -80,14 +80,14 @@
     color: white !important; }
     .hackathon-demo md-toolbar .md-toolbar-tools {
       height: 50px; }
+      .hackathon-demo md-toolbar .md-toolbar-tools h2 {
+        color: white !important; }
     .hackathon-demo md-toolbar .md-icon-button {
       font-size: 29px;
       padding-left: 20px;
       width: 50px;
       position: absolute;
       top: 0; }
-    .hackathon-demo md-toolbar h2.md-truncate {
-      color: white !important; }
   .hackathon-demo .scroll {
     overflow-x: hidden;
     overflow-y: auto;

@@ -25,18 +25,45 @@
     <body ng-controller="ctr">
         <div class="reveal">
             <div class="slides">
-                <section ng-include="'slides/welcome.html'" data-state="axon"></section> 
+                <section  data-state="axon">
+                    <div ng-include="'slides/welcome.html'"></div>
+                    <aside class="notes" ng-include="'notes/welcome.html'">
+                    </aside>
+                </section> 
+                
+                <section >
+                    <div ng-include="'slides/whoweare_1.html'"></div>
+                    <aside class="notes" ng-include="'notes/whoweare_1.html'">
+                    </aside>
+                </section> 
+                
+                  <section >
+                    <div ng-include="'slides/1.html'"></div>
+                    <aside class="notes" ng-include="'notes/1.html'">
+                    </aside>
+                </section> 
+                  <section >
+                    <div ng-include="'slides/2.html'"></div>
+                    <aside class="notes" ng-include="'notes/2.html'">
+                    </aside>
+                </section> 
+                  <section >
+                    <div ng-include="'slides/3.html'"></div>
+                    <aside class="notes" ng-include="'notes/3.html'">
+                    </aside>
+                </section> 
+                
+                
 
-                <section ng-include="'slides/whoweare_1.html'"></section>
 
 
-                <section ng-include="'slides/1.html'"></section>
-                <section ng-include="'slides/2.html'"></section>
-                <section ng-include="'slides/3.html'"></section>
                 <section  ng-include="'slides/4.html'" data-state="whatIsAngular"></section>
                 <section ng-include="'slides/4-2.html'"></section>
                 <section data-state="otherFeatures" ng-include="'slides/other_features.html'" ></section>           </section>
                 <section ng-include="'slides/5.html'"></section>
+                
+                
+                
                 <section ng-include="'slides/core_features.html'" ></section>
                 <section  ng-include="'slides/mvc-1.html'" data-state="mvcState"></section>
                 <section ng-include="'slides/two_way_db.html'"></section>

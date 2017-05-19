@@ -100,9 +100,11 @@ $toolbar-height:50px;
                 }
             }
         }
-        h2,h3{
-            color: black !important;
-        }
+
+            h2,h3{
+                color: black !important;
+            }
+        
     }
     md-toolbar{
         width: 100%;
@@ -112,6 +114,11 @@ $toolbar-height:50px;
         color: white !important;
         .md-toolbar-tools{
             height:$toolbar-height;
+               
+            h2{
+                color: white !important; 
+
+            }
         }
         .md-icon-button{
             font-size: 29px;
@@ -120,10 +127,7 @@ $toolbar-height:50px;
             position: absolute;
             top: 0;
         }
-        h2.md-truncate{
-            color: white !important; 
-
-        }
+      
     }
     .scroll{
 
@@ -147,9 +151,9 @@ $toolbar-height:50px;
 
             }
         }
-          &.md-input-has-value,&.md-input-focused{
+        &.md-input-has-value,&.md-input-focused{
             label{
-                  transform: translate3d(0, 20px, 0) scale(0.75);
+                transform: translate3d(0, 20px, 0) scale(0.75);
 
             }
         }

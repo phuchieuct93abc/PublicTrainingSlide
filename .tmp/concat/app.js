@@ -1,4 +1,4 @@
-var app = angular.module("app", ['ngAnimate',  'angular-carousel', 'frapontillo.bootstrap-switch', 'ngMaterial']);
+var app = angular.module("app", ['ngAnimate','ngMessages',  'angular-carousel', 'frapontillo.bootstrap-switch', 'ngMaterial']);
 app.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
             .primaryPalette('blue')
@@ -229,21 +229,31 @@ app.controller("hackathonDemo", function ($scope) {
 
     }
     $scope.create = function () {
-        if ($scope.isShowAdd) {
-            $scope.list.push($scope.addNote)
+        if ($scope.edit.form.$valid) {
 
+            if ($scope.isShowAdd) {
+                $scope.list.push($scope.addNote)
+
+            } else {
+                $scope.originalItem.note = $scope.addNote.note
+                $scope.originalItem.desc = $scope.addNote.desc
+                $scope.originalItem.color = $scope.addNote.color
+                $scope.originalItem = null
+
+            }
+            $scope.showList();
         } else {
-            $scope.originalItem.note = $scope.addNote.note
-            $scope.originalItem.desc = $scope.addNote.desc
-            $scope.originalItem.color = $scope.addNote.color
-            $scope.originalItem = null
+            angular.forEach($scope.edit.form.$error, function (field) {
+                angular.forEach(field, function (errorField) {
+                    errorField.$setTouched();
+                })
+            });
 
         }
-        $scope.showList();
     }
     $scope.showList = function () {
         $scope.isShowList = true;
-        $scope.isShowEdit= false;
+        $scope.isShowEdit = false;
         $scope.isShowAdd = false;
         $scope.isShowRead = false;
     }
