@@ -24,11 +24,11 @@ $toolbar-height:50px;
         width: 50%;
         overflow: hidden;
         padding: 0 0 0 40px;
-         font-size: 40px;
-         text-align: left;
-         h3{
-             text-align: center;
-         }
+        font-size: 40px;
+        text-align: left;
+        h3{
+            text-align: center;
+        }
     }
     height: $height;
     width:$width;
@@ -86,7 +86,19 @@ $toolbar-height:50px;
             width: 100%;
             height: 100%;
             margin: auto;
-            padding: 50px;
+            padding: 20px 50px;
+            md-input-container{
+                margin-bottom: 30px;
+            }
+            input{
+                height: 40px;
+            }
+            .mes-wrapper{
+                .md-input-message-animation{
+                    font-size: 20px !important;
+                    line-height: 30px !important;
+                }
+            }
         }
         h2,h3{
             color: black !important;
@@ -129,14 +141,22 @@ $toolbar-height:50px;
     }
 
     md-input-container{
-        &:not(.md-input-focused) { 
-            label:not(.md-no-float):not(.md-container-ignore), .md-placeholder{
-                /*color: white;*/
+        &:not(.md-input-has-value):not(.md-input-focused){
+            label{
+                transform: translateY(46px);
+
             }
-
-
-
         }
+          &.md-input-has-value,&.md-input-focused{
+            label{
+                  transform: translate3d(0, 20px, 0) scale(0.75);
+
+            }
+        }
+
+
+
+
         input,label,md-select{
             font-size: 30px;
 

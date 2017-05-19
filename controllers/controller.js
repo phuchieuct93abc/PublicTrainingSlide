@@ -1,4 +1,4 @@
-var app = angular.module("app", ['ngAnimate',  'angular-carousel', 'frapontillo.bootstrap-switch', 'ngMaterial']);
+var app = angular.module("app", ['ngAnimate','ngMessages',  'angular-carousel', 'frapontillo.bootstrap-switch', 'ngMaterial']);
 app.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('default')
             .primaryPalette('blue')

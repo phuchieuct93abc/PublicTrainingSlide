@@ -37,13 +37,20 @@
 
             </div>
             <div ng-if="isShowAdd || isShowEdit" class="animate animate-left add-note"  ng-style="{'background-color':addNote.color}">
-                <form name="form">
+               
+    
+                
+                <form name="edit.form">
                     <md-button class="md-fab  md-primary" ng-click="create()">
                         <i class="glyphicon  glyphicon-ok"></i>
                     </md-button>      
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Title</label>
-                        <input name="title" ng-model="addNote.note" >
+                        <input name="title" required ng-model="addNote.note" />
+                         <div ng-messages="edit.form.title.$error" class="mes-wrapper">
+          <div ng-message="required">This is required.</div>
+        </div>
+                        
                         <!--                    <div ng-messages="form.title.$error">
                                                 <div ng-message="required">This is required.</div>
                                             </div>-->
