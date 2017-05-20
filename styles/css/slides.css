@@ -5,7 +5,7 @@
 .reveal .progress {
   margin: 0; }
 
-.reveal h2, .reveal h3, .reveal h4.h5, .reveal h6 {
+.reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
   text-transform: initial; }
 
 .reveal pre {
