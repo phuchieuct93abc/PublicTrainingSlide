@@ -34,6 +34,12 @@ app.config(function($routeProvider) {
   .when("/red", {
     templateUrl : "red.htm"
   })  
+  .when("/green", {
+    templateUrl : "green.htm"
+  }) 
+  .when("/blue", {
+    templateUrl : "blue.htm"
+  }) 
 });
 </code>
                     </pre>
@@ -44,6 +50,24 @@ app.config(function($routeProvider) {
                     <pre>
 <code data-trim class="html" data-noescape>
 &lt;div ng-view&gt;Views are here&lt;/div&gt;
+&lt;button ng-click=&quot;moveToView(&apos;red&apos;)&quot;&gt;Red&lt;/button&gt;
+&lt;button ng-click=&quot;moveToView(&apos;green&apos;)&quot;&gt;Green&lt;/button&gt;
+&lt;button ng-click=&quot;moveToView(&apos;blue&apos;)&quot;&gt;Blue&lt;/button&gt;
+</code>
+                    </pre>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="text">4. Navigate through views by using $location 
+                    <pre>
+<code data-trim class="js" data-noescape>
+function myControoler($scope,$location){
+    $scope.moveToView = function(view){
+        $location.path(view);
+    
+    }
+
+}
 </code>
                     </pre>
                 </div>
