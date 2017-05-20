@@ -1,0 +1,55 @@
+<h2>Routing</h2>
+<div class="live-code-routing fragment" ng-controller="liveCodeRouting">
+    <div class="swiper-container">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+                <div class="text">1. Include the AngularJS Route module
+                    <pre>
+<code data-trim class="html" data-noescape>
+&lt;script src=&quot;angular-route.js&quot;&gt;&lt;/script&gt;
+</code>
+                    </pre>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="text">2. Add the <b>ngRoute</b> as a dependency in the application module
+                    <pre>
+<code data-trim class="js" data-noescape>
+var app = angular.module("myApp", ["ngRoute"]);
+</code>
+                    </pre>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="text">3. Use the <b>$routeProvider</b> to configure different routes in your application
+                    <pre>
+<code data-trim class="js" data-noescape>
+app.config(function($routeProvider) {
+  $routeProvider
+  .when("/", {
+    templateUrl : "main.htm"
+  })
+  .when("/red", {
+    templateUrl : "red.htm"
+  })  
+});
+</code>
+                    </pre>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="text">4. Use <b>ng-view</b> to put the content provided by the routing.
+                    <pre>
+<code data-trim class="html" data-noescape>
+&lt;div ng-view&gt;Views are here&lt;/div&gt;
+</code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
