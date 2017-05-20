@@ -8,12 +8,13 @@
                  <div class="text">In controller, <b>$scope</b> is the glue that connects view and model together
                     <pre>
 <code data-trim class="javascript">
-    app.controller('myController',function($scope){
+    function myController($scope){
         $scope.modelName="Value 1";
-        $scope.getValue = function(){
+        $scope.getValue = function(){ 
             alert($scope.modelName);
         };                        
-    })
+    }
+    app.controller('myController',myController)
 </code>
                     </pre>
                 </div>

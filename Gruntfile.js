@@ -210,7 +210,7 @@ module.exports = function (grunt) {
                     {expand: true, src: ['plugin/**'], dest: 'docs/'},
                     {expand: true, src: ['slides/**'], dest: 'docs/'},
                     {expand: true, cwd: "lib/font/source-sans-pro", src: ['**'], dest: 'docs/'},
-                    {expand: true, cwd: "lib/", src: ['fonts/**/*.*'], dest: 'docs/'},
+                    {expand: true, cwd: "lib/css", src: ['fonts/**/*.*'], dest: 'docs/'},
                 ],
             },
         },

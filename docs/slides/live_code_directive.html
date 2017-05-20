@@ -8,17 +8,19 @@
                 <div class="text">1. Create directive with name <b>"searchField"</b>
                     <pre style="width: 850px">
 <code data-trim class="js" data-noescape>
-app.directive(&quot;searchField&quot;,function(){
-    return {
-        templateUrl : &quot;search-field.html&quot;,
-        controller : function($scope){
-            $scope.modelName = "Value 1"
-            $scope.onSubmit = function(){
-               $scope.outputName = "Output"+ $scope.modelName
-            }
+    function searchFieldController($scope){
+        $scope.modelName = "Value 1"
+        $scope.onSubmit = function(){
+           $scope.outputName = "Output"+ $scope.modelName
         }
     }
-})
+    function searchField(){
+        return {
+            templateUrl : &quot;search-field.html&quot;,
+            controller : searchFieldController 
+        }
+    }
+    app.directive(&quot;searchField&quot;,searchField)
 </code>
                     </pre>
                 </div>
