@@ -5,6 +5,22 @@ app.config(function ($mdThemingProvider) {
 
 
 });
+app.directive('search',function(){
+    
+    return {
+        replace:true,
+        scope:{
+            model:"="
+        },
+        templateUrl:"slides/search-directive.html",
+        controller:function($scope){
+            
+            
+        }
+    }
+    
+})
+
 app.directive("axon", function () {
 
     return{
@@ -48,11 +64,6 @@ app.controller("ctr", function ($scope, $timeout) {
         return slidesFolder + section.contain + ".html";
 
     };
-    function registerEvent() {
-
-
-
-    }
     $timeout(function () {
         Reveal.initialize({
             controls: true,
@@ -78,13 +89,5 @@ app.controller("ctr", function ($scope, $timeout) {
                 {src: 'plugin/notes/notes.js', async: true}
             ]
         });
-        registerEvent();
-
-
     }, 3000)
-
-
-
-
-
 })

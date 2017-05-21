@@ -3,6 +3,8 @@ $height:650px;
 $background-color: white;
 $toolbar-height:50px;
 .hackathon-demo{
+    
+    
 
     [ng-click]{
         cursor: pointer;        
@@ -112,6 +114,12 @@ $toolbar-height:50px;
         min-height: 0px;
         margin: 0;
         color: white !important;
+        .search-toolbar{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        
         .md-toolbar-tools{
             height:$toolbar-height;
                

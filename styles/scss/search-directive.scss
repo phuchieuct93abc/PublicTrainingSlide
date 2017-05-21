@@ -1,0 +1,48 @@
+.search-directive{
+    position: absolute;
+    right: 10;
+    top:10px;
+    transition:all 0.5s linear;
+    &.isFull-remove{
+        width: 100%;
+
+    }
+    &.isFull-remove-active{
+
+        width: 0%;
+    }
+
+    &.isFull,&.isFull-remove{
+        width: 100%;
+
+    }
+    .search-input{
+        border-radius: 15px;
+        transition:all 0.5s linear;
+        float:right;
+        width: calc(100% - 40px);
+        color: black;
+        padding-left: 9px;
+        &.ng-enter,&.ng-leave.ng-leave-active{
+            width: 0px
+
+        }
+        &.ng-leave,&.ng-enter.ng-enter-active{
+            width: calc(100% - 40px);
+
+        }
+    }
+    .search-icon,.remove{
+        top: 5px;
+    }
+    .search-icon{
+        float: right;
+    }
+    .remove{
+        position: absolute;
+        right: 10px;
+    }
+}
+
+
+

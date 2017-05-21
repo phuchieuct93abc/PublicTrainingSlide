@@ -78,6 +78,10 @@
     min-height: 0px;
     margin: 0;
     color: white !important; }
+    .hackathon-demo md-toolbar .search-toolbar {
+      position: absolute;
+      top: 10px;
+      right: 10px; }
     .hackathon-demo md-toolbar .md-toolbar-tools {
       height: 50px; }
       .hackathon-demo md-toolbar .md-toolbar-tools h2 {

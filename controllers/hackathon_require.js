@@ -1,5 +1,5 @@
 app.controller("hackathonDemo", function ($scope) {
-
+    $scope.model={}
     $scope.list = [
         {note: "Axon Active",
             desc: "Awesome"

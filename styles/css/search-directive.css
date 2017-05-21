@@ -1,0 +1,29 @@
+.search-directive {
+  position: absolute;
+  right: 10;
+  top: 10px;
+  transition: all 0.5s linear; }
+  .search-directive.isFull-remove {
+    width: 100%; }
+  .search-directive.isFull-remove-active {
+    width: 0%; }
+  .search-directive.isFull, .search-directive.isFull-remove {
+    width: 100%; }
+  .search-directive .search-input {
+    border-radius: 15px;
+    transition: all 0.5s linear;
+    float: right;
+    width: calc(100% - 40px);
+    color: black;
+    padding-left: 9px; }
+    .search-directive .search-input.ng-enter, .search-directive .search-input.ng-leave.ng-leave-active {
+      width: 0px; }
+    .search-directive .search-input.ng-leave, .search-directive .search-input.ng-enter.ng-enter-active {
+      width: calc(100% - 40px); }
+  .search-directive .search-icon, .search-directive .remove {
+    top: 5px; }
+  .search-directive .search-icon {
+    float: right; }
+  .search-directive .remove {
+    position: absolute;
+    right: 10px; }

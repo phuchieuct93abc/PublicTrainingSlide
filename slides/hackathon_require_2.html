@@ -10,7 +10,7 @@
                     <h2 flex md-truncate ng-if="isShowList">Quick note</h2> 
                     <h2 flex md-truncate ng-if=" isShowRead || isShowEdit">{{selectedNote.note}}</h2> 
                     <h2 flex md-truncate ng-if="isShowAdd">Add new</h2> 
-
+                    <search class="search-toolbar" model="model"></search>
                 </div>
             </md-toolbar>
 
@@ -20,9 +20,8 @@
                     <i class="glyphicon glyphicon-plus"></i>
                 </md-button>          
                 <div class="container-fluid scroll">
-
                     <md-list class="note-list">
-                        <md-list-item class="md-3-line" ng-repeat="item in list" ng-click="read(item)"  ng-style="{'background-color':item.color}">
+                        <md-list-item class="md-3-line" ng-repeat="item in list | filter:model.searchValue" ng-click="read(item)"  ng-style="{'background-color':item.color}">
                             <div class="md-list-item-text">
                                 <h3>{{item.note}}</h3>
                                 <h4>{{item.desc}}</h4>

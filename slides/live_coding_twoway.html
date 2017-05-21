@@ -8,13 +8,12 @@
                  <div class="text">In controller, <b>$scope</b> is the glue that connects view and model together
                     <pre>
 <code data-trim class="javascript">
-    function myController($scope){
+    app.controller('myController',function($scope){
         $scope.modelName="Value 1";
         $scope.getValue = function(){ 
             alert($scope.modelName);
         };                        
-    }
-    app.controller('myController',myController)
+    })
 </code>
                     </pre>
                 </div>
@@ -25,8 +24,7 @@
                     <pre>
 <code data-trim data-noescape class="html">
     &lt;input ng-model="modelName"&gt;
-    &lt;button ng-click=&quot;getValue()&quot;&gt;Get value&lt;/button&gt;
-    
+    &lt;button ng-click=&quot;getValue()&quot;&gt;Get value&lt;/button&gt;    
 </code>
 
                        
