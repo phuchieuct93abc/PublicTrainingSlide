@@ -10,7 +10,7 @@
                     <h2 flex md-truncate ng-if="isShowList">Quick note</h2> 
                     <h2 flex md-truncate ng-if=" isShowRead || isShowEdit">{{selectedNote.note}}</h2> 
                     <h2 flex md-truncate ng-if="isShowAdd">Add new</h2> 
-
+                    <search class="search-toolbar" model="model"></search>
                 </div>
             </md-toolbar>
 
@@ -20,9 +20,8 @@
                     <i class="glyphicon glyphicon-plus"></i>
                 </md-button>          
                 <div class="container-fluid scroll">
-
                     <md-list class="note-list">
-                        <md-list-item class="md-3-line" ng-repeat="item in list" ng-click="read(item)"  ng-style="{'background-color':item.color}">
+                        <md-list-item class="md-3-line" ng-repeat="item in list | filter:model.searchValue" ng-click="read(item)"  ng-style="{'background-color':item.color}">
                             <div class="md-list-item-text">
                                 <h3>{{item.note}}</h3>
                                 <h4>{{item.desc}}</h4>
@@ -87,6 +86,7 @@
                 <li>Show a list of notes</li>
                 <li>Display title, description, color for each note</li>
                 <li>Ability to create, edit or view a note</li>
+                <li>Ability to search (optional)</li>
             </ul>
         </div>
 
@@ -94,7 +94,7 @@
 
             <h3>Display view</h3>
             <ul>
-                <li>Display the detail of selected note</li>
+                <li>Display the detail of selected note with proper background color</li>
                 <li>Able to back to list view</li>
 
 
@@ -116,6 +116,7 @@
                 <li>Add a new note</li>
                 <li>Title and descript are plain text</li>
                 <li>Select a color to category the note</li>
+                <li>Form validation: title is required (optional)</li>
 
 
             </ul>

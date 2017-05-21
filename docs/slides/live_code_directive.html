@@ -8,31 +8,28 @@
                 <div class="text">1. Create directive with name <b>"searchField"</b>
                     <pre style="width: 850px">
 <code data-trim class="js" data-noescape>
-    function searchFieldController($scope){
-        $scope.modelName = "Value 1"
-        $scope.onSubmit = function(){
-           $scope.outputName = "Output"+ $scope.modelName
-        }
-    }
-    function searchField(){
-        return {
+    app.directive(&quot;searchField&quot;,function(){
+     return {
             templateUrl : &quot;search-field.html&quot;,
-            controller : searchFieldController 
-        }
-    }
-    app.directive(&quot;searchField&quot;,searchField)
+            controller : function ($scope){
+                $scope.modelName = "Value 1"
+                $scope.onSubmit = function(){
+                  alert($scope.modelName)
+                }
+            }
+        }  
+    })
 </code>
                     </pre>
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="text">2. Create search-field.html template &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <pre >
+                    <pre style="width: 800px">
 <code data-trim data-noescape class="html">
 &ltdiv&gt
     &lt;input type=&quot;text&quot; ng-model=&quot;modelName&quot;/&gt;
     &lt;button ng-click=&quotonSubmit()&quot;&gtSubmit&lt;/button&gt;
-    &lt;div&gt;<span ng-non-bindable>{{outputName}}</span>&lt;/div&gt;  
 &lt/div&gt    
 </code>
                     </pre>
