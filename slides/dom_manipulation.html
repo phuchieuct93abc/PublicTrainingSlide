@@ -2,11 +2,12 @@
     <h2>DOM manipulation</h2>
     <div class="row">
         <div class="col-xs-6">
-            <div class="panel panel-primary">
+            <div class="panel panel-primary" ng-init="isShow=true">
                 <div class="panel-heading">Visibility manipulation</div>
-                <div class="panel-content text-left">
-                    <input ng-init="isShow=true" bs-switch type="checkbox" ng-model="isShow"/>
-                    <span ng-show="isShow" class="hide-item">Sho w</span>
+                <div class="panel-content text-left" style=" min-height: 95px;">
+                    <md-switch class="md-primary"" ng-model="isShow" >
+                      </md-switch>
+                    <span ng-show="isShow" class="hide-item"><b>Show</b></span>
                 </div>
             </div>
         </div>
@@ -14,8 +15,9 @@
         <div class="col-xs-6">
             <div class="panel panel-primary">
                 <div class="panel-heading">Ability manipulation</div>
-                <div class="panel-content text-left">
-                    <input ng-init="isEnabled=true" bs-switch type="checkbox" ng-model="isEnabled"/>
+                <div class="panel-content text-left" ng-init="isEnabled=true">
+                     <md-switch class="md-primary"" ng-model="isEnabled" >
+                      </md-switch>
                     <button ng-init="count=0" class="btn btn-primary" ng-disabled="!isEnabled" ng-click="count=count+1">
                         Count: <b >{{count}}</b></button>
                 </div>

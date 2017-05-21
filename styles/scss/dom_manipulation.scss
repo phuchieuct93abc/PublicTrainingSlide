@@ -1,41 +1,43 @@
 .reveal {
-  .dom-manipulation {
+    .dom-manipulation {
+        md-switch{
+                margin: 0px;
+        }
+        .row {
+            margin-right: -15px !important;
+            margin-left: -15px !important;;
+        }
+        .form-group-lg select.form-control {
+            height: 75px;
+            line-height: 46px;
+        }
+        .panel {
+            background-color: transparent;
+            border: 1px solid #337ab7;
+            margin-bottom: 30px;
 
-    .row {
-      margin-right: -15px !important;
-      margin-left: -15px !important;;
-    }
-    .form-group-lg select.form-control {
-      height: 75px;
-      line-height: 46px;
-    }
-    .panel {
-      background-color: transparent;
-      border: 1px solid #337ab7;
-      margin-bottom: 30px;
+            .panel-content {
+                padding: 20px 20px;
+                display: flex;
+                align-items: center;
+                button {
 
-      .panel-content {
-        padding: 20px 20px;
-        display: flex;
-        align-items: center;
-        button {
+                    font-size: 0.7em;
+                }
 
-          font-size: 0.7em;
+                .bootstrap-switch-wrapper {
+                    margin-right: 10px;
+                }
+
+            }
         }
 
-        .bootstrap-switch-wrapper {
-          margin-right: 10px;
+        .hide-item {
+            transition: all linear 0.5s;
         }
 
-      }
+        .hide-item.ng-hide {
+            opacity: 0;
+        }
     }
-
-    .hide-item {
-      transition: all linear 0.5s;
-    }
-
-    .hide-item.ng-hide {
-      opacity: 0;
-    }
-  }
 }
