@@ -223,8 +223,12 @@ module.exports = function (grunt) {
             }
         },
         imagemin: {// Task
-
-            dynamic: {// Another target
+            
+            dynamic: {
+                options: {                       // Target options
+                   optimizationLevel: 7
+                 
+                 },
                 files: [{
                         expand: true, // Enable dynamic expansion
                         src: ['resources/**/*.{png,jpg,gif}'], // Actual patterns to match
