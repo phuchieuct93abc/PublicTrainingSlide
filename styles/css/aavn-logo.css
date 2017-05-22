@@ -1,0 +1,18 @@
+.aavn-logo {
+  background-color: #0397d6;
+  overflow: hidden; }
+  .aavn-logo .effect {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    animation-name: slide_slow;
+    animation-duration: 3s;
+    animation-iteration-count: infinite; }
+
+@keyframes slide_slow {
+  0% {
+    right: 100px; }
+  100% {
+    right: -200px; } }
