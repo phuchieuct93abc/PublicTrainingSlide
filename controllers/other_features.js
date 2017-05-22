@@ -1,10 +1,10 @@
-app.controller('otherFeatures', function ($timeout) {
+app.controller('otherFeatures', function ($timeout,$element) {
     var mySwiper;
     Reveal.addEventListener('otherFeatures', function (event) {
         $timeout(function () {
             if (mySwiper == null) {
 
-                new Swiper('.otherFeatures .swiper-container', {
+                mySwiper = new Swiper($($element).find('.swiper-container'), {
                     speed: 1000,
                     spaceBetween: 100,
                     nextButton: ".otherFeatures .swiper-button-next",
@@ -16,6 +16,12 @@ app.controller('otherFeatures', function ($timeout) {
         }, 1000);
         // TODO: Sprinkle magic
     }, false);
+
+    document.addEventListener("otherFeatures", function (e) {
+        if(e.detail!=null){
+           mySwiper.slideTo(e.detail, 500, true); 
+        }
+    });
 
 
 

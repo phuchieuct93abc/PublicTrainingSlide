@@ -1,9 +1,9 @@
-app.controller("liveCodeRouting", function ($timeout) {
+app.controller("liveCodeRouting", function ($timeout,$element) {
     var mySwiper;
     Reveal.addEventListener('liveCodeRouting', function () {
         if (mySwiper == null) {
             $timeout(function () {
-                new Swiper('.live-code-routing .swiper-container', {
+                mySwiper = new Swiper($($element).find('.swiper-container'), {
                     speed: 1000,
                     spaceBetween: 100,
                     nextButton: ".live-code-routing .swiper-button-next",
@@ -16,6 +16,10 @@ app.controller("liveCodeRouting", function ($timeout) {
             });
         }
     }, false);
-
+    document.addEventListener("liveCodeRouting", function (e) {
+        if (e.detail != null) {
+            mySwiper.slideTo(e.detail, 500, true);
+        }
+    });
 
 })

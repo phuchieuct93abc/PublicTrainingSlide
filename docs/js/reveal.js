@@ -3803,6 +3803,7 @@
 
 						if( i === index ) {
 							element.classList.add( 'current-fragment' );
+                                                        $(element).visibleFragment()
 							startEmbeddedContent( element );
 						}
 					}

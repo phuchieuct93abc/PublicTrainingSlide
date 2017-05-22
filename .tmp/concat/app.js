@@ -137,6 +137,27 @@ app.controller("ctr5", function ($scope) {
 
     ]
 });
+$.fn.visibleFragment = function () {
+    var context = $(this);
+    var isInsideSwiper = context.parents(".swiper-container").length > 0;
+    if (isInsideSwiper) {
+        var swiperId = context.parents(".swiper-container").eq(0).attr("swiper-id");
+        var index = context.index()
+        console.log(swiperId, index);
+
+        // Create the event
+        var event = new CustomEvent(swiperId, {"detail": index});
+
+// Dispatch/Trigger/Fire the event
+        document.dispatchEvent(event);
+
+    }
+
+
+
+
+
+}
 app.directive("searchField",function(){
     return {
         scope:{value:"@"}, 
@@ -285,12 +306,12 @@ app.controller("letStart", function ($timeout) {
 
 
 })
-app.controller("liveCodeDirective", function ($timeout) {
+app.controller("liveCodeDirective", function ($timeout,$element) {
     var mySwiper;
     Reveal.addEventListener('liveCodeDirective', function () {
         if (mySwiper == null) {
             $timeout(function () {
-                new Swiper('.live-code-directive .swiper-container', {
+                mySwiper = new Swiper($($element).find('.swiper-container'), {
                     speed: 1000,
                     spaceBetween: 100,
                     nextButton: ".live-code-directive .swiper-button-next",
@@ -303,15 +324,19 @@ app.controller("liveCodeDirective", function ($timeout) {
             });
         }
     }, false);
-
+   document.addEventListener("liveCodeDirective", function (e) {
+        if(e.detail!=null){
+           mySwiper.slideTo(e.detail, 500, true); 
+        }
+    });
 
 })
-app.controller("liveCodeDom", function ($timeout) {
+app.controller("liveCodeDom", function ($timeout,$element) {
     var mySwiper;
     Reveal.addEventListener('liveCodeDom', function () {
         if (mySwiper == null) {
             $timeout(function () {
-                new Swiper('.live-code-dom .swiper-container', {
+                mySwiper = new Swiper($($element).find('.swiper-container'), {
                     speed: 1000,
                     spaceBetween: 100,
                     nextButton: ".live-code-dom .swiper-button-next",
@@ -324,15 +349,19 @@ app.controller("liveCodeDom", function ($timeout) {
             });
         }
     }, false);
-
+   document.addEventListener("liveCodeDom", function (e) {
+        if(e.detail!=null){
+           mySwiper.slideTo(e.detail, 500, true); 
+        }
+    });
 
 })
-app.controller("liveCodeInstallation", function ($timeout) {
+app.controller("liveCodeInstallation", function ($timeout,$element) {
     var mySwiper;
     Reveal.addEventListener('liveCodeInstallation', function () {
         if (mySwiper == null) {
             $timeout(function () {
-                new Swiper('.installation .swiper-container', {
+                mySwiper = new Swiper($($element).find('.swiper-container'), {
                     speed: 1000,
                     spaceBetween: 100,
                     nextButton: ".installation .swiper-button-next",
@@ -345,15 +374,19 @@ app.controller("liveCodeInstallation", function ($timeout) {
             });
         }
     }, false);
-
+    document.addEventListener("liveCodeInstallation", function (e) {
+        if(e.detail!=null){
+           mySwiper.slideTo(e.detail, 500, true); 
+        }
+    });
 
 })
-app.controller("liveCodeRouting", function ($timeout) {
+app.controller("liveCodeRouting", function ($timeout,$element) {
     var mySwiper;
     Reveal.addEventListener('liveCodeRouting', function () {
         if (mySwiper == null) {
             $timeout(function () {
-                new Swiper('.live-code-routing .swiper-container', {
+                mySwiper = new Swiper($($element).find('.swiper-container'), {
                     speed: 1000,
                     spaceBetween: 100,
                     nextButton: ".live-code-routing .swiper-button-next",
@@ -366,15 +399,19 @@ app.controller("liveCodeRouting", function ($timeout) {
             });
         }
     }, false);
-
+    document.addEventListener("liveCodeRouting", function (e) {
+        if (e.detail != null) {
+            mySwiper.slideTo(e.detail, 500, true);
+        }
+    });
 
 })
-app.controller("liveCodeTwoWay", function ($timeout) {
+app.controller("liveCodeTwoWay", function ($timeout,$element) {
     var mySwiper;
     Reveal.addEventListener('liveCodeTwoWay', function () {
         if (mySwiper == null) {
             $timeout(function () {
-                new Swiper('.live-code-twoway .swiper-container', {
+                mySwiper = new Swiper($($element).find('.swiper-container'), {
                     speed: 1000,
                     spaceBetween: 100,
                     nextButton: ".live-code-twoway .swiper-button-next",
@@ -387,6 +424,11 @@ app.controller("liveCodeTwoWay", function ($timeout) {
             });
         }
     }, false);
+    document.addEventListener("liveCodeTwoWay", function (e) {
+        if (e.detail != null) {
+            mySwiper.slideTo(e.detail, 500, true);
+        }
+    });
 
 
 })
@@ -523,13 +565,13 @@ app.directive('renderNestedHtml', function ($timeout) {
     }
 })
 
-app.controller('otherFeatures', function ($timeout) {
+app.controller('otherFeatures', function ($timeout,$element) {
     var mySwiper;
     Reveal.addEventListener('otherFeatures', function (event) {
         $timeout(function () {
             if (mySwiper == null) {
 
-                new Swiper('.otherFeatures .swiper-container', {
+                mySwiper = new Swiper($($element).find('.swiper-container'), {
                     speed: 1000,
                     spaceBetween: 100,
                     nextButton: ".otherFeatures .swiper-button-next",
@@ -541,6 +583,12 @@ app.controller('otherFeatures', function ($timeout) {
         }, 1000);
         // TODO: Sprinkle magic
     }, false);
+
+    document.addEventListener("otherFeatures", function (e) {
+        if(e.detail!=null){
+           mySwiper.slideTo(e.detail, 500, true); 
+        }
+    });
 
 
 
@@ -564,22 +612,7 @@ app.controller("two_way_db",function($scope){
         $scope.name = "Everybody"
     }
 })
-app.controller("whatIsAngular", function ($timeout) {
-    var mySwiper;
-    Reveal.addEventListener('whatIsAngular', function () {
-        if (mySwiper == null) {
-            $timeout(function () {
-                new Swiper('.whatIsAngular .swiper-container', {
-                    speed: 1000,
-                    spaceBetween: 100,
-                    nextButton: ".whatIsAngular .swiper-button-next",
-                    prevButton: ".whatIsAngular .swiper-button-prev",
-
-                })
-            }, 1000);
-           
-        }
-    }, false);
-
+app.controller("whatIsAngular", function ($timeout,$element) {
+    
 
 })

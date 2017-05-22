@@ -1,9 +1,9 @@
-app.controller("liveCodeInstallation", function ($timeout) {
+app.controller("liveCodeInstallation", function ($timeout,$element) {
     var mySwiper;
     Reveal.addEventListener('liveCodeInstallation', function () {
         if (mySwiper == null) {
             $timeout(function () {
-                new Swiper('.installation .swiper-container', {
+                mySwiper = new Swiper($($element).find('.swiper-container'), {
                     speed: 1000,
                     spaceBetween: 100,
                     nextButton: ".installation .swiper-button-next",
@@ -16,6 +16,10 @@ app.controller("liveCodeInstallation", function ($timeout) {
             });
         }
     }, false);
-
+    document.addEventListener("liveCodeInstallation", function (e) {
+        if(e.detail!=null){
+           mySwiper.slideTo(e.detail, 500, true); 
+        }
+    });
 
 })
