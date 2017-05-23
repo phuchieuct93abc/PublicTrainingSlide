@@ -143,7 +143,6 @@ $.fn.visibleFragment = function () {
     if (isInsideSwiper) {
         var swiperId = context.parents(".swiper-container").eq(0).attr("swiper-id");
         var index = context.index()
-        console.log(swiperId, index);
 
         // Create the event
         var event = new CustomEvent(swiperId, {"detail": index});
@@ -151,12 +150,11 @@ $.fn.visibleFragment = function () {
 // Dispatch/Trigger/Fire the event
         document.dispatchEvent(event);
 
+    }else if( context.parents(".mvc-wrapper").length > 0){
+        var index = context.index();                    
+        var event = new CustomEvent("mvc", {"detail": index});
+        document.dispatchEvent(event);       
     }
-
-
-
-
-
 }
 app.directive("searchField",function(){
     return {
@@ -432,7 +430,7 @@ app.controller("liveCodeTwoWay", function ($timeout,$element) {
 
 
 })
-app.controller('ctrlMVC', function ($timeout) {
+app.controller('ctrlMVC', function ($timeout,$element) {
   
             $timeout(function () {
                 var link = $('.com__nav-link');
@@ -476,7 +474,6 @@ app.controller('ctrlMVC', function ($timeout) {
                 activeFirst();
 
                 Reveal.addEventListener('mvcState', function () {
-                    console.log('hi');
                     slides.css({"zoom": "1", "height": "100%"})
                     $('pre code').each(function (i, block) {
                         setTimeout(function () {
@@ -486,9 +483,7 @@ app.controller('ctrlMVC', function ($timeout) {
                 });
 
                 
-                Reveal.addEventListener('slidechanged', function (event) {
-                    //console.log(event.previousSlide, event.currentSlide, event.indexh, event.indexv);
-                });
+
 
                 $('.com .img').off('mouseover').off('mouseout').on('mouseover', function () {
                     $('h2').css('color', '#404855')
@@ -547,6 +542,14 @@ app.controller('ctrlMVC', function ($timeout) {
                 
             },1000)
 
+
+document.addEventListener("mvc", function (e) {
+            var index = e.detail
+        if(index!=null){
+           $($element).find(".com__nav-list").find("li").eq(index).find("a").trigger("click")
+            
+        }
+    });
 
 
     
