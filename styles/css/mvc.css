@@ -1,13 +1,15 @@
 .com {
   display: flex;
   align-items: stretch;
-  height: 100vh;
   overflow: hidden;
-  transform: scale(1)
+  transform: scale(1);
+    height: 600px;
+    margin-top: 50px;
+
 }
 
 .com__content {
-  position: relative;
+ // position: relative;
   flex: 8;
   background: #404855;
   padding: 10vh 10vw !important;
@@ -16,7 +18,7 @@
   display: flex !important;
   flex-flow: column wrap;
   justify-content: center;
-  height: 100vh;
+  height: 600px;
   position: absolute;
   top: 0 !important;
   left: 0;
@@ -32,7 +34,7 @@
 }
 .com__section-half {
   flex: 1;
-  height: 100vh;
+  height: 600px;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
@@ -69,7 +71,7 @@
   list-style-type: none !important;
   display: flex !important;
   flex-flow: column wrap;
-  height: 100vh;
+  height: 600px;
   overflow: visible;
 }
 .com__nav-item {
