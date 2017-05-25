@@ -24,8 +24,8 @@
                 <div class="animate slideInLeft delay-2">
                     <pre><code data-trim data-noescape class="javascript">
 <strong>View (DOM)</strong>
-&lt;div ng-controller="MyController"&gt;
-        Hello {{name}}!
+&lt;div ng-controller="MyController" &gt;
+        Hello <span ng-non-bindable>{{name}}</span>!
         &lt;button ng-click="action()"&gt;
                 OK
         &lt;/button&gt;
