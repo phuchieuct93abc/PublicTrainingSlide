@@ -17,7 +17,7 @@ app.controller("liveCodeInstallation", function ($timeout,$element) {
         }
     }, false);
     document.addEventListener("liveCodeInstallation", function (e) {
-        if(e.detail!=null){
+        if(e.detail!=null && mySwiper!=null){
            mySwiper.slideTo(e.detail, 500, true); 
         }
     });

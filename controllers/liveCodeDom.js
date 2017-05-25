@@ -17,7 +17,7 @@ app.controller("liveCodeDom", function ($timeout,$element) {
         }
     }, false);
    document.addEventListener("liveCodeDom", function (e) {
-        if(e.detail!=null){
+        if(e.detail!=null && mySwiper!=null){
            mySwiper.slideTo(e.detail, 500, true); 
         }
     });

@@ -66,6 +66,8 @@
     bottom: 40px; }
     .directive-animation .views div {
       width: 250px; }
+      .directive-animation .views div.white {
+        color: white; }
       .directive-animation .views div.blue {
         color: #0003fe; }
       .directive-animation .views div.red {

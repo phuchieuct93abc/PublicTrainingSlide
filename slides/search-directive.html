@@ -1,10 +1,10 @@
 <div class="search-directive" ng-class="{'isFull':isShow}">
     <input class="search-input" ng-if="isShow" ng-model="model.searchValue"/>
     <i class="glyphicon search-icon glyphicon-search"
-       ng-click="isShow=true"></i>
+       ng-click="isShow=true;focus()"></i>
  
 
 
-    <i style="color:black" ng-click="model.searchValue='';isShow=false" ng-show="isShow" class="glyphicon glyphicon-remove remove"    ></i>
+    <i style="color:black" ng-click="model.searchValue='';isShow=false;" ng-show="isShow" class="glyphicon glyphicon-remove remove"    ></i>
  
 </div>

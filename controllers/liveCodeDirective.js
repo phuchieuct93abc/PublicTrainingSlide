@@ -17,8 +17,8 @@ app.controller("liveCodeDirective", function ($timeout,$element) {
         }
     }, false);
    document.addEventListener("liveCodeDirective", function (e) {
-        if(e.detail!=null){
-           mySwiper.slideTo(e.detail, 500, true); 
+        if(e.detail!=null && mySwiper!=null){
+          mySwiper.slideTo(e.detail, 500, true); 
         }
     });
 

@@ -13,8 +13,14 @@ app.directive('search',function(){
             model:"="
         },
         templateUrl:"slides/search-directive.html",
-        controller:function($scope){
-            
+        controller:function($scope,$element,$timeout){
+            $scope.focus = function(){
+                $timeout( function(){
+                    $($element).find("input").focus()
+                },1000);
+              
+                
+            }
             
         }
     }

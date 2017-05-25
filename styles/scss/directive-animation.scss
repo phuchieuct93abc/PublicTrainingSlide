@@ -112,6 +112,9 @@
     .views{
         bottom:40px;
         div{
+            &.white{
+                color:white;
+            }
             &.blue{
                 color: $blue-color;
             }
