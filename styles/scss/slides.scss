@@ -2,6 +2,13 @@
     padding:0 15px !important;
     margin-bottom: 10px !important;
 }
+.hide-fragment{
+    &.visible:not(.current-fragment){
+        display: none;
+    }
+    
+    
+}
 .demo-wrapper{
     &.visible:not(.current-fragment){
       //  display: none;
@@ -61,6 +68,7 @@
         .navigate-left,.navigate-right{
             bottom: 0px;
             top:initial;
+           
         }
     }
 

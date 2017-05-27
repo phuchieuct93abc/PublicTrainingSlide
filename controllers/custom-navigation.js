@@ -1,7 +1,7 @@
 $.fn.visibleFragment = function () {
     var context = $(this);
     var isInsideSwiper = context.parents(".swiper-container").length > 0;
-    if (isInsideSwiper) {
+    if (isInsideSwiper && context.attr('no-slide')==null) {
         var swiperId = context.parents(".swiper-container").eq(0).attr("swiper-id");
         var index = context.index()
 

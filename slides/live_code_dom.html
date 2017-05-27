@@ -5,26 +5,54 @@
         <div class="swiper-wrapper ">
             <!-- Slides -->
             <div class="swiper-slide fragment alway-visible-fragment">
-                <div class="text">Visibility manipulation by using <b>ng-if</b> or <b>ng-show</b>
-                    <pre>
+                <div class="text">
+                    <div class="col-xs-12">Visibility manipulation by using <b>ng-if</b></div>
+                    <div class="demo col-xs-4 fragment" no-slide="true">
+                        <h3>Require</h3>
+                        <div class="form-group-lg">
+                            <label><input style="    width: 30px;    height: 30px;" type="checkbox"  ng-model="isShow"/>Change visibility</label>
+                            <div ng-show="isShow">Content here</div>
+                        </div>
+                    </div>
+                    <div class="code col-xs-8 fragment" no-slide="true">
+                        <h3>How to do</h3>
+                        <pre>
 <code data-trim data-noescape class="html">
-    &lt;div ng-show=&quot;isShow&quot;&gt;Content here&lt;/div&gt; 
+    &lt;input type=&quot;checkbox&quot;  ng-model=&quot;isShow&quot;/&gt;
+    &lt;div ng-if=&quot;isShow&quot;&gt;Content here&lt;/div&gt;
 </code>
-<code data-trim  class="javascript">
-    <b>In controller:</b>
-    $scope.isShow = true //$scope.isShow = false;
-</code>
-                    </pre>
+                        </pre>
+                    </div>
+
                 </div>
             </div>
             <div class="swiper-slide fragment">
-                <div class="text">Ability manipulation by using <b>ng-disable</b>
-                    <pre style="width: 800px">
+                <div class="text">
+                    <div class="col-xs-12">Ability manipulation by using <b>ng-disable</b></div>
+                    <div class="demo col-xs-3 fragment" no-slide="true">
+                        <h3>Require</h3>
+                        <div class="form-group-lg" style="font-size: 30px">
+                            <label class="radio-inline">
+                             <input type="radio" ng-model="isMale"  ng-value="true"> Male
+                           </label>
+                           <label class="radio-inline">
+                             <input type="radio" ng-model="isMale"  ng-value="false"> Female
+                           </label>
+                            
+                        </div>
+                        <button class="btn btn-primary" ng-disabled="isMale" ng-click="submit()" >Submit</button>
+                    </div>
+                    <div class="code col-xs-9 fragment" no-slide="true">
+                         <h3>How to do it</h3>
+                        <pre style="width: 100%;margin:0">
 <code class="html">
-    &lt;button ng-disabled=&quot;isDisable&quot;&gt;Click me!&lt;/button&gt;
+&lt;input type=&quot;radio&quot; ng-model=&quot;isMale&quot;  ng-value=&quot;true&quot;&gt; Male
+&lt;input type=&quot;radio&quot; ng-model=&quot;isMale&quot;  ng-value=&quot;false&quot;&gt; Female
+&lt;button ng-disabled=&quot;isMale&quot; ng-click=&quot;submit()&quot; &gt;Submit&lt;/button&gt;
 </code>
                         
-                    </pre>
+                        </pre>
+                    </div>
                 </div>
             </div>
             <div class="swiper-slide fragment">

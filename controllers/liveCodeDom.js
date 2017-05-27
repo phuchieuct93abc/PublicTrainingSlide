@@ -1,5 +1,6 @@
-app.controller("liveCodeDom", function ($timeout,$element) {
+app.controller("liveCodeDom", function ($scope,$timeout,$element) {
     var mySwiper;
+    $scope.submit=function(){alert('submit')}
     Reveal.addEventListener('liveCodeDom', function () {
         if (mySwiper == null) {
             $timeout(function () {

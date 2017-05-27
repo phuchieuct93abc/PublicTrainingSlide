@@ -1,21 +1,31 @@
 <h2>Installation</h2>
-<div class="installation fragment" ng-controller="liveCodeInstallation">
-    <div class="swiper-container"  swiper-id="liveCodeInstallation">
+<div class="installation fragment " ng-controller="liveCodeInstallation">
+    <div class="fragment hide-fragment">
+        <ol>
+            <li>Download and include AngularJS</li>
+            <li>Declare ng-app with our own module</li>
+            <li>Declare ng-controller with our own controller</li>
+        </ol>
+        
+        
+    </div>
+    <div class="swiper-container fragment"  swiper-id="liveCodeInstallation">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
             <div class="swiper-slide fragment alway-visible-fragment">
-                <div class="text">1. Download and include AngularJS in the HTML page</div>
-                                    <pre>
+                <div class="text">1. Download and include AngularJS in the HTML page
+                <br/>
+<pre>
 <code data-trim data-noescape class="html">
     &lt;script src="angular.js"&gt;&lt;/script&gt;
 </code>
-                    </pre>
+</pre></div>
             </div>
 
             <div class="swiper-slide fragment">
-                <div class="text">3. Pointing to AngularJS app via <b>ng-app</b>
-                    <pre>
+                <div class="text">2.Declare module by <b>ng-app</b>
+                    <pre style="width: 800px">
 <code data-trim class="html" data-noescape>
     <b class="text-danger">index.html</b>
     &lt;html ng-app="myApp"&gt;
@@ -27,7 +37,7 @@
                     </pre></div>
             </div>
             <div class="swiper-slide fragment">
-                <div class="text">4. Creating a view with <b>ng-controller</b>
+                <div class="text">3. Declare controller with<b>ng-controller</b>
                     <pre style="width: 1000px">
 <code data-noescape data-trim class="html" >
     <b class="text-danger">index.html</b>                     

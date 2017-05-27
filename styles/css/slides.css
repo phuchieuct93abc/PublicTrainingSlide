@@ -2,6 +2,9 @@
   padding: 0 15px !important;
   margin-bottom: 10px !important; }
 
+.hide-fragment.visible:not(.current-fragment) {
+  display: none; }
+
 .demo-wrapper {
   display: flex; }
   .demo-wrapper .demo {
