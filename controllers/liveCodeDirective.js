@@ -1,5 +1,20 @@
-app.controller("liveCodeDirective", function ($timeout,$element) {
+app.controller("liveCodeDirective", function ($scope,$timeout,$element) {
     var mySwiper;
+     $scope.model={};
+    
+    document.addEventListener('fragment', function (e) {
+        if (e.detail == "directive-slide") {
+            $scope.model.hide = true;
+
+        } else if (e.detail == "directive-demo") {
+
+            $scope.model.hide = false;
+
+
+        }
+        $scope.$evalAsync();
+
+    })
     Reveal.addEventListener('liveCodeDirective', function () {
         if (mySwiper == null) {
             $timeout(function () {

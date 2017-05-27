@@ -1,5 +1,18 @@
-app.controller("liveCodeRouting", function ($timeout,$element) {
+app.controller("liveCodeRouting", function ($scope,$timeout,$element) {
     var mySwiper;
+      document.addEventListener('fragment', function (e) {
+        if (e.detail == "routing-slide") {
+            $scope.hide = true;
+
+        } else if (e.detail == "routing-demo") {
+
+            $scope.hide = false;
+
+
+        }
+        $scope.$evalAsync();
+
+    })
     Reveal.addEventListener('liveCodeRouting', function () {
         if (mySwiper == null) {
             $timeout(function () {

@@ -25,6 +25,7 @@
     "bootstrap-material-design": "^4.0.2",
     "angular-aria": "1.5.6",
     "angular-messages": "1.5.6",
+        "angular-route":"1.5.6",
     "flipclock": "FlipClock#^0.7.7"
   },
   "repository": {

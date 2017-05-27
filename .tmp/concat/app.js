@@ -1,7 +1,17 @@
-var app = angular.module("app", ['ngAnimate','ngMessages',  'angular-carousel', 'frapontillo.bootstrap-switch', 'ngMaterial']);
-app.config(function ($mdThemingProvider) {
+var app = angular.module("app", ['ngRoute','ngAnimate','ngMessages',  'angular-carousel', 'frapontillo.bootstrap-switch', 'ngMaterial']);
+app.config(function ($mdThemingProvider,$routeProvider) {
     $mdThemingProvider.theme('default')
-            .primaryPalette('blue')
+            .primaryPalette('blue');
+    $routeProvider
+            .when('/26/',{
+        templateUrl:'slides/main.html'  
+    })
+         .when('/26/edit',{
+        templateUrl:'slides/red.html'
+    })
+         .when('/26/display',{
+        templateUrl:'slides/green.html'
+    })
 
 
 });
@@ -146,20 +156,23 @@ app.controller("ctr5", function ($scope) {
 $.fn.visibleFragment = function () {
     var context = $(this);
     var isInsideSwiper = context.parents(".swiper-container").length > 0;
-    if (isInsideSwiper) {
+    if (isInsideSwiper && context.attr('no-slide')==null) {
         var swiperId = context.parents(".swiper-container").eq(0).attr("swiper-id");
         var index = context.index()
 
-        // Create the event
         var event = new CustomEvent(swiperId, {"detail": index});
 
-// Dispatch/Trigger/Fire the event
         document.dispatchEvent(event);
 
-    }else if( context.parents(".mvc-wrapper").length > 0){
-        var index = context.index();                    
+    } else if (context.parents(".mvc-wrapper").length > 0) {
+        var index = context.index();
         var event = new CustomEvent("mvc", {"detail": index});
-        document.dispatchEvent(event);       
+        document.dispatchEvent(event);
+    } else {
+        console.log(123);
+        var fragmentId = context.attr("fragment-id");
+        var event = new CustomEvent("fragment", {"detail": fragmentId});
+        document.dispatchEvent(event);
     }
 }
 app.directive("searchField",function(){
@@ -311,8 +324,23 @@ app.controller("letStart", function ($timeout) {
 
 
 })
-app.controller("liveCodeDirective", function ($timeout,$element) {
+app.controller("liveCodeDirective", function ($scope,$timeout,$element) {
     var mySwiper;
+     $scope.model={};
+    
+    document.addEventListener('fragment', function (e) {
+        if (e.detail == "directive-slide") {
+            $scope.model.hide = true;
+
+        } else if (e.detail == "directive-demo") {
+
+            $scope.model.hide = false;
+
+
+        }
+        $scope.$evalAsync();
+
+    })
     Reveal.addEventListener('liveCodeDirective', function () {
         if (mySwiper == null) {
             $timeout(function () {
@@ -336,8 +364,36 @@ app.controller("liveCodeDirective", function ($timeout,$element) {
     });
 
 })
-app.controller("liveCodeDom", function ($timeout,$element) {
+app.directive('directiveDemo',function(){
+    return {
+        template:'<form class=" form-inline" style="white-space: nowrap;">'
+        +'<input ng-model="modelName" class="form-control " style="width:400px" placeholder="Search"/>'
++'<button ng-click="getValue()" class="btn btn-lg btn-primary">Submit</button> </form>',
+                
+           
+        scope:true,
+        controller:function($scope){
+             $scope.getValue = function(){
+                alert($scope.modelName)
+            }
+        }
+    }
+    
+})
+app.controller("liveCodeDom", function ($scope,$timeout,$element) {
     var mySwiper;
+    $scope.classes = [{
+            name:"Text danger",
+            className:"text-danger"},
+        {
+            name:"Text success",
+            className:"text-success"},
+        {
+            name:"Text primary",
+            className:"text-primary"}
+    ]
+
+    $scope.submit=function(){alert('submit')}
     Reveal.addEventListener('liveCodeDom', function () {
         if (mySwiper == null) {
             $timeout(function () {
@@ -386,8 +442,21 @@ app.controller("liveCodeInstallation", function ($timeout,$element) {
     });
 
 })
-app.controller("liveCodeRouting", function ($timeout,$element) {
+app.controller("liveCodeRouting", function ($scope,$timeout,$element) {
     var mySwiper;
+      document.addEventListener('fragment', function (e) {
+        if (e.detail == "routing-slide") {
+            $scope.hide = true;
+
+        } else if (e.detail == "routing-demo") {
+
+            $scope.hide = false;
+
+
+        }
+        $scope.$evalAsync();
+
+    })
     Reveal.addEventListener('liveCodeRouting', function () {
         if (mySwiper == null) {
             $timeout(function () {
@@ -411,18 +480,33 @@ app.controller("liveCodeRouting", function ($timeout,$element) {
     });
 
 })
-app.controller("liveCodeTwoWay", function ($scope,$timeout,$element) {
+app.controller("liveCodeTwoWay", function ($scope, $timeout, $element) {
     //demo
-    $scope.demoList=[]
-    $scope.demoClick = function(){
+    $scope.demoList = []
+    $scope.demoClick = function () {
         var newItem = {
-            name:$scope.demoInput,
-            time:new Date()
+            name: $scope.demoInput,
+            time: new Date()
         }
         $scope.demoList.push(newItem)
-        
+
     }
-    
+    $scope.model = {}
+    document.addEventListener('fragment', function (e) {
+        console.log("fire",e.detail)
+        if (e.detail == "two-way-slide") {
+            $scope.model.hide = true;
+
+        } else if (e.detail == "two-way-demo") {
+                        console.log("hien")
+
+            $scope.model.hide = false;
+
+
+        }
+        $scope.$evalAsync();
+
+    })
     var mySwiper;
     Reveal.addEventListener('liveCodeTwoWay', function () {
         if (mySwiper == null) {
@@ -441,7 +525,7 @@ app.controller("liveCodeTwoWay", function ($scope,$timeout,$element) {
         }
     }, false);
     document.addEventListener("liveCodeTwoWay", function (e) {
-        if(e.detail!=null && mySwiper!=null){
+        if (e.detail != null && mySwiper != null) {
             mySwiper.slideTo(e.detail, 500, true);
         }
     });

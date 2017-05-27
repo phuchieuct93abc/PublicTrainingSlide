@@ -1,6 +1,26 @@
 <h2>Directive</h2>
 <div class="live-code-directive fragment" ng-controller="liveCodeDirective">
-    <div class="swiper-container"  swiper-id="liveCodeDirective">
+    <div class="demo-wrapper fragment" fragment-id="directive-demo" ng-class="{'hide':model.hide}"> 
+        <div class="demo form-group-lg " >
+            <h3>Require</h3>
+            <directive-demo class='fragment'></directive-demo>   
+            <directive-demo class='fragment'></directive-demo>   
+            <directive-demo class='fragment'></directive-demo>   
+        </div>
+        <div class="instruction fragment">
+            <h3>How to do it</h3>
+            <ol>
+                <li>Define a directive</li>
+                <li>Define template for directive</li>
+                <li>Define controller for directive</li>
+                <li>Using directive as a HTML tag</li>           
+                
+            </ol>
+            
+        </div>
+        
+    </div>
+      <div class="swiper-container fragment " fragment-id="directive-slide"  swiper-id="liveCodeDirective">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
@@ -12,9 +32,8 @@
      return {
             templateUrl : &quot;search-field.html&quot;,
             controller : function ($scope){
-                $scope.modelName = "Value 1"
-                $scope.onSubmit = function(){
-                  alert($scope.modelName)
+                 $scope.getValue = function(){
+                    alert($scope.modelName)
                 }
             }
         }  
@@ -28,8 +47,8 @@
                     <pre style="width: 800px">
 <code data-trim data-noescape class="html">
 &ltdiv&gt
-    &lt;input type=&quot;text&quot; ng-model=&quot;modelName&quot;/&gt;
-    &lt;button ng-click=&quotonSubmit()&quot;&gtSubmit&lt;/button&gt;
+    &lt;input ng-model=&quot;modelName&quot; /&gt;
+    &lt;button ng-click=&quot;getValue()&quot;&gt;Submit&lt;/button&gt;
 &lt/div&gt    
 </code>
                     </pre>

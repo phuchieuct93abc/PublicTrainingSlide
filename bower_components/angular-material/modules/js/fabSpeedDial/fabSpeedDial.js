@@ -1,8 +1,8 @@
 /*!
- * Angular Material Design
+ * AngularJS Material Design
  * https://github.com/angular/material
  * @license MIT
- * v1.1.0
+ * v1.1.4
  */
 (function( window, angular, undefined ){
 "use strict";
@@ -10,11 +10,13 @@
 (function() {
   'use strict';
 
+  MdFabController['$inject'] = ["$scope", "$element", "$animate", "$mdUtil", "$mdConstant", "$timeout"];
   angular.module('material.components.fabShared', ['material.core'])
     .controller('MdFabController', MdFabController);
 
   function MdFabController($scope, $element, $animate, $mdUtil, $mdConstant, $timeout) {
     var vm = this;
+    var initialAnimationAttempts = 0;
 
     // NOTE: We use async eval(s) below to avoid conflicts with any existing digest loops
 
@@ -35,12 +37,23 @@
       $scope.$evalAsync("vm.isOpen = !vm.isOpen");
     };
 
-    setupDefaults();
-    setupListeners();
-    setupWatchers();
+    /*
+     * AngularJS Lifecycle hook for newer AngularJS versions.
+     * Bindings are not guaranteed to have been assigned in the controller, but they are in the $onInit hook.
+     */
+    vm.$onInit = function() {
+      setupDefaults();
+      setupListeners();
+      setupWatchers();
 
-    var initialAnimationAttempts = 0;
-    fireInitialAnimations();
+      fireInitialAnimations();
+    };
+
+    // For AngularJS 1.4 and older, where there are no lifecycle hooks but bindings are pre-assigned,
+    // manually call the $onInit hook.
+    if (angular.version.major === 1 && angular.version.minor <= 4) {
+      this.$onInit();
+    }
 
     function setupDefaults() {
       // Set the default direction to 'down' if none is specified
@@ -302,7 +315,6 @@
       return $element.find('md-fab-actions');
     }
   }
-  MdFabController.$inject = ["$scope", "$element", "$animate", "$mdUtil", "$mdConstant", "$timeout"];
 })();
 
 (function() {
@@ -313,6 +325,8 @@
    *
    * @type {number}
    */
+  MdFabSpeedDialFlingAnimation['$inject'] = ["$timeout"];
+  MdFabSpeedDialScaleAnimation['$inject'] = ["$timeout"];
   var cssAnimationDuration = 300;
 
   /**
@@ -383,16 +397,16 @@
    * <hljs lang="html">
    * <md-fab-speed-dial md-direction="up" class="md-fling">
    *   <md-fab-trigger>
-   *     <md-button aria-label="Add..."><md-icon icon="/img/icons/plus.svg"></md-icon></md-button>
+   *     <md-button aria-label="Add..."><md-icon md-svg-src="/img/icons/plus.svg"></md-icon></md-button>
    *   </md-fab-trigger>
    *
    *   <md-fab-actions>
    *     <md-button aria-label="Add User">
-   *       <md-icon icon="/img/icons/user.svg"></md-icon>
+   *       <md-icon md-svg-src="/img/icons/user.svg"></md-icon>
    *     </md-button>
    *
    *     <md-button aria-label="Add Group">
-   *       <md-icon icon="/img/icons/group.svg"></md-icon>
+   *       <md-icon md-svg-src="/img/icons/group.svg"></md-icon>
    *     </md-button>
    *   </md-fab-actions>
    * </md-fab-speed-dial>
@@ -512,9 +526,8 @@
         runAnimation(element);
         delayDone(done);
       }
-    }
+    };
   }
-  MdFabSpeedDialFlingAnimation.$inject = ["$timeout"];
 
   function MdFabSpeedDialScaleAnimation($timeout) {
     function delayDone(done) { $timeout(done, cssAnimationDuration, false); }
@@ -556,9 +569,8 @@
         runAnimation(element);
         delayDone(done);
       }
-    }
+    };
   }
-  MdFabSpeedDialScaleAnimation.$inject = ["$timeout"];
 })();
 
 })(window, window.angular);

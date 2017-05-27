@@ -1,19 +1,26 @@
 <h2>Two-way data binding</h2>
 <div class="live-code-twoway fragment" ng-controller="liveCodeTwoWay">
-    <div class="demo-wrapper">
-        <div class="demo form-group-lg  form-inline" >
-            <div><input ng-model="demoInput" class="form-control "/><button ng-click="demoClick()" class="btn btn-lg btn-primary">Add</button></div>
+    <div class="demo-wrapper fragment" fragment-id="two-way-demo" ng-class="{'hide':model.hide}"> 
+        <div class="demo form-group-lg " >
+            <h3>Require</h3>
+            <form class=" form-inline" style="white-space: nowrap;">
+                
+                <input ng-model="demoInput" class="form-control " style="width:400px" placeholder="New item"/>
+                <button ng-click="demoClick()" class="btn btn-lg btn-primary">Add</button>
+            </form>
             <ul style="color: white">
                 <li ng-repeat="item in demoList">
                     {{item.name}} at {{item.time | date:"HH:mm:ss"}}
                 </li>
             </ul>            
         </div>
-        <div class="instruction fragement">
+        <div class="instruction fragment">
+                            <h3>How to do it</h3>
+
             <ol>
                 <li>Define models and function in controller</li>
-                <li>Get value from view by ng-model and ng-click</li>
-                <li>Show model to view by {{modelName}}</li>
+                <li>Get value from view by <b>ng-model</b> and <b>ng-click</b></li>
+                <li ng-non-bindable>Show model to view by <b>ng-repeat</b> and <b>{{modelName}}</b></li>
                 
             </ol>
             
@@ -21,7 +28,7 @@
         
     </div>
     
-    <div class="swiper-container fragment"  swiper-id="liveCodeTwoWay">
+    <div class="swiper-container fragment " fragment-id="two-way-slide"  swiper-id="liveCodeTwoWay">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
@@ -30,10 +37,15 @@
                     <pre>
 <code data-trim class="javascript">
     app.controller('myController',function($scope){
-        $scope.modelName="Value 1";
-        $scope.getValue = function(){ 
-            alert($scope.modelName);
-        };                        
+        $scope.list = []
+        $scope.add = function () {
+            var newItem = {
+                name: $scope.name,
+                time: new Date()
+            }
+            $scope.list.push(newItem)
+
+        }                     
     })
 </code>
                     </pre>
@@ -44,8 +56,9 @@
                 <div class="text">1. From view to model by using <b>ng-model="modelName"</b> or <b>ng-click="getValue()"</b>
                     <pre>
 <code data-trim data-noescape class="html">
-    &lt;input ng-model="modelName"&gt;
-    &lt;button ng-click=&quot;getValue()&quot;&gt;Get value&lt;/button&gt;    
+&lt;input ng-model=&quot;name&quot; /&gt;
+&lt;button ng-click=&quot;add()&quot;&gt;Add&lt;/button&gt;
+
 </code>
 
                        
@@ -56,7 +69,9 @@
                 <div class="text">2. From model to view by using <b ng-non-bindable>{{modelName}}</b>
                     <pre>
 <code data-trim data-noescape class="html">
-    &lt;div&gt;<span ng-non-bindable>{{modelName}}</span>&lt;/div&gt;                      
+    &lt;li ng-repeat=&quot;item in list&quot;&gt;
+    <span ng-non-bindable>{{item.name}} at {{item.time | date:&quot;HH:mm:ss&quot;}}</span>
+    &lt;/li&gt;
 </code>
                     </pre>
                 </div>

@@ -1,5 +1,16 @@
 app.controller("liveCodeDom", function ($scope,$timeout,$element) {
     var mySwiper;
+    $scope.classes = [{
+            name:"Text danger",
+            className:"text-danger"},
+        {
+            name:"Text success",
+            className:"text-success"},
+        {
+            name:"Text primary",
+            className:"text-primary"}
+    ]
+
     $scope.submit=function(){alert('submit')}
     Reveal.addEventListener('liveCodeDom', function () {
         if (mySwiper == null) {

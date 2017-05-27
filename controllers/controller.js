@@ -1,7 +1,17 @@
-var app = angular.module("app", ['ngAnimate','ngMessages',  'angular-carousel', 'frapontillo.bootstrap-switch', 'ngMaterial']);
-app.config(function ($mdThemingProvider) {
+var app = angular.module("app", ['ngRoute','ngAnimate','ngMessages',  'angular-carousel', 'frapontillo.bootstrap-switch', 'ngMaterial']);
+app.config(function ($mdThemingProvider,$routeProvider) {
     $mdThemingProvider.theme('default')
-            .primaryPalette('blue')
+            .primaryPalette('blue');
+    $routeProvider
+            .when('/26/',{
+        templateUrl:'slides/main.html'  
+    })
+         .when('/26/edit',{
+        templateUrl:'slides/red.html'
+    })
+         .when('/26/display',{
+        templateUrl:'slides/green.html'
+    })
 
 
 });

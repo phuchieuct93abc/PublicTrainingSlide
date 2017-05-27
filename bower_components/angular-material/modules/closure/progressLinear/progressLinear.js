@@ -1,8 +1,8 @@
 /*!
- * Angular Material Design
+ * AngularJS Material Design
  * https://github.com/angular/material
  * @license MIT
- * v1.1.0
+ * v1.1.4
  */
 goog.provide('ngmaterial.components.progressLinear');
 goog.require('ngmaterial.core');
@@ -11,6 +11,7 @@ goog.require('ngmaterial.core');
  * @name material.components.progressLinear
  * @description Linear Progress module!
  */
+MdProgressLinearDirective['$inject'] = ["$mdTheming", "$mdUtil", "$log"];
 angular.module('material.components.progressLinear', [
   'material.core'
 ])
@@ -207,7 +208,6 @@ function MdProgressLinearDirective($mdTheming, $mdUtil, $log) {
     return Math.max(0, Math.min(value || 0, 100));
   }
 }
-MdProgressLinearDirective.$inject = ["$mdTheming", "$mdUtil", "$log"];
 
 
 ngmaterial.components.progressLinear = angular.module("material.components.progressLinear");
