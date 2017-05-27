@@ -13,8 +13,14 @@ app.directive('search',function(){
             model:"="
         },
         templateUrl:"slides/search-directive.html",
-        controller:function($scope){
-            
+        controller:function($scope,$element,$timeout){
+            $scope.focus = function(){
+                $timeout( function(){
+                    $($element).find("input").focus()
+                },1000);
+              
+                
+            }
             
         }
     }
@@ -158,13 +164,14 @@ $.fn.visibleFragment = function () {
 }
 app.directive("searchField",function(){
     return {
-        scope:{value:"@"}, 
+        scope:{}, 
         template : '<div class="form-inline input-group-lg">' +
             '<input type="text" ng-model="value" class="nam_text form-control" />' +
             '<button class="nam_btn btn btn-primary btn-lg" ng-click="onSubmit()" >Search</button>' +
             '</div>' + 
             '<b>{{result}}</b>',
         controller : function($scope){
+            $scope.value =""
             $scope.result = 'Result: ';
             $scope.onSubmit = function(){
                 $scope.result = 'Result: ' + $scope.value;
@@ -323,8 +330,8 @@ app.controller("liveCodeDirective", function ($timeout,$element) {
         }
     }, false);
    document.addEventListener("liveCodeDirective", function (e) {
-        if(e.detail!=null){
-           mySwiper.slideTo(e.detail, 500, true); 
+        if(e.detail!=null && mySwiper!=null){
+          mySwiper.slideTo(e.detail, 500, true); 
         }
     });
 
@@ -348,7 +355,7 @@ app.controller("liveCodeDom", function ($timeout,$element) {
         }
     }, false);
    document.addEventListener("liveCodeDom", function (e) {
-        if(e.detail!=null){
+        if(e.detail!=null && mySwiper!=null){
            mySwiper.slideTo(e.detail, 500, true); 
         }
     });
@@ -373,7 +380,7 @@ app.controller("liveCodeInstallation", function ($timeout,$element) {
         }
     }, false);
     document.addEventListener("liveCodeInstallation", function (e) {
-        if(e.detail!=null){
+        if(e.detail!=null && mySwiper!=null){
            mySwiper.slideTo(e.detail, 500, true); 
         }
     });
@@ -398,13 +405,24 @@ app.controller("liveCodeRouting", function ($timeout,$element) {
         }
     }, false);
     document.addEventListener("liveCodeRouting", function (e) {
-        if (e.detail != null) {
+        if(e.detail!=null && mySwiper!=null){
             mySwiper.slideTo(e.detail, 500, true);
         }
     });
 
 })
-app.controller("liveCodeTwoWay", function ($timeout,$element) {
+app.controller("liveCodeTwoWay", function ($scope,$timeout,$element) {
+    //demo
+    $scope.demoList=[]
+    $scope.demoClick = function(){
+        var newItem = {
+            name:$scope.demoInput,
+            time:new Date()
+        }
+        $scope.demoList.push(newItem)
+        
+    }
+    
     var mySwiper;
     Reveal.addEventListener('liveCodeTwoWay', function () {
         if (mySwiper == null) {
@@ -423,7 +441,7 @@ app.controller("liveCodeTwoWay", function ($timeout,$element) {
         }
     }, false);
     document.addEventListener("liveCodeTwoWay", function (e) {
-        if (e.detail != null) {
+        if(e.detail!=null && mySwiper!=null){
             mySwiper.slideTo(e.detail, 500, true);
         }
     });
@@ -588,7 +606,7 @@ app.controller('otherFeatures', function ($timeout,$element) {
     }, false);
 
     document.addEventListener("otherFeatures", function (e) {
-        if(e.detail!=null){
+        if(e.detail!=null && mySwiper!=null){
            mySwiper.slideTo(e.detail, 500, true); 
         }
     });
@@ -597,16 +615,22 @@ app.controller('otherFeatures', function ($timeout,$element) {
 
 
 })
-app.controller("routing",function($location,$scope){
-    var url = $location.absUrl();
-    $scope.url = url.replace($location.path(),"/") + "3";
-   
-    $scope.move = function(){
+app.controller("routing", function ($location, $scope, $timeout) {
+    Reveal.addEventListener('routing', function () {
+        var url = $location.absUrl();
+        console.log($location.absUrl(), $location.path())
+        $scope.url = url.replace($location.path(), "/") + "3";
+    }, false);
+
+
+
+
+    $scope.move = function () {
         $location.path("/3")
-        
+
     }
-    
-    
+
+
 })
 app.controller("two_way_db",function($scope){
 	$scope.name = "AngularJS";

@@ -2,6 +2,26 @@
   padding: 0 15px !important;
   margin-bottom: 10px !important; }
 
+.demo-wrapper {
+  display: flex; }
+  .demo-wrapper .demo {
+    flex: 1;
+    text-align: center;
+    color: black;
+    text-align: left;
+    width: 600px;
+    margin: 0 auto; }
+  .demo-wrapper .instruction {
+    overflow: hidden;
+    width: 0;
+    border-left: 5px solid white;
+    margin-left: 14px; }
+    .demo-wrapper .instruction.visible {
+      width: 800px; }
+    .demo-wrapper .instruction.current-fragment {
+      animation-fill-mode: both;
+      animation: instruction 2s; }
+
 .alway-visible-fragment {
   visibility: visible !important;
   opacity: 1 !important; }
@@ -113,3 +133,12 @@ ul.light-speed li.current-fragment h3 {
   
   50% {
     transform: scale(1.5); } }
+
+@keyframes instruction {
+  from {
+    width: 0;
+    opacity: 0; }
+  
+  to {
+    width: 800px;
+    opacity: 1; } }

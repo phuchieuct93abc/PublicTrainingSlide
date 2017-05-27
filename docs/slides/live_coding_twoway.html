@@ -1,6 +1,27 @@
 <h2>Two-way data binding</h2>
 <div class="live-code-twoway fragment" ng-controller="liveCodeTwoWay">
-    <div class="swiper-container"  swiper-id="liveCodeTwoWay">
+    <div class="demo-wrapper">
+        <div class="demo form-group-lg  form-inline" >
+            <div><input ng-model="demoInput" class="form-control "/><button ng-click="demoClick()" class="btn btn-lg btn-primary">Add</button></div>
+            <ul style="color: white">
+                <li ng-repeat="item in demoList">
+                    {{item.name}} at {{item.time | date:"HH:mm:ss"}}
+                </li>
+            </ul>            
+        </div>
+        <div class="instruction fragement">
+            <ol>
+                <li>Define models and function in controller</li>
+                <li>Get value from view by ng-model and ng-click</li>
+                <li>Show model to view by {{modelName}}</li>
+                
+            </ol>
+            
+        </div>
+        
+    </div>
+    
+    <div class="swiper-container fragment"  swiper-id="liveCodeTwoWay">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
             <!-- Slides -->
