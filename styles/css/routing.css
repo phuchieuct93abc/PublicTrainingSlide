@@ -18,3 +18,9 @@
 .routing .routes {
   width: 600px;
   display: inline-block; }
+
+.routing-2 .nav li a {
+  color: white; }
+
+.routing-2 .nav > li > a:hover, .routing-2 .nav > li > a:focus {
+  background-color: #0397d6; }

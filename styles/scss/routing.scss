@@ -39,5 +39,15 @@
     }
 }
 .routing-2{
-    
+    .nav {
+        li{
+            a{
+                
+            color:white;
+            }
+        }
+    }
+    .nav > li > a:hover, .nav > li > a:focus{
+        background-color: #0397d6
+    }
 }

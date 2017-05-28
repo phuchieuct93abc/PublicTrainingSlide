@@ -1,8 +1,17 @@
 <div class="routing-2" ng-controller="routing">
-    <h2>Routing</h2>
-    <div><b ng-click="move()">Move to welcome page by code</b><div>
-    <div><b>or by URL: </b> <a ng-href="{{url}}">{{url}}</a></div>
-<!--     <code>Translude</code>-->
+    <h2>Routing - Example</h2>
+    <div class="row fragment" style="margin-top: 50px">
+        <div class="col-xs-5">
+            <ul class="nav nav-pills nav-stacked">
+                <li> <a href='#/19/'>Main</a></li>
+                <li> <a href='#/19/edit'>Edit</a></li>
+                <li> <a href='#/19/display'>Display</a></li>
+            </ul>
+        </div>
+        <div class="col-xs-7 text-left">
+            <div ng-view></div>
+        </div>
+    </div>
 </div>
 
 

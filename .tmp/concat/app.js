@@ -1,5 +1,8 @@
 var app = angular.module("app", ['ngRoute','ngAnimate','ngMessages',  'angular-carousel', 'frapontillo.bootstrap-switch', 'ngMaterial']);
-app.config(function ($mdThemingProvider,$routeProvider) {
+app.config(function ($mdThemingProvider,$routeProvider,$compileProvider) {
+    $compileProvider.debugInfoEnabled(false);
+//$compileProvider.commentDirectivesEnabled(false);
+//$compileProvider.cssClassDirectivesEnabled(false);
     $mdThemingProvider.theme('default')
             .primaryPalette('blue');
     $routeProvider
@@ -10,6 +13,15 @@ app.config(function ($mdThemingProvider,$routeProvider) {
         templateUrl:'slides/red.html'
     })
          .when('/26/display',{
+        templateUrl:'slides/green.html'
+    })
+    .when('/19/',{
+        templateUrl:'slides/main.html'  
+    })
+         .when('/19/edit',{
+        templateUrl:'slides/red.html'
+    })
+         .when('/19/display',{
         templateUrl:'slides/green.html'
     })
 
