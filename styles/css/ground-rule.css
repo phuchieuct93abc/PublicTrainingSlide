@@ -1,0 +1,11 @@
+.ground-rule li {
+  display: flex;
+  align-items: center; }
+  .ground-rule li i.fa {
+    margin-right: 20px; }
+  .ground-rule li img {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    margin-left: 20px;
+    width: 100px; }
