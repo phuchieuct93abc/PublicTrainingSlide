@@ -5,8 +5,8 @@
             <h3>Require</h3>
             <ul>
                 <li> <a href='#/26/'>Main</a></li>
-                <li> <a href='#/26/edit'>Edit</a></li>
-                <li> <a href='#/26/display'>Display</a></li>
+                <li> <a href='#/26/showOrders'>Show orders</a></li>
+                <li> <a href='#/26/addNewOrders'>Add new order</a></li>
             </ul>
             
            
@@ -60,11 +60,11 @@ app.config(function($routeProvider) {
   .when("/", {
     templateUrl : "main.html"
   })
-  .when("/edit", {
-    templateUrl : "edit.html"
+  .when("/showOrders", {
+    templateUrl : "show-orders.html"
   })  
-   .when("/display", {
-    templateUrl : "display.html"
+   .when("/addOrder", {
+    templateUrl : "add-order.html"
   }) 
 });
 </code>
@@ -79,8 +79,8 @@ app.config(function($routeProvider) {
 
     Redirect by
 &lt;a href=&quot;#/&quot;&gt;Main&lt;/a&gt;
-&lt;a href=&quot;#/edit&quot;&gt;Edit&lt;/a&gt;
-&lt;a href=&quot;#/display&quot;&gt;Display&lt;/a&gt;
+&lt;a href=&quot;#/showOrders&quot;&gt;Show order&lt;/a&gt;
+&lt;a href=&quot;#/addOrder&quot;&gt;Add new order&lt;/a&gt;
 
 </code>
                     </pre>

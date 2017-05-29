@@ -9,19 +9,19 @@ app.config(function ($mdThemingProvider,$routeProvider,$compileProvider) {
             .when('/26/',{
         templateUrl:'slides/main.html'  
     })
-         .when('/26/edit',{
+         .when('/26/showOrders',{
         templateUrl:'slides/red.html'
     })
-         .when('/26/display',{
+         .when('/26/addNewOrders',{
         templateUrl:'slides/green.html'
     })
     .when('/19/',{
         templateUrl:'slides/main.html'  
     })
-         .when('/19/edit',{
+         .when('/19/showOrders',{
         templateUrl:'slides/red.html'
     })
-         .when('/19/display',{
+         .when('/19/addNewOrders',{
         templateUrl:'slides/green.html'
     })
 
