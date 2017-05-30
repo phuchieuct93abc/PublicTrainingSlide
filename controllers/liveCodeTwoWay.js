@@ -11,7 +11,6 @@ app.controller("liveCodeTwoWay", function ($scope, $timeout, $element) {
     }
     $scope.model = {}
     document.addEventListener('fragment', function (e) {
-        console.log("fire",e.detail)
         if (e.detail == "two-way-slide") {
             $scope.model.hide = true;
 

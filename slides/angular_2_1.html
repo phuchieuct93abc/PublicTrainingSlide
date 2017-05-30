@@ -1,2 +1,13 @@
-<h3>Angular 2.0</h3> 
-<img class="fragment fade-up" src="resources/angular2-title.png"/>
+<div ng-controller="angular2" class="angular2">
+    <h3><span>Angular</span>
+        <span class="line-wrap" ng-class="{'smaller':isAngular2_2}">
+            <span class='line' ng-class="{'add-line':isAngular2}"></span>JS</span> 
+        <div style="display: inline-block" class="wrapper">
+            <div ng-class="{'remove-angular':isAngular2}"  class="alway-visible-fragment fragment version1"  fragment-id="angular1">1.0</div>
+            <div ng-class="{'add-angular':isAngular2}" class="fragment version2" fragment-id="angular2">2.0</div> 
+        </div>
+<!--        <div class="fragment" fragment-id="angular2_2"></div>-->
+
+    </h3> 
+    <img class="fragment fade-up" src="resources/angular2-title.png"/>
+</div>

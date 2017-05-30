@@ -14,7 +14,6 @@ $.fn.visibleFragment = function () {
         var event = new CustomEvent("mvc", {"detail": index});
         document.dispatchEvent(event);
     } else {
-        console.log(123);
         var fragmentId = context.attr("fragment-id");
         var event = new CustomEvent("fragment", {"detail": fragmentId});
         document.dispatchEvent(event);

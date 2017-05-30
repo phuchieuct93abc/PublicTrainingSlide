@@ -1,0 +1,60 @@
+.angular2 .line-wrap {
+  position: relative;
+  display: inline-block;
+  left: -10px; }
+  .angular2 .line-wrap.smaller {
+    animation: smaller-angular 2s; }
+  .angular2 .line-wrap .line {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 0;
+    border-top: 4px solid red;
+    transition: width 1s; }
+    .angular2 .line-wrap .line.add-line {
+      width: 100%; }
+
+.angular2 .wrapper {
+  display: inline-block;
+  height: 50px;
+  position: relative;
+  /*        overflow: hidden;*/ }
+
+.angular2 .version1, .angular2 .version2 {
+  display: block; }
+
+.angular2 .version1.remove-angular {
+  animation: angular-leave 2s;
+  animation-fill-mode: forwards; }
+
+.angular2 .version2 {
+  position: absolute; }
+  .angular2 .version2.add-angular {
+    animation: angular-enter 0.8s;
+    animation-fill-mode: forwards; }
+
+@keyframes smaller-angular {
+  from { }
+  to {
+    width: 0; } }
+
+@keyframes angular-enter {
+  from {
+    top: 100px;
+    left: 0px;
+    opacity: 0; }
+  to {
+    left: 0px;
+    top: 0px; } }
+
+@keyframes angular-leave {
+  from {
+    transform: translateY(0);
+    opacity: 1; }
+  8% {
+    transform: translateY(0);
+    opacity: 1; }
+  to {
+    transform: translateY(-100px);
+    opacity: 0; } }
