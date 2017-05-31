@@ -101,6 +101,27 @@ app.controller("ctr", function ($scope, $timeout) {
         });
     }, 3000)
 })
+app.controller('angular2', function ($scope) {
+
+    document.addEventListener('fragment', function (e) {
+        if (e.detail == "angular2") {
+            $scope.isAngular2 = true;
+            $scope.isAngular2_2 = false;
+
+
+        } else if (e.detail == "angular1") {
+            $scope.isAngular2 = false;
+            $scope.isAngular2_2 = false;
+
+
+        } else if (e.detail == "angular2_2") {
+            $scope.isAngular2_2 = true;
+
+        }
+        $scope.$evalAsync();
+
+    })
+})
 app.directive('axonLogo', function () {
 
     return {
@@ -181,7 +202,6 @@ $.fn.visibleFragment = function () {
         var event = new CustomEvent("mvc", {"detail": index});
         document.dispatchEvent(event);
     } else {
-        console.log(123);
         var fragmentId = context.attr("fragment-id");
         var event = new CustomEvent("fragment", {"detail": fragmentId});
         document.dispatchEvent(event);
@@ -505,7 +525,6 @@ app.controller("liveCodeTwoWay", function ($scope, $timeout, $element) {
     }
     $scope.model = {}
     document.addEventListener('fragment', function (e) {
-        console.log("fire",e.detail)
         if (e.detail == "two-way-slide") {
             $scope.model.hide = true;
 
