@@ -23,32 +23,40 @@
 
     </head>
     <body ng-controller="ctr">
+        <a class="menu"   data-template-url="slides/nav.html" 
+           data-placement="left" data-animation="am-slide-left" 
+           bs-aside="aside" data-container="body">Menu</a>     
+
+   
+
+
+
         <div class="reveal">
             <div class="slides">
                 <section  data-state="axon">
                     <div ng-include="'slides/welcome.html'"></div>
 
                 </section> 
-                    <section  ng-include="'slides/Policy.html'">
+                <section  ng-include="'slides/Policy.html'">
 
                 </section> 
-                
+
                 <section >
                     <div ng-include="'slides/whoweare_1.html'"></div>
 
                 </section> 
-                
-                
-                  <section >
+
+
+                <section >
                     <div ng-include="'slides/2.html'"></div>
 
                 </section> 
-                  <section >
+                <section >
                     <div ng-include="'slides/3.html'"></div>
 
                 </section> 
-                
-                
+
+
 
 
 
@@ -56,9 +64,9 @@
                 <section ng-include="'slides/4-2.html'"></section>
                 <section data-state="otherFeatures" ng-include="'slides/other_features.html'" ></section>           </section>
                 <section ng-include="'slides/5.html'"></section>
-                
-                
-                
+
+
+
                 <section ng-include="'slides/core_features.html'" ></section>
                 <section  ng-include="'slides/mvc-1.html'" data-state="mvcState"></section>
                 <section ng-include="'slides/two_way_db.html'"></section>
@@ -71,8 +79,8 @@
                 <section  ng-include="'slides/routing_1.html'"></section>
                 <section  ng-include="'slides/routing_definition.html'"></section>
                 <section  ng-include="'slides/routing_2.html'" data-state="routing"></section>
-               
-                
+
+
                 <section data-background="resources/live_code.gif"  ng-include="'slides/live_code.html'"></section>
                 <section  ng-include="'slides/live_coding_agenda.html'"></section>
                 <section  ng-include="'slides/live_coding_installation.html'"  data-state="liveCodeInstallation"></section>
@@ -116,7 +124,7 @@
             </div>
         </div>
         <div axon-logo>
-           
+
         </div>
         <script src="js/head.min.js"></script>
         <script src="js/reveal.js"></script>

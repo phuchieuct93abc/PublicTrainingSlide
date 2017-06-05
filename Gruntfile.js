@@ -283,7 +283,6 @@ module.exports = function (grunt) {
         'injector',
         'sass',
         'useminPrepare',
-        'imagemin',
         'copy',
         'concat:generated',
         'cssmin:generated',

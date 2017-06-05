@@ -6,12 +6,12 @@
     &.visible:not(.current-fragment){
         display: none;
     }
-    
-    
+
+
 }
 .demo-wrapper{
     &.visible:not(.current-fragment){
-      //  display: none;
+        //  display: none;
     }
     display: flex;
     .demo{
@@ -68,7 +68,7 @@
         .navigate-left,.navigate-right{
             bottom: 0px;
             top:initial;
-           
+
         }
     }
 
@@ -163,4 +163,37 @@ ul{
         opacity:1;
 
     }
+}
+
+.aside {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 1049;
+    overflow: auto;
+    width: 320px;
+    background: #fff;
+
+    
+}
+.nav > li{
+    width: 100%;
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+    background-color: transparent;
+    color:red;
+}
+.sub-nav{
+    margin-left: 30px;
+}
+a.menu{
+
+    color: white;
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    font-size: 25px;
+        z-index: 9;
+
+
 }
