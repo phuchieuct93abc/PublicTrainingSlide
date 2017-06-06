@@ -2150,7 +2150,7 @@
         defaults: defaults
       };
     };
-  }).directive('bsNavbar', [ '$window', '$location', '$navbar', function($window, $location, $navbar) {
+  }).directive('bsNavbar', [ '$window', '$location', '$navbar','$timeout', function($window, $location, $navbar,$timeout) {
     var defaults = $navbar.defaults;
     return {
       restrict: 'A',
@@ -2162,13 +2162,16 @@
         scope.$watch(function() {
           return $location.path();
         }, function(newValue, oldValue) {
-          var liElements = element[0].querySelectorAll('li[' + options.routeAttr + ']');
+            $timeout(function(){
+                
+                     var liElements = element[0].querySelectorAll('li[' + options.routeAttr + ']');
           angular.forEach(liElements, function(li) {
             var liElement = angular.element(li);
             var pattern = liElement.attr(options.routeAttr).replace('/', '\\/');
             if (options.strict) {
               pattern = '^' + pattern + '$';
             }
+            console.log(pattern)
             var regexp = new RegExp(pattern, 'i');
             if (regexp.test(newValue)) {
               liElement.addClass(options.activeClass);
@@ -2176,6 +2179,9 @@
               liElement.removeClass(options.activeClass);
             }
           });
+                
+            })
+     
         });
       }
     };

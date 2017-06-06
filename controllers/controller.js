@@ -165,25 +165,12 @@ app.controller("ctr", function ($scope, $timeout,$location) {
             name: "Two way data binding",
             link: "#/11",
            isSub: true
-        }, {
-            name: "Two way data binding - Example",
-            link: "#/12",
-           isSub: true
-        }, {
+        },  {
             name: "Directive",
             link: "#/13",
            isSub: true
         },
-        {
-            name: "Directive - Demo",
-            link: "#/14",
-           isSub: true
-        },
-        {
-            name: "Directive - Example",
-            link: "#/15",
-           isSub: true
-        },
+        
          {
             name: "DOM manipulation",
             link: "#/16",
@@ -192,14 +179,6 @@ app.controller("ctr", function ($scope, $timeout,$location) {
         {
             name: "Routing",
             link: "#/17",
-           isSub: true
-        },{
-            name: "Routing + Deep linking",
-            link: "#/18",
-           isSub: true
-        },{
-            name: "Routing - Example",
-            link: "#/19",
            isSub: true
         }
         ,{
