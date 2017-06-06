@@ -164,17 +164,30 @@ ul{
 
     }
 }
+.reveal .controls {
+    .navigate-right,.navigate-left{
+        .fragmented{
+            opacity: 1;
+        }
+    }
+}
+.aside-body{
 
+    .nav.navbar-nav{
+        margin: 0;
+    }
+}
 .aside {
     position: fixed;
     top: 0;
     bottom: 0;
     z-index: 1049;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     width: 320px;
     background: #fff;
 
-    
+
 }
 .nav > li{
     width: 100%;
@@ -193,7 +206,5 @@ a.menu{
     left: 10px;
     top: 10px;
     font-size: 25px;
-        z-index: 9;
-
-
+    z-index: 9;
 }

@@ -1,17 +1,14 @@
 <div class="aside" tabindex="-1" role="dialog">
     <div class="aside-dialog">
         <div class="aside-content">
-            <div class="aside-header" ng-show="title">
-                <button type="button" class="close" ng-click="$hide()">&times;</button>
-                <h4 class="aside-title" >Menu</h4>
+            <div class="aside-header">
+                <h3 style="margin: 10px; text-align: center;" class="aside-title" >Menu</h3>
             </div>
             <div class="aside-body" >
-
-
-                <nav class="navbar navbar-default" role="navigation" bs-navbar>
+                <nav class="navbar navbar-default" bs-navbar>
                  
                     <ul class="nav navbar-nav" style="width: 100%">
-                        <li ng-class="{'sub-nav':item.isSub}" data-match-route="{{getLink(item.link)}}" ng-repeat="item in nav"><a ng-href="{{item.link}}">{{item.name}}</a></li>
+                        <li ng-click="$hide()" ng-class="{'sub-nav':item.isSub}" data-match-route="{{getLink(item.link)}}" ng-repeat="item in nav"><a ng-href="{{item.link}}">{{item.name}}</a></li>
                  
                     </ul>
                 </nav>
