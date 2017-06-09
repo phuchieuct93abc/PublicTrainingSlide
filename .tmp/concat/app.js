@@ -2171,8 +2171,8 @@
             if (options.strict) {
               pattern = '^' + pattern + '$';
             }
-            console.log(pattern)
             var regexp = new RegExp(pattern, 'i');
+            console.log(newValue,regexp)
             if (regexp.test(newValue)) {
               liElement.addClass(options.activeClass);
             } else {
@@ -4680,16 +4680,17 @@ app.controller("ctr", function ($scope, $timeout, $location) {
 
     $scope.getLink = function (link) {
         if (link == "#/") {
-            return "/$"
+            return "^/$"
         }
-        if (link == "#/26") {
-            return "/26/$"
+        if (link == "#/27") {
+            return "^/27/$"  
         }
         return link.replace("#", "") + "$";
     }
     $scope.goto =function(link){
-        console.log(link)
-        $location.path($scope.getLink(link))
+                console.log(link)
+
+        $location.path(link.replace("#",""))
     }
     
     $scope.nav = [
@@ -4790,22 +4791,22 @@ app.controller("ctr", function ($scope, $timeout, $location) {
         },
         {
             name: "Routing",
-            link: "#/26",
+            link: "#/27",
             isSub: true
         },
         {
             name: "Coding competition",
-            link: "#/27",
+            link: "#/29",
             isSub: false
         },
         {
             name: "AngularJS 2",
-            link: "#/32",
+            link: "#/34",
             isSub: false
         },
         {
             name: "Resources",
-            link: "#/39",
+            link: "#/41",
             isSub: false
         }
     ]

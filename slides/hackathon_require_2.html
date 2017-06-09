@@ -47,12 +47,10 @@
                         <label>Title</label>
                         <input name="title" required ng-model="addNote.note" />
                          <div ng-messages="edit.form.title.$error" class="mes-wrapper">
-          <div ng-message="required">This is required.</div>
-        </div>
-                        
-                        <!--                    <div ng-messages="form.title.$error">
-                                                <div ng-message="required">This is required.</div>
-                                            </div>-->
+                            <div ng-message="required">This is required.</div>
+                        </div>
+                       
+
                     </md-input-container>
                     <md-input-container class="md-block" flex-gt-sm>
                         <label>Description</label>
@@ -82,12 +80,12 @@
     <div class="notes">
         <h3>Requirement</h3>
         <ul>
+            <li>Use AngularJS</li>
             <li>Show a list of notes</li>
             <li>Display title, description, color for each note</li>
             <li>Ability to create, edit and display a note</li>
             <li>Ability to search note</li>
-            <li>Use Angular Js</li>
-            <li>Routing is bonus</li>
+            <li>Routing, form valication are bonuses</li>
         </ul>
     </div>
 

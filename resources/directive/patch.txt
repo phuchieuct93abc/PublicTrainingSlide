@@ -1,0 +1,5941 @@
+### Eclipse Workspace Patch 1.0
+#P abs
+Index: webContent/resources/css/style.css
+===================================================================
+--- webContent/resources/css/style.css	(revision 153996)
++++ webContent/resources/css/style.css	(nonexistent)
+@@ -1,1540 +0,0 @@
+-/* General */
+-* {
+-	margin: 0;
+-}
+-
+-html {
+-	height: 100%;
+-}
+-
+-div#mfPreviewBarShow {
+-	top: -50px !important;
+-}
+-
+-body {
+-	font-family: "Avenir Next Pro Medium", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-weight: normal;
+-	font-size: 1em;
+-	line-height: 1.5;
+-	color: #54585f;
+-	-webkit-font-smoothing: antialiased;
+-	-moz-osx-font-smoothing: grayscale;
+-	height: 100%;
+-}
+-
+-.top-17 {
+-	height: calc(100% - 17px);
+-}
+-
+-img {
+-	display: inline-block;
+-	vertical-align: middle;
+-	max-width: 100%;
+-	height: auto;
+-	-ms-interpolation-mode: bicubic;
+-}
+-
+-h1 {
+-	font-family: "Avenir Next Pro Light", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-weight: normal;
+-	font-size: 4em;
+-	line-height: 1.2;
+-	color: #cf1152;
+-	letter-spacing: -0.5px;
+-	word-spacing: 0.125rem;
+-	margin: 15px 0;
+-	margin-left: -4px;
+-}
+-
+-h1.large {
+-	font-size: 8em;
+-	margin: 0;
+-	margin-left: -10px;
+-	line-height: 0.8;
+-	letter-spacing: -0.5px;
+-}
+-
+-h2 {
+-	margin: 0;
+-	max-width: 720px;
+-	line-height: 1.2;
+-	font-family: "Avenir Next Pro Demi", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-weight: normal;
+-	font-size: 1.375rem;
+-	color: #54585f;
+-}
+-
+-h3 {
+-	margin: 1.25em 0;
+-	max-width: 640px;
+-	line-height: 1.2;
+-	font-family: "Avenir Next Pro Demi", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-weight: normal;
+-	font-size: 0.875rem;
+-	color: #cf1152;
+-	text-transform: uppercase;
+-	letter-spacing: 0.033rem;
+-	word-spacing: 0.033rem;
+-}
+-
+-h4 {
+-	font-family: "Avenir Next Pro Light", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-weight: normal;
+-	font-size: 2em;
+-	line-height: 1.2;
+-	color: #cf1152;
+-	letter-spacing: -0.5px;
+-	word-spacing: -1px;
+-	margin: 15px 0;
+-	margin-left: -2px;
+-}
+-
+-a, a:visited, a:focus, a:active, a:hover {
+-	outline: 0 none !important;
+-}
+-
+-a {
+-	text-decoration: none;
+-	color: #cf1152;
+-}
+-
+-a:hover, a:focus {
+-	color: #54585f;
+-}
+-
+-a.white-link {
+-	text-decoration: none;
+-	color: #ffffff;
+-	text-decoration: underline;
+-}
+-
+-a.white-link:hover, a.white-link:focus {
+-	color: #dbdedf;
+-}
+-
+-#header a {
+-	color: #54585f;
+-}
+-
+-p a {
+-	display: inline-block;
+-	line-height: 1.25
+-}
+-
+-p a:hover {
+-	transition: box-shadow .3s ease;
+-	box-shadow: 0 2px 0 0 #cf1152;
+-}
+-
+-#header a:hover, #header a:focus {
+-	color: #cf1152;
+-}
+-
+-#header span.active {
+-	color: #cf1152;
+-}
+-
+-.not-active {
+-	color: #a9abaf;
+-}
+-
+-p, ul {
+-	margin: 0.75em 0;
+-	max-width: 640px;
+-}
+-
+-ul {
+-	line-height: 2.5;
+-}
+-
+-ul.liste {
+-	list-style-type: disc;
+-	list-style-position: inside;
+-	margin-left: 0.25rem;
+-	line-height: 1.5;
+-	margin: 0;
+-}
+-
+-b {
+-	font-family: "Avenir Next Pro Demi", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-weight: normal;
+-	color: #cf1152;
+-	text-transform: uppercase;
+-	letter-spacing: 0.033rem;
+-	word-spacing: 0.033rem;
+-}
+-
+-strong {
+-	font-family: "Avenir Next Pro Demi", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-weight: normal;
+-	color: #cf1152;
+-}
+-
+-.uc {
+-	letter-spacing: 0.033rem;
+-	word-spacing: 0.033rem;
+-	text-transform: uppercase;
+-}
+-
+-.nb {
+-	white-space: nowrap
+-}
+-
+-.ns {
+-	letter-spacing: 0;
+-	word-spacing: 0;
+-}
+-
+-#signet {
+-	height: 42px;
+-	width: 23px;
+-	padding-bottom: 2px;
+-}
+-
+-#logo {
+-	height: 77px;
+-	width: 149px;
+-	margin-top: 83px;
+-	margin-bottom: 99px;
+-	margin-left: -1px;
+-}
+-
+-.btn {
+-	box-sizing: border-box;
+-	font-family: "Avenir Next Pro Demi", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-size: 18px;
+-	text-transform: uppercase;
+-	letter-spacing: 0.033rem;
+-	word-spacing: 0.05rem;
+-	padding: 17px 33px 15px;
+-	border: none;
+-	box-shadow: none;
+-	border-radius: 2px;
+-	display: inline-block;
+-	text-align: center;
+-	margin-right: 0.5em;
+-}
+-
+-.btn-small, input[type='file'] {
+-	box-sizing: border-box;
+-	font-family: "Avenir Next Pro Demi", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-size: 18px;
+-	text-transform: uppercase;
+-	letter-spacing: 0.033rem;
+-	word-spacing: 0.05rem;
+-	min-width: 180px;
+-	padding: 17px 33px 15px;
+-	border: none;
+-	box-shadow: none;
+-	border-radius: 2px;
+-	display: inline-block;
+-	text-align: center;
+-	margin-right: 0.5em;
+-}
+-
+-input[type='file'] {
+-	padding: 0;
+-}
+-
+-.btn-large {
+-	box-sizing: border-box;
+-	font-family: "Avenir Next Pro Demi", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-size: 18px;
+-	text-transform: uppercase;
+-	letter-spacing: 0.033rem;
+-	word-spacing: 0.05rem;
+-	min-width: 280px;
+-	padding: 17px 33px 15px;
+-	border: none;
+-	box-shadow: none;
+-	border-radius: 2px;
+-	display: inline-block;
+-	text-align: center;
+-}
+-
+-.btn-red {
+-	color: #fff;
+-	background-color: #cf1152;
+-}
+-
+-.btn-red:hover, .btn-red:focus {
+-	color: #fff;
+-	background-color: #54585f;
+-}
+-
+-.btn-grey {
+-	color: #54585f;
+-	background-color: #dbdedf;
+-}
+-
+-.btn-grey:hover, .btn-grey:focus, .btn-grey.active {
+-	color: #fff;
+-	background-color: #54585f;
+-}
+-
+-[type="checkbox"], [type="radio"] {
+-	margin-right: 5px;
+-}
+-
+-.btn-group {
+-	margin: 15px 0;
+-	position: relative;
+-}
+-
+-.ghost-btn-left {
+-	box-sizing: border-box;
+-	font-weight: normal;
+-	font-size: 1.125rem;
+-	color: #54585f;
+-	border-style: solid;
+-	border-width: 1px;
+-	border-color: #a9abaf;
+-	border-top-left-radius: 2px;
+-	border-bottom-left-radius: 2px;
+-	display: inline-block;
+-	text-align: center;
+-	min-width: 140px;
+-	letter-spacing: 0.033rem;
+-	word-spacing: 0.05rem;
+-	padding: 10px 15px 8px 15px;
+-	margin: 0;
+-	background-color: #fff;
+-}
+-
+-.ghost-btn-right {
+-	box-sizing: border-box;
+-	font-weight: normal;
+-	font-size: 1.125rem;
+-	color: #54585f;
+-	border-style: solid;
+-	border-width: 1px;
+-	border-color: #a9abaf;
+-	border-top-right-radius: 2px;
+-	border-bottom-right-radius: 2px;
+-	border-left: none;
+-	display: inline-block;
+-	text-align: center;
+-	min-width: 140px;
+-	letter-spacing: 0.033rem;
+-	word-spacing: 0.05rem;
+-	padding: 10px 15px 8px 15px;
+-	margin: 0;
+-	background-color: #fff;
+-}
+-
+-.ghost-btn-right:hover, .ghost-btn-right:focus {
+-	border-color: #54585f;
+-	background-color: #54585f;
+-	color: #fff;
+-}
+-
+-.ghost-btn-left:hover, .ghost-btn-left:focus {
+-	border-color: #54585f;
+-	background-color: #54585f;
+-	color: #fff;
+-}
+-
+-.ghost-btn-right.active, .ghost-btn-left.active {
+-	border-color: #54585f;
+-	background-color: #54585f;
+-	color: #fff;
+-}
+-
+-.down {
+-	border-color: #54585f;
+-	background-color: #54585f;
+-	color: #fff;
+-}
+-
+-.ghost-btn-right.passive:hover, .ghost-btn-right.passive:focus {
+-	border-color: #54585f;
+-	border-left: 1px solid #fff;
+-	background-color: #54585f;
+-	color: #fff;
+-}
+-
+-.ghost-btn-left.passive:hover, .ghost-btn-left.passive:focus {
+-	border-color: #54585f;
+-	border-right-color: #fff;
+-	background-color: #54585f;
+-	color: #fff;
+-}
+-
+-.x-large {
+-	font-size: 1.375rem;
+-}
+-
+-.large {
+-	font-size: 1.125rem
+-}
+-
+-.small {
+-	font-size: 0.875rem !important;
+-}
+-
+-.x-small {
+-	font-size: 0.75rem !important;
+-}
+-
+-.normal {
+-	font-family: 'Avenir Next Pro'
+-}
+-
+-.mb0 {
+-	margin-bottom: 0px !important
+-}
+-
+-.mt0 {
+-	margin-top: 0px !important
+-}
+-
+-.mb5 {
+-	margin-bottom: 5px
+-}
+-
+-.mt5 {
+-	margin-top: 5px
+-}
+-
+-.mb10 {
+-	margin-bottom: 10px
+-}
+-
+-.mt10 {
+-	margin-top: 10px
+-}
+-
+-.mb15 {
+-	margin-bottom: 15px
+-}
+-
+-.mt15 {
+-	margin-top: 15px
+-}
+-
+-.mb20 {
+-	margin-bottom: 20px
+-}
+-
+-.mt20 {
+-	margin-top: 20px
+-}
+-
+-.mb25 {
+-	margin-bottom: 25px
+-}
+-
+-.mt25 {
+-	margin-top: 25px
+-}
+-
+-.mb40 {
+-	margin-bottom: 40px
+-}
+-
+-.mt40 {
+-	margin-top: 40px
+-}
+-
+-.mb55 {
+-	margin-bottom: 55px
+-}
+-
+-.mt55 {
+-	margin-top: 55px
+-}
+-
+-.mb60 {
+-	margin-bottom: 60px
+-}
+-
+-.mt60 {
+-	margin-top: 60px
+-}
+-
+-.mb65 {
+-	margin-bottom: 65px
+-}
+-
+-.mt65 {
+-	margin-top: 65px
+-}
+-
+-.mb80 {
+-	margin-bottom: 80px
+-}
+-
+-.mt80 {
+-	margin-top: 80px
+-}
+-
+-.mw800 {
+-	max-width: 800px
+-}
+-
+-.ml5 {
+-	margin-left: 5px
+-}
+-
+-.mr5 {
+-	margin-right: 5px
+-}
+-
+-.ml25 {
+-	margin-left: 25px
+-}
+-
+-.mr25 {
+-	margin-right: 25px
+-}
+-
+-.float-left {
+-	float: left !important;
+-}
+-
+-.float-right {
+-	float: right !important;
+-}
+-
+-.float-center {
+-	display: block;
+-	margin-right: auto;
+-	margin-left: auto;
+-}
+-
+-.clearfix::before, .clearfix::after {
+-	display: table;
+-	content: ' ';
+-}
+-
+-.clearfix::after {
+-	clear: both
+-}
+-
+-.w100 {
+-	width: 100%
+-}
+-
+-.w200 {
+-	width: 200px
+-}
+-
+-.align-center {
+-	text-align: center
+-}
+-
+-.align-left {
+-	text-align: left
+-}
+-
+-.align-right {
+-	text-align: right
+-}
+-
+-.di {
+-	display: inline
+-}
+-
+-.dn {
+-	display: none
+-}
+-
+-.db {
+-	display: block
+-}
+-
+-.dib {
+-	display: inline-block
+-}
+-
+-.dib {
+-	display: inline-block
+-}
+-
+-.dt {
+-	display: table
+-}
+-
+-.dtc {
+-	display: table-cell
+-}
+-
+-.df {
+-	display: flex
+-}
+-
+-.pr {
+-	position: relative
+-}
+-
+-.lh1 {
+-	line-height: 1
+-}
+-
+-/* structural */
+-#page-wrap {
+-	min-height: 100%;
+-	margin-bottom: -53px;
+-}
+-
+-#page-wrap:after {
+-	content: "";
+-	display: block;
+-	height: 52px;
+-}
+-
+-#main, #not_supported {
+-	box-sizing: border-box;
+-	max-width: 1320px;
+-	margin: 1em auto;
+-	padding: 0 120px;
+-}
+-
+-#not_supported {
+-	display: none;
+-}
+-
+-#header {
+-	height: 69px;
+-	border-bottom: 1px solid #eaeaea;
+-	line-height: 72px;
+-	font-size: 0.875rem;
+-	padding: 0 25px;
+-	word-spacing: 0.025rem;
+-	overflow: hidden;
+-}
+-
+-#header2 {
+-	height: 135px;
+-	background-color: #f7f7f8;
+-	border-bottom: 1px solid #eaeaea;
+-}
+-
+-#footer {
+-	height: 51px;
+-	border-top: 1px solid #ddd;
+-	line-height: 51px;
+-	font-size: 0.75rem;
+-	padding: 0 25px;
+-	word-spacing: 0.033rem;
+-	/*text-align: center;*/
+-}
+-
+-.row-left {
+-	width: 520px;
+-	float: left;
+-	box-sizing: border-box;
+-	padding-right: 40px;
+-}
+-
+-.row-right {
+-	width: 280px;
+-	float: left;
+-	box-sizing: border-box;
+-}
+-
+-.col-left {
+-	width: 440px;
+-	float: left;
+-	box-sizing: border-box;
+-}
+-
+-.col-right {
+-	width: 480px;
+-	float: left;
+-	box-sizing: border-box;
+-}
+-
+-.thumbnail {
+-	width: 400px;
+-	height: 266px;
+-	background-color: #777777;
+-	margin-right: 12px;
+-	margin-bottom: 8px;
+-	float: left;
+-	margin-top: 5px;
+-}
+-
+-/* scanline */
+-#scanline {
+-	display: table;
+-	width: 100%;
+-	max-width: 1232px;
+-	margin: 0 auto;
+-}
+-
+-#scanline>div, #scanline>a {
+-	position: relative;
+-	display: table-cell;
+-	text-align: center;
+-	/* vertical-align: middle; */
+-}
+-
+-#scanline .circle {
+-	position: relative;
+-	z-index: 2;
+-	width: 49px;
+-	height: 49px;
+-	font-size: 0.875rem;
+-	line-height: 50px;
+-	margin: 30px auto 0;
+-	border-radius: 50px;
+-	background-color: #f7f7f8;
+-	border: 1px solid #a9abaf;
+-	padding-left: 1px;
+-	padding-top: 1px;
+-}
+-
+-#scanline>div::before, #scanline>div::after, #scanline>div.active>.progress,
+-	#scanline>a.done>.progress {
+-	content: '';
+-	position: absolute;
+-	z-index: 1;
+-	display: block;
+-	width: 50%;
+-	top: 56px;
+-	left: 50%;
+-	border-bottom: 1px solid #bdbfc1;
+-}
+-
+-#scanline>div#step_1 {
+-	z-index: 10;
+-}
+-
+-#scanline>div#step_2 {
+-	z-index: 11;
+-}
+-
+-#scanline>div#step_3 {
+-	z-index: 12;
+-}
+-
+-#scanline>div#step_4 {
+-	z-index: 13;
+-}
+-
+-#scanline div.active .typo {
+-	color: #cf1152;
+-}
+-
+-#scanline div.active .circle {
+-	color: #fff;
+-}
+-
+-#scanline a.done .circle {
+-	color: transparent;
+-	background-image: url('../img/checkmark.svg');
+-	background-position: center center;
+-	background-size: 50%;
+-	background-repeat: no-repeat;
+-}
+-
+-#scanline>div.active>.circle, #scanline>div.active>.progress {
+-	z-index: 2;
+-	border-color: #cf1152;
+-	background-color: #cf1152;
+-}
+-
+-#scanline>a.done>.circle, #scanline>a.done>.progress {
+-	z-index: 2;
+-	border-color: #cf1152;
+-	background-color: #cf1152;
+-}
+-
+-#scanline>a.done:hover>.typo {
+-	color: #54585f;
+-}
+-
+-#scanline>a.done:hover>.circle {
+-	border-color: #54585f;
+-	background-color: #54585f;
+-}
+-
+-#scanline>div::before {
+-	left: 0;
+-	right: 50%;
+-}
+-
+-#scanline>div:first-child::before, #scanline>div:last-child::after {
+-	display: none;
+-}
+-
+-#scanline>div.active::before {
+-	display: none;
+-}
+-
+-#scanline .typo {
+-	font-family: "Avenir Next Pro", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-size: 0.875rem;
+-	letter-spacing: 0.02rem;
+-	word-spacing: 0.02rem;
+-	text-transform: uppercase;
+-	margin: 10px auto;
+-	width: 200px;
+-	color: #54585f;
+-}
+-
+-#scanline .done .typo {
+-	color: #cf1152;
+-}
+-
+-#scanline-2 {
+-	margin: 80px 0 40px 0;
+-}
+-
+-#scanline-2>a, #scanline-2>span {
+-	display: inline-block;
+-	margin-right: 2.5em;
+-	margin-bottom: 1em;
+-	line-height: 1;
+-	font-family: "Avenir Next Pro Demi", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-weight: normal;
+-	font-size: 0.875rem;
+-	color: #a9abaf;
+-	text-transform: uppercase;
+-	letter-spacing: 0.033rem;
+-	word-spacing: 0.033rem;
+-	height: 20px;
+-	padding: 0;
+-	border-bottom: none;
+-}
+-
+-#scanline-2>a.done {
+-	color: #54585f;
+-}
+-
+-#scanline-2>a.done:hover {
+-	color: #cf1152;
+-}
+-
+-#scanline-2>span.active {
+-	color: #cf1152;
+-	border-bottom: 1px solid #cf1152;
+-}
+-
+-a.overview.item {
+-	box-sizing: border-box;
+-	border-bottom: 1px solid #a9abaf;
+-	padding: 14px 15px 12px 0px;
+-	margin: 0;
+-	background-image: url('../img/arrow-down_hover.svg');
+-	background-position: right 1em;
+-	background-size: 2em 1em;
+-	background-repeat: no-repeat;
+-	display: block;
+-	color: #54585f;
+-	cursor: pointer;
+-}
+-
+-a.overview.item:hover {
+-	background-image: url('../img/arrow-down_.svg');
+-}
+-
+-a.overview.item.open {
+-	background-image: url('../img/arrow-up_hover.svg');
+-}
+-
+-a.overview.item.open:hover {
+-	background-image: url('../img/arrow-up_.svg');
+-}
+-
+-h2.overview {
+-	box-sizing: border-box;
+-	border-bottom: 1px solid #a9abaf;
+-	padding: 0 0 8px 0;
+-	margin-bottom: 0;
+-	max-width: none;
+-}
+-
+-a.overview.edit {
+-	margin: 1.25em 0;
+-	line-height: 1.2;
+-	font-family: "Avenir Next Pro Demi", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-weight: normal;
+-	font-size: 0.875rem;
+-	/*color: #54585f;*/
+-	text-transform: uppercase;
+-	letter-spacing: 0.033rem;
+-	word-spacing: 0.033rem;
+-	box-sizing: border-box;
+-	padding: 0;
+-	border: none;
+-	box-sizing: border-box;
+-	display: inline-block;
+-}
+-
+-a.overview.edit:hover {
+-	/*color: #cf1152;*/
+-	
+-}
+-
+-.item-info {
+-	margin-top: 20px;
+-	margin-bottom: 20px;
+-	width: 90%;
+-	max-width: 720px;
+-	display: none;
+-}
+-
+-/* lightbox */
+-.difuse {
+-	opacity: 0.33;
+-}
+-
+-div.lightbox {
+-	box-sizing: border-box;
+-	padding-top: 100px;
+-	padding-left: 50px;
+-	padding-right: 50px;
+-	position: fixed;
+-	top: 50%;
+-	left: 50%;
+-	width: 100%;
+-	height: 10%;
+-	max-width: 700px;
+-	min-width: 420px;
+-	min-height: 420px;
+-	transform: translate(-50%, -50%);
+-	-webkit-transform: translate(-50%, -50%);
+-	-moz-transform: translate(-50%, -50%);
+-	-o-transform: translate(-50%, -50%);
+-	-ms-transform: translate(-50%, -50%);
+-	background-color: #54585f;
+-	color: #fff;
+-	text-align: center;
+-	border-radius: 2px;
+-}
+-
+-.lightbox h2, .lightbox h2 {
+-	color: #fff;
+-}
+-
+-.lightbox .ghost-btn-right:hover, .lightbox .ghost-btn-right:focus {
+-	border-color: #cf1152;
+-	background-color: #cf1152;
+-	color: #fff;
+-}
+-
+-.lightbox .ghost-btn-left:hover, .lightbox .ghost-btn-left:focus {
+-	border-color: #cf1152;
+-	background-color: #cf1152;
+-	color: #fff;
+-}
+-
+-a.close {
+-	position: absolute;
+-	top: 25px;
+-	right: 25px;
+-	width: 32px;
+-	height: 32px;
+-	background-image: url('../img/close_white.svg');
+-	background-position: center center;
+-	background-size: 100%;
+-	background-repeat: no-repeat;
+-}
+-
+-a.close:hover {
+-	background-image: url('../img/close_hover2.svg');
+-	background-position: center center;
+-	background-size: 100%;
+-	background-repeat: no-repeat;
+-}
+-
+-/* tables */
+-table {
+-	width: 100%;
+-	box-sizing: border-box;
+-	border-bottom: 1px solid #a9abaf;
+-}
+-
+-td {
+-	padding-right: 30px;
+-	padding-top: 10px;
+-}
+-
+-tr:last-child>td {
+-	padding-bottom: 10px;
+-}
+-
+-td.left-col {
+-	width: 33%;
+-}
+-
+-td.right-col {
+-	
+-}
+-
+-/* forms */
+-#main form {
+-	margin-top: 50px;
+-}
+-
+-form h2 {
+-	max-width: 560px;
+-	margin: 0 0 0.75em 0;
+-}
+-
+-form h3 {
+-	max-width: 560px;
+-	margin: 0 0 1.25em 0;
+-}
+-
+-form p {
+-	max-width: 560px;
+-	margin: 0 0 0.75em 0;
+-}
+-
+-textarea {
+-	height: auto;
+-	min-height: 100px;
+-	height: 180px;
+-}
+-
+-.label {
+-	font-family: "Avenir Next Pro Medium", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-weight: normal;
+-	font-size: 1.375rem;
+-	color: #54585f;
+-	display: block;
+-}
+-
+-input, textarea, select {
+-	font-family: "Avenir Next Pro", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-}
+-
+-select {
+-	-webkit-appearance: none !important;
+-	-moz-appearance: none !important;
+-	appearance: none !important;
+-}
+-
+-select::-ms-expand {
+-	display: none;
+-}
+-
+-select:focus {
+-	outline: none !important;
+-}
+-
+-:focus {
+-	outline: none;
+-}
+-
+-::-moz-focus-inner {
+-	border: 0;
+-}
+-
+-select:-moz-focusring {
+-	color: transparent;
+-	text-shadow: 0 0 0 #000;
+-}
+-
+-option {
+-	background: #fff;
+-	border-top: 1px solid #eaeaea;
+-	padding: 0.25rem 0.25rem 0.25rem 1rem;
+-	color: #54585f !important;
+-}
+-
+-.hinweis {
+-	font-size: 0.875em;
+-	padding-left: 1.25rem;
+-	padding-top: 0px;
+-}
+-
+-.optional {
+-	font-size: 1.25em;
+-	opacity: 0.3;
+-	top: 1.1rem;
+-	right: 0.75rem;
+-	position: absolute;
+-}
+-
+-.alert .hinweis {
+-	color: #cf1152;
+-}
+-
+-form input[type='checkbox'], form input[type='radio'] {
+-	display: none;
+-}
+-
+-input[type='checkbox']+label, input[type='radio']+label, label+input[type='checkbox'],
+-	label+input[type='radio'] {
+-	cursor: pointer;
+-}
+-
+-.box {
+-	box-sizing: border-box;
+-	padding: 6px 6px;
+-	width: 26px;
+-	height: 26px;
+-	border-style: solid;
+-	border-width: 1px;
+-	border-color: #a9abaf;
+-	border-radius: 2px;
+-	display: inline-block;
+-	text-align: center;
+-	margin-right: 0.5em;
+-	vertical-align: middle;
+-	margin-top: -5px;
+-}
+-
+-.inline-box {
+-	box-sizing: border-box;
+-	width: 12px;
+-	height: 12px;
+-	border-style: solid;
+-	border-width: 1px;
+-	border-color: #54585f;
+-	border-radius: 2px;
+-	background-color: #54585f;
+-	margin: 0;
+-	display: none;
+-}
+-
+-.box-small {
+-	box-sizing: border-box;
+-	padding: 3px 3px;
+-	width: 14px;
+-	height: 14px;
+-	border-style: solid;
+-	border-width: 1px;
+-	border-color: #a9abaf;
+-	border-radius: 2px;
+-	display: inline-block;
+-	text-align: center;
+-	margin-right: 0.5em;
+-	vertical-align: middle;
+-	margin-top: -5px;
+-}
+-
+-.inline-box-small {
+-	box-sizing: border-box;
+-	width: 6px;
+-	height: 6px;
+-	border-style: solid;
+-	border-width: 1px;
+-	border-color: #54585f;
+-	border-radius: 2px;
+-	background-color: #54585f;
+-	margin: 0;
+-	display: none;
+-}
+-
+-.cir {
+-	box-sizing: border-box;
+-	padding: 6px 6px;
+-	width: 26px;
+-	height: 26px;
+-	border-style: solid;
+-	border-width: 1px;
+-	border-color: #a9abaf;
+-	border-radius: 26px;
+-	display: inline-block;
+-	text-align: center;
+-	margin-right: 0.5em;
+-	vertical-align: middle;
+-	margin-top: -5px;
+-}
+-
+-.inline-cir {
+-	box-sizing: border-box;
+-	width: 12px;
+-	height: 12px;
+-	border-style: solid;
+-	border-width: 1px;
+-	border-color: #54585f;
+-	border-radius: 12px;
+-	background-color: #54585f;
+-	margin: 0;
+-	display: none;
+-}
+-
+-input[type="radio"]:checked+label>.cir>.inline-cir {
+-	display: block;
+-}
+-
+-input[type="checkbox"]:checked+label>.box>.inline-box {
+-	display: block;
+-}
+-
+-input[type="checkbox"]:checked+label>.box-small>.inline-box-small {
+-	display: block;
+-}
+-
+-.file-icon {
+-	padding-left: 32px;
+-	background-image: url('../img/antrag.svg');
+-	background-position: center left;
+-	background-size: 24px 24px;
+-	background-repeat: no-repeat;
+-	height: 24px;
+-	display: block;
+-	box-shadow: unset !important;
+-}
+-
+-.file-icon:hover {
+-	background-image: url('../img/antrag_.svg');
+-}
+-
+-.form-icon {
+-	box-sizing: border-box;
+-	width: 23px;
+-	height: 23px;
+-	border-radius: 23px;
+-	margin: 0;
+-	font-family: "Avenir Next Pro Demi", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	text-align: center;
+-	font-size: 1rem !important;
+-}
+-
+-.has-float-label>.form-icon {
+-	position: absolute;
+-	left: -2.75rem;
+-	top: 1.2rem;
+-}
+-
+-.btn-group>.form-icon, p>.form-icon {
+-	position: absolute;
+-	left: -2.75rem;
+-	top: 3px;
+-}
+-
+-.btn-group>h3+.form-icon {
+-	position: absolute;
+-	left: -2.75rem;
+-	top: -4px;
+-}
+-
+-.tooltip {
+-	position: absolute;
+-	background-color: #54585f;
+-	color: #fff;
+-	border-radius: 16px;
+-	padding: 17px 33px 16px;
+-	left: 580px;
+-	top: -25px;
+-	width: 430px;
+-}
+-
+-.tooltip::before {
+-	border-color: transparent #54585f transparent transparent;
+-	border-style: solid;
+-	border-width: 10px;
+-	content: " ";
+-	display: block;
+-	height: 0;
+-	width: 0;
+-	left: -19px;
+-	position: absolute;
+-	top: calc(50% - 10px);
+-}
+-
+-.tooltip h3 {
+-	color: #fff;
+-	margin-bottom: 0.5rem;
+-	font-size: 1em;
+-}
+-
+-#zvk, #nfc {
+-	margin-left: 80px;
+-	display: none;
+-}
+-
+-/*
+-#zvk .form-icon {
+-    position: static;
+-    display: inline-block;
+-    vertical-align: text-bottom;
+-    margin-left: 0.33em;
+-}
+-
+-#zvk label{
+-    display: inline-block;
+-}
+-*/
+-#zvk .btn-group {
+-	margin: 0;
+-}
+-
+-/* sky */
+-#sky {
+-	position: absolute;
+-	top: 70px;
+-	width: 100%;
+-	-webkit-animation: FadeIn 3s ease-out;
+-	animation: FadeIn 3s ease-out;
+-	-webkit-user-select: none;
+-	-moz-user-select: none;
+-	-ms-user-select: none;
+-	user-select: none;
+-	overflow: hidden;
+-	height: 640px;
+-	display: none;
+-}
+-
+-#cloud1 {
+-	height: 100px;
+-	position: absolute;
+-	top: 230px;
+-	left: 85%;
+-}
+-
+-#cloud2 {
+-	height: 80px;
+-	position: absolute;
+-	left: 20%;
+-	top: 420px;
+-}
+-
+-#cloud3 {
+-	height: 100px;
+-	position: absolute;
+-	left: 800px;
+-	top: 100px;
+-}
+-
+-#cloud4 {
+-	height: 160px;
+-	position: absolute;
+-	right: 90%;
+-	top: 40px;
+-}
+-
+-#bird1 {
+-	height: 56px;
+-	width: 28px;
+-	z-index: 2;
+-	position: absolute;
+-	left: calc(15% - 145px);
+-	top: 100px;
+-	display: none
+-}
+-
+-#bird2 {
+-	height: 30px;
+-	z-index: 2;
+-	position: absolute;
+-	right: 15%;
+-	top: 500px;
+-	display: none
+-}
+-
+-#bird3 {
+-	height: 56px;
+-	width: 28px;
+-	z-index: 2;
+-	position: absolute;
+-	top: 25px;
+-	right: 33%;
+-}
+-
+-#cloud1, #cloud2, #cloud3, #cloud4 {
+-	display: none;
+-}
+-
+-/* responsive behavior */
+-@media screen and (max-width: 1400px) {
+-	#bird1 {
+-		display: none;
+-	}
+-}
+-
+-@media screen and (max-width: 1200px) {
+-	.tooltip {
+-		width: 300px;
+-	}
+-	td.left-col {
+-		width: 40%;
+-	}
+-	#bird2 {
+-		top: 500px;
+-	}
+-}
+-
+-@media screen and (max-width: 1080px) {
+-	.tooltip {
+-		left: 0px;
+-		width: 430px;
+-	}
+-	td.left-col {
+-		width: 50%;
+-	}
+-	#header2 {
+-		height: 125px;
+-	}
+-	#scanline .typo {
+-		width: 100px;
+-		line-height: 1.25;
+-		font-size: 0.75em;
+-	}
+-	#scanline .circle {
+-		margin: 20px auto 0;
+-	}
+-	#scanline>div::before, #scanline>div::after, #scanline>div.active>.progress,
+-		#scanline>a.done>.progress {
+-		top: 45px;
+-	}
+-	h1 {
+-		font-size: 3em;
+-		line-height: 1.25;
+-	}
+-	h1.large {
+-		font-size: 7em;
+-		margin-left: -8.8px;
+-	}
+-	#logo {
+-		margin-top: 63px;
+-		margin-bottom: 79px;
+-	}
+-	p, ul {
+-		line-height: 1.5;
+-	}
+-	#main {
+-		padding: 0 80px;
+-	}
+-}
+-
+-@media screen and (max-width: 719px) {
+-	#sky {
+-		display: block;
+-	}
+-	#cloud1, #cloud2, #cloud3, #cloud4 {
+-		display: block;
+-		-webkit-animation-duration: 120s;
+-		animation-duration: 120s;
+-		-webkit-animation-iteration-count: infinite;
+-		animation-iteration-count: infinite;
+-		-webkit-animation-fill-mode: forwards;
+-		animation-fill-mode: forwards;
+-		-webkit-animation-timing-function: linear;
+-		animation-timing-function: linear;
+-		-webkit-animation-name: Float, FadeFloat;
+-		animation-name: Float, FadeFloat;
+-	}
+-	@
+-	-webkit-keyframes Float {from { -webkit-transform:translateX(100%)translateZ(0);
+-		transform: translateX(100%) translateZ(0);
+-	}
+-	to {
+-		-webkit-transform: translateX(-300%) translateZ(0);
+-		transform: translateX(-300%) translateZ(0);
+-	}
+-}
+-
+-@
+-keyframes Float {from { -webkit-transform:translateX(100%)translateZ(0);
+-	transform: translateX(100%) translateZ(0);
+-}
+-
+-to {
+-	-webkit-transform: translateX(-300%) translateZ(0);
+-	transform: translateX(-300%) translateZ(0);
+-}
+-
+-}
+-#cloud4 {
+-	height: 160px;
+-	position: absolute;
+-	right: 60%;
+-	top: 50px;
+-}
+-
+-#bird2 {
+-	display: block;
+-	height: 30px;
+-	right: 12.5%;
+-	top: 120px;
+-}
+-
+-#bird3 {
+-	display: none;
+-}
+-
+-#main, #header, #header2, #footer, #scanline {
+-	display: none;
+-}
+-
+-#not_supported {
+-	display: block;
+-	margin-bottom: 50px;
+-	padding: 0 40px;
+-	position: relative;
+-	z-index: 3;
+-}
+-
+-#logo {
+-	margin-top: 43px;
+-	margin-bottom: 46px;
+-	margin-left
+-	-1px;
+-}
+-
+-p, ul {
+-	font-size: 0.875;
+-	line-height: 1.4;
+-}
+-
+-h1.large {
+-	font-size: 6em;
+-	margin-left: -7px;
+-	line-height: 1.2;
+-}
+-
+-h2 {
+-	font-size: 1em;
+-}
+-
+-}
+-@media screen and (max-width: 480px) {
+-	h1.large {
+-		font-size: 4.5em;
+-		margin-left: -5.5px;
+-		line-height: 1.2;
+-		letter-spacing: -0.025rem;
+-	}
+-}
+-
+-#sky {
+-	display: block;
+-	top: 70px;
+-}
+-
+-#bird3, #bird2 {
+-	display: block;
+-}
+-
+-#bird2 {
+-	height: 45px;
+-	z-index: 2;
+-	position: absolute;
+-	right: 35%;
+-	top: 333px;
+-}
+-
+-@media screen and (max-width: 719px) {
+-	#bird3 {
+-		display: none;
+-	}
+-	#bird2 {
+-		height: 30px;
+-		right: 12.5%;
+-		top: 120px;
+-	}
+-}
+\ No newline at end of file
+Index: webContent/resources/css/style.css
+===================================================================
+--- webContent/resources/css/style.css	(nonexistent)
++++ webContent/resources/css/style.css	(working copy)
+@@ -0,0 +1,1710 @@
++/* general */
++/* line 3, ../scss/style.scss */
++* {
++  margin: 0;
++}
++
++/* line 7, ../scss/style.scss */
++html {
++  height: 100%;
++}
++
++/* line 11, ../scss/style.scss */
++div#mfPreviewBarShow {
++  top: -50px !important;
++}
++
++/* line 15, ../scss/style.scss */
++body {
++  font-family: "Avenir Next Pro Medium","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 1em;
++  line-height: 1.5;
++  color: #54585f;
++  -webkit-font-smoothing: antialiased;
++  -moz-osx-font-smoothing: grayscale;
++  height: 100%;
++}
++
++/* line 26, ../scss/style.scss */
++.top-17 {
++  height: calc(100% - 17px);
++}
++
++/* line 30, ../scss/style.scss */
++img {
++  display: inline-block;
++  vertical-align: middle;
++  max-width: 100%;
++  height: auto;
++  -ms-interpolation-mode: bicubic;
++}
++
++/* line 38, ../scss/style.scss */
++h1 {
++  font-family: "Avenir Next Pro Light","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 4em;
++  line-height: 1.2;
++  color: #cf1152;
++  letter-spacing: -0.5px;
++  word-spacing: 0.125rem;
++  margin: 15px 0;
++  margin-left: -4px;
++}
++/* line 48, ../scss/style.scss */
++h1.large {
++  font-size: 8em;
++  margin: 0;
++  margin-left: -10px;
++  line-height: 0.8;
++  letter-spacing: -0.5px;
++}
++
++/* line 57, ../scss/style.scss */
++h2 {
++  margin: 0;
++  max-width: 720px;
++  line-height: 1.2;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 1.375rem;
++  color: #54585f;
++}
++
++/* line 67, ../scss/style.scss */
++h3 {
++  margin: 1.25em 0;
++  max-width: 640px;
++  line-height: 1.2;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 0.875rem;
++  color: #cf1152;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.033rem;
++}
++
++/* line 80, ../scss/style.scss */
++h4 {
++  font-family: "Avenir Next Pro Light","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 2em;
++  line-height: 1.2;
++  color: #cf1152;
++  letter-spacing: -0.5px;
++  word-spacing: -1px;
++  margin: 15px 0;
++  margin-left: -2px;
++}
++
++/* line 92, ../scss/style.scss */
++a {
++  outline: 0 none !important;
++  text-decoration: none;
++  color: #cf1152;
++}
++/* line 94, ../scss/style.scss */
++a:visited, a:focus, a:active {
++  outline: 0 none !important;
++}
++/* line 97, ../scss/style.scss */
++a:hover {
++  outline: 0 none !important;
++  color: #54585f;
++}
++/* line 103, ../scss/style.scss */
++a:focus {
++  color: #54585f;
++}
++/* line 106, ../scss/style.scss */
++a.white-link {
++  text-decoration: none;
++  color: #ffffff;
++  text-decoration: underline;
++}
++/* line 110, ../scss/style.scss */
++a.white-link:hover, a.white-link:focus {
++  color: #dbdedf;
++}
++
++/* line 116, ../scss/style.scss */
++#header a {
++  color: #54585f;
++}
++
++/* line 120, ../scss/style.scss */
++p a {
++  display: inline-block;
++  line-height: 1.25;
++}
++/* line 123, ../scss/style.scss */
++p a:hover {
++  transition: box-shadow .3s ease;
++  box-shadow: 0 2px 0 0 #cf1152;
++}
++
++/* line 131, ../scss/style.scss */
++#header a:hover, #header a:focus {
++  color: #cf1152;
++}
++/* line 135, ../scss/style.scss */
++#header span.active {
++  color: #cf1152;
++}
++
++/* line 140, ../scss/style.scss */
++.not-active {
++  color: #a9abaf;
++}
++
++/* line 144, ../scss/style.scss */
++p {
++  margin: 0.75em 0;
++  max-width: 640px;
++}
++
++/* line 149, ../scss/style.scss */
++ul {
++  margin: 0.75em 0;
++  max-width: 640px;
++  line-height: 2.5;
++}
++/* line 153, ../scss/style.scss */
++ul.liste {
++  list-style-type: disc;
++  list-style-position: inside;
++  margin-left: 0.25rem;
++  line-height: 1.5;
++  margin: 0;
++}
++
++/* line 162, ../scss/style.scss */
++b {
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  color: #cf1152;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.033rem;
++}
++
++/* line 171, ../scss/style.scss */
++strong {
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  color: #cf1152;
++}
++
++/* line 177, ../scss/style.scss */
++.uc {
++  letter-spacing: 0.033rem;
++  word-spacing: 0.033rem;
++  text-transform: uppercase;
++}
++
++/* line 183, ../scss/style.scss */
++.nb {
++  white-space: nowrap;
++}
++
++/* line 187, ../scss/style.scss */
++.ns {
++  letter-spacing: 0;
++  word-spacing: 0;
++}
++
++/* line 192, ../scss/style.scss */
++#signet {
++  height: 42px;
++  width: 23px;
++  padding-bottom: 2px;
++}
++
++/* line 198, ../scss/style.scss */
++#logo {
++  height: 77px;
++  width: 149px;
++  margin-top: 83px;
++  margin-bottom: 99px;
++  margin-left: -1px;
++}
++
++/* line 206, ../scss/style.scss */
++.btn {
++  box-sizing: border-box;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-size: 18px;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  padding: 17px 33px 15px;
++  border: none;
++  box-shadow: none;
++  border-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  margin-right: 0.5em;
++}
++
++/* line 222, ../scss/style.scss */
++.btn-small {
++  box-sizing: border-box;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-size: 18px;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  min-width: 180px;
++  padding: 17px 33px 15px;
++  border: none;
++  box-shadow: none;
++  border-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  margin-right: 0.5em;
++}
++
++/* line 239, ../scss/style.scss */
++input[type='file'] {
++  box-sizing: border-box;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-size: 18px;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  min-width: 180px;
++  padding: 17px 33px 15px;
++  border: none;
++  box-shadow: none;
++  border-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  margin-right: 0.5em;
++  padding: 0;
++}
++
++/* line 257, ../scss/style.scss */
++.btn-large {
++  box-sizing: border-box;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-size: 18px;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  min-width: 280px;
++  padding: 17px 33px 15px;
++  border: none;
++  box-shadow: none;
++  border-radius: 2px;
++  display: inline-block;
++  text-align: center;
++}
++
++/* line 273, ../scss/style.scss */
++.btn-red {
++  color: #fff;
++  background-color: #cf1152;
++}
++/* line 276, ../scss/style.scss */
++.btn-red:hover, .btn-red:focus {
++  color: #fff;
++  background-color: #54585f;
++}
++
++/* line 282, ../scss/style.scss */
++.btn-grey {
++  color: #54585f;
++  background-color: #dbdedf;
++}
++/* line 285, ../scss/style.scss */
++.btn-grey:hover, .btn-grey:focus, .btn-grey.active {
++  color: #fff;
++  background-color: #54585f;
++}
++
++/* line 291, ../scss/style.scss */
++[type="checkbox"], [type="radio"] {
++  margin-right: 5px;
++}
++
++/* line 295, ../scss/style.scss */
++.btn-group {
++  margin: 15px 0;
++  position: relative;
++}
++
++/* line 300, ../scss/style.scss */
++.ghost-btn-left {
++  box-sizing: border-box;
++  font-weight: normal;
++  font-size: 1.125rem;
++  color: #54585f;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #a9abaf;
++  border-top-left-radius: 2px;
++  border-bottom-left-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  min-width: 140px;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  padding: 10px 15px 8px 15px;
++  margin: 0;
++  background-color: #fff;
++}
++
++/* line 320, ../scss/style.scss */
++.ghost-btn-right {
++  box-sizing: border-box;
++  font-weight: normal;
++  font-size: 1.125rem;
++  color: #54585f;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #a9abaf;
++  border-top-right-radius: 2px;
++  border-bottom-right-radius: 2px;
++  border-left: none;
++  display: inline-block;
++  text-align: center;
++  min-width: 140px;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  padding: 10px 15px 8px 15px;
++  margin: 0;
++  background-color: #fff;
++}
++/* line 339, ../scss/style.scss */
++.ghost-btn-right:hover, .ghost-btn-right:focus {
++  border-color: #54585f;
++  background-color: #54585f;
++  color: #fff;
++}
++
++/* line 347, ../scss/style.scss */
++.ghost-btn-left:hover, .ghost-btn-left:focus {
++  border-color: #54585f;
++  background-color: #54585f;
++  color: #fff;
++}
++
++/* line 354, ../scss/style.scss */
++.ghost-btn-right.active, .ghost-btn-left.active, .down {
++  border-color: #54585f;
++  background-color: #54585f;
++  color: #fff;
++}
++
++/* line 361, ../scss/style.scss */
++.ghost-btn-right.passive:hover, .ghost-btn-right.passive:focus {
++  border-color: #54585f;
++  border-left: 1px solid #fff;
++  background-color: #54585f;
++  color: #fff;
++}
++
++/* line 370, ../scss/style.scss */
++.ghost-btn-left.passive:hover, .ghost-btn-left.passive:focus {
++  border-color: #54585f;
++  border-right-color: #fff;
++  background-color: #54585f;
++  color: #fff;
++}
++
++/* line 378, ../scss/style.scss */
++.x-large {
++  font-size: 1.375rem;
++}
++
++/* line 382, ../scss/style.scss */
++.large {
++  font-size: 1.125rem;
++}
++
++/* line 386, ../scss/style.scss */
++.small {
++  font-size: 0.875rem !important;
++}
++
++/* line 390, ../scss/style.scss */
++.x-small {
++  font-size: 0.75rem !important;
++}
++
++/* line 394, ../scss/style.scss */
++.normal {
++  font-family: "Avenir Next Pro";
++}
++
++/* line 398, ../scss/style.scss */
++.mb0 {
++  margin-bottom: 0px !important;
++}
++
++/* line 402, ../scss/style.scss */
++.mt0 {
++  margin-top: 0px !important;
++}
++
++/* line 406, ../scss/style.scss */
++.mb5 {
++  margin-bottom: 5px;
++}
++
++/* line 410, ../scss/style.scss */
++.mt5 {
++  margin-top: 5px;
++}
++
++/* line 414, ../scss/style.scss */
++.mb10 {
++  margin-bottom: 10px;
++}
++
++/* line 418, ../scss/style.scss */
++.mt10 {
++  margin-top: 10px;
++}
++
++/* line 422, ../scss/style.scss */
++.mb15 {
++  margin-bottom: 15px;
++}
++
++/* line 426, ../scss/style.scss */
++.mt15 {
++  margin-top: 15px;
++}
++
++/* line 430, ../scss/style.scss */
++.mb20 {
++  margin-bottom: 20px;
++}
++
++/* line 434, ../scss/style.scss */
++.mt20 {
++  margin-top: 20px;
++}
++
++/* line 438, ../scss/style.scss */
++.mb25 {
++  margin-bottom: 25px;
++}
++
++/* line 442, ../scss/style.scss */
++.mt25 {
++  margin-top: 25px;
++}
++
++/* line 446, ../scss/style.scss */
++.mb40 {
++  margin-bottom: 40px;
++}
++
++/* line 450, ../scss/style.scss */
++.mt40 {
++  margin-top: 40px;
++}
++
++/* line 454, ../scss/style.scss */
++.mb55 {
++  margin-bottom: 55px;
++}
++
++/* line 458, ../scss/style.scss */
++.mt55 {
++  margin-top: 55px;
++}
++
++/* line 462, ../scss/style.scss */
++.mb60 {
++  margin-bottom: 60px;
++}
++
++/* line 466, ../scss/style.scss */
++.mt60 {
++  margin-top: 60px;
++}
++
++/* line 470, ../scss/style.scss */
++.mb65 {
++  margin-bottom: 65px;
++}
++
++/* line 474, ../scss/style.scss */
++.mt65 {
++  margin-top: 65px;
++}
++
++/* line 478, ../scss/style.scss */
++.mb80 {
++  margin-bottom: 80px;
++}
++
++/* line 482, ../scss/style.scss */
++.mt80 {
++  margin-top: 80px;
++}
++
++/* line 486, ../scss/style.scss */
++.mw800 {
++  max-width: 800px;
++}
++
++/* line 490, ../scss/style.scss */
++.ml5 {
++  margin-left: 5px;
++}
++
++/* line 494, ../scss/style.scss */
++.mr5 {
++  margin-right: 5px;
++}
++
++/* line 498, ../scss/style.scss */
++.ml25 {
++  margin-left: 25px;
++}
++
++/* line 502, ../scss/style.scss */
++.mr25 {
++  margin-right: 25px;
++}
++
++/* line 506, ../scss/style.scss */
++.float-left {
++  float: left !important;
++}
++
++/* line 510, ../scss/style.scss */
++.float-right {
++  float: right !important;
++}
++
++/* line 514, ../scss/style.scss */
++.float-center {
++  display: block;
++  margin-right: auto;
++  margin-left: auto;
++}
++
++/* line 521, ../scss/style.scss */
++.clearfix::before {
++  display: table;
++  content: ' ';
++}
++/* line 525, ../scss/style.scss */
++.clearfix::after {
++  display: table;
++  content: ' ';
++  clear: both;
++}
++
++/* line 532, ../scss/style.scss */
++.w100 {
++  width: 100%;
++}
++
++/* line 536, ../scss/style.scss */
++.w200 {
++  width: 200px;
++}
++
++/* line 540, ../scss/style.scss */
++.align-center {
++  text-align: center;
++}
++
++/* line 544, ../scss/style.scss */
++.align-left {
++  text-align: left;
++}
++
++/* line 548, ../scss/style.scss */
++.align-right {
++  text-align: right;
++}
++
++/* line 552, ../scss/style.scss */
++.di {
++  display: inline;
++}
++
++/* line 556, ../scss/style.scss */
++.dn {
++  display: none;
++}
++
++/* line 560, ../scss/style.scss */
++.db {
++  display: block;
++}
++
++/* line 564, ../scss/style.scss */
++.dib {
++  display: inline-block;
++  display: inline-block;
++}
++
++/* line 569, ../scss/style.scss */
++.dt {
++  display: table;
++}
++
++/* line 573, ../scss/style.scss */
++.dtc {
++  display: table-cell;
++}
++
++/* line 577, ../scss/style.scss */
++.df {
++  display: flex;
++}
++
++/* line 581, ../scss/style.scss */
++.pr {
++  position: relative;
++}
++
++/* line 585, ../scss/style.scss */
++.lh1 {
++  line-height: 1;
++}
++
++/* structural */
++/* line 591, ../scss/style.scss */
++#page-wrap {
++  min-height: 100%;
++  margin-bottom: -53px;
++}
++/* line 594, ../scss/style.scss */
++#page-wrap:after {
++  content: "";
++  display: block;
++  height: 52px;
++}
++
++/* line 601, ../scss/style.scss */
++#main {
++  box-sizing: border-box;
++  max-width: 1320px;
++  margin: 1em auto;
++  padding: 0 120px;
++}
++
++/* line 608, ../scss/style.scss */
++#not_supported {
++  box-sizing: border-box;
++  max-width: 1320px;
++  margin: 1em auto;
++  padding: 0 120px;
++  display: none;
++}
++
++/* line 616, ../scss/style.scss */
++#header {
++  height: 69px;
++  border-bottom: 1px solid #eaeaea;
++  line-height: 72px;
++  font-size: 0.875rem;
++  padding: 0 25px;
++  word-spacing: 0.025rem;
++  overflow: hidden;
++}
++
++/* line 626, ../scss/style.scss */
++#header2 {
++  height: 135px;
++  background-color: #f7f7f8;
++  border-bottom: 1px solid #eaeaea;
++}
++
++/* line 632, ../scss/style.scss */
++#footer {
++  height: 51px;
++  border-top: 1px solid #ddd;
++  line-height: 51px;
++  font-size: 0.75rem;
++  padding: 0 25px;
++  word-spacing: 0.033rem;
++  /*text-align: center;*/
++}
++
++/* line 642, ../scss/style.scss */
++.row-left {
++  width: 520px;
++  float: left;
++  box-sizing: border-box;
++  padding-right: 40px;
++}
++
++/* line 649, ../scss/style.scss */
++.row-right {
++  width: 280px;
++  float: left;
++  box-sizing: border-box;
++}
++
++/* line 655, ../scss/style.scss */
++.col-left {
++  width: 440px;
++  float: left;
++  box-sizing: border-box;
++}
++
++/* line 661, ../scss/style.scss */
++.col-right {
++  width: 480px;
++  float: left;
++  box-sizing: border-box;
++}
++
++/* line 667, ../scss/style.scss */
++.thumbnail {
++  width: 400px;
++  height: 266px;
++  background-color: #777777;
++  margin-right: 12px;
++  margin-bottom: 8px;
++  float: left;
++  margin-top: 5px;
++}
++
++/* scanline */
++/* line 679, ../scss/style.scss */
++#scanline {
++  display: table;
++  width: 100%;
++  max-width: 1232px;
++  margin: 0 auto;
++}
++/* line 685, ../scss/style.scss */
++#scanline > div, #scanline > a {
++  position: relative;
++  display: table-cell;
++  text-align: center;
++  /* vertical-align: middle; */
++}
++/* line 692, ../scss/style.scss */
++#scanline .circle {
++  position: relative;
++  z-index: 2;
++  width: 49px;
++  height: 49px;
++  font-size: 0.875rem;
++  line-height: 50px;
++  margin: 30px auto 0;
++  border-radius: 50px;
++  background-color: #f7f7f8;
++  border: 1px solid #a9abaf;
++  padding-left: 1px;
++  padding-top: 1px;
++}
++/* line 708, ../scss/style.scss */
++#scanline > div::before, #scanline > div::after, #scanline > div.active > .progress {
++  content: '';
++  position: absolute;
++  z-index: 1;
++  display: block;
++  width: 50%;
++  top: 56px;
++  left: 50%;
++  border-bottom: 1px solid #bdbfc1;
++}
++/* line 719, ../scss/style.scss */
++#scanline > a.done > .progress {
++  content: '';
++  position: absolute;
++  z-index: 1;
++  display: block;
++  width: 50%;
++  top: 56px;
++  left: 50%;
++  border-bottom: 1px solid #bdbfc1;
++}
++/* line 730, ../scss/style.scss */
++#scanline > div#step_1 {
++  z-index: 10;
++}
++/* line 733, ../scss/style.scss */
++#scanline > div#step_2 {
++  z-index: 11;
++}
++/* line 736, ../scss/style.scss */
++#scanline > div#step_3 {
++  z-index: 12;
++}
++/* line 739, ../scss/style.scss */
++#scanline > div#step_4 {
++  z-index: 13;
++}
++/* line 745, ../scss/style.scss */
++#scanline div.active .typo {
++  color: #cf1152;
++}
++/* line 748, ../scss/style.scss */
++#scanline div.active .circle {
++  color: #fff;
++}
++/* line 752, ../scss/style.scss */
++#scanline a.done .circle {
++  color: transparent;
++  background-image: url("../img/checkmark.svg");
++  background-position: center center;
++  background-size: 50%;
++  background-repeat: no-repeat;
++}
++/* line 761, ../scss/style.scss */
++#scanline > div.active > .circle, #scanline > div.active > .progress {
++  z-index: 2;
++  border-color: #cf1152;
++  background-color: #cf1152;
++}
++/* line 769, ../scss/style.scss */
++#scanline > a.done > .circle, #scanline > a.done > .progress {
++  z-index: 2;
++  border-color: #cf1152;
++  background-color: #cf1152;
++}
++/* line 776, ../scss/style.scss */
++#scanline > a.done:hover > .typo {
++  color: #54585f;
++}
++/* line 779, ../scss/style.scss */
++#scanline > a.done:hover > .circle {
++  border-color: #54585f;
++  background-color: #54585f;
++}
++/* line 786, ../scss/style.scss */
++#scanline > div::before {
++  left: 0;
++  right: 50%;
++}
++/* line 790, ../scss/style.scss */
++#scanline > div:first-child::before, #scanline > div:last-child::after, #scanline > div.active::before {
++  display: none;
++}
++/* line 795, ../scss/style.scss */
++#scanline .typo {
++  font-family: "Avenir Next Pro","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-size: 0.875rem;
++  letter-spacing: 0.02rem;
++  word-spacing: 0.02rem;
++  text-transform: uppercase;
++  margin: 10px auto;
++  width: 200px;
++  color: #54585f;
++}
++/* line 805, ../scss/style.scss */
++#scanline .done .typo {
++  color: #cf1152;
++}
++
++/* line 810, ../scss/style.scss */
++#scanline-2 {
++  margin: 80px 0 40px 0;
++}
++/* line 813, ../scss/style.scss */
++#scanline-2 > a, #scanline-2 > span {
++  display: inline-block;
++  margin-right: 2.5em;
++  margin-bottom: 1em;
++  line-height: 1;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 0.875rem;
++  color: #a9abaf;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.033rem;
++  height: 20px;
++  padding: 0;
++  border-bottom: none;
++}
++/* line 829, ../scss/style.scss */
++#scanline-2 > a.done {
++  color: #54585f;
++}
++/* line 831, ../scss/style.scss */
++#scanline-2 > a.done:hover {
++  color: #cf1152;
++}
++/* line 835, ../scss/style.scss */
++#scanline-2 > span.active {
++  color: #cf1152;
++  border-bottom: 1px solid #cf1152;
++}
++
++/* line 842, ../scss/style.scss */
++a.overview.item {
++  box-sizing: border-box;
++  border-bottom: 1px solid #a9abaf;
++  padding: 14px 15px 12px 0px;
++  margin: 0;
++  background-image: url("../img/arrow-down_hover.svg");
++  background-position: right 1em;
++  background-size: 2em 1em;
++  background-repeat: no-repeat;
++  display: block;
++  color: #54585f;
++  cursor: pointer;
++}
++/* line 854, ../scss/style.scss */
++a.overview.item:hover {
++  background-image: url("../img/arrow-down_.svg");
++}
++/* line 857, ../scss/style.scss */
++a.overview.item.open {
++  background-image: url("../img/arrow-up_hover.svg");
++}
++/* line 859, ../scss/style.scss */
++a.overview.item.open:hover {
++  background-image: url("../img/arrow-up_.svg");
++}
++
++/* line 865, ../scss/style.scss */
++h2.overview {
++  box-sizing: border-box;
++  border-bottom: 1px solid #a9abaf;
++  padding: 0 0 8px 0;
++  margin-bottom: 0;
++  max-width: none;
++}
++
++/* line 873, ../scss/style.scss */
++a.overview.edit {
++  margin: 1.25em 0;
++  line-height: 1.2;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 0.875rem;
++  /*color: #54585f;*/
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.033rem;
++  box-sizing: border-box;
++  padding: 0;
++  border: none;
++  box-sizing: border-box;
++  display: inline-block;
++}
++/* line 888, ../scss/style.scss */
++a.overview.edit:hover {
++  /*color: #cf1152;*/
++}
++
++/* line 893, ../scss/style.scss */
++.item-info {
++  margin-top: 20px;
++  margin-bottom: 20px;
++  width: 90%;
++  max-width: 720px;
++  display: none;
++}
++
++/* lightbox */
++/* line 903, ../scss/style.scss */
++.difuse {
++  opacity: 0.33;
++}
++
++/* line 907, ../scss/style.scss */
++div.lightbox {
++  box-sizing: border-box;
++  padding-top: 100px;
++  padding-left: 50px;
++  padding-right: 50px;
++  position: fixed;
++  top: 50%;
++  left: 50%;
++  width: 100%;
++  height: 10%;
++  max-width: 700px;
++  min-width: 420px;
++  min-height: 420px;
++  transform: translate(-50%, -50%);
++  -webkit-transform: translate(-50%, -50%);
++  -moz-transform: translate(-50%, -50%);
++  -o-transform: translate(-50%, -50%);
++  -ms-transform: translate(-50%, -50%);
++  background-color: #54585f;
++  color: #fff;
++  text-align: center;
++  border-radius: 2px;
++}
++
++/* line 932, ../scss/style.scss */
++.lightbox h2 {
++  color: #fff;
++}
++/* line 936, ../scss/style.scss */
++.lightbox .ghost-btn-right:hover, .lightbox .ghost-btn-right:focus {
++  border-color: #cf1152;
++  background-color: #cf1152;
++  color: #fff;
++}
++/* line 943, ../scss/style.scss */
++.lightbox .ghost-btn-left:hover, .lightbox .ghost-btn-left:focus {
++  border-color: #cf1152;
++  background-color: #cf1152;
++  color: #fff;
++}
++
++/* line 951, ../scss/style.scss */
++a.close {
++  position: absolute;
++  top: 25px;
++  right: 25px;
++  width: 32px;
++  height: 32px;
++  background-image: url("../img/close_white.svg");
++  background-position: center center;
++  background-size: 100%;
++  background-repeat: no-repeat;
++}
++/* line 961, ../scss/style.scss */
++a.close:hover {
++  background-image: url("../img/close_hover2.svg");
++  background-position: center center;
++  background-size: 100%;
++  background-repeat: no-repeat;
++}
++
++/* tables */
++/* line 971, ../scss/style.scss */
++table {
++  width: 100%;
++  box-sizing: border-box;
++  border-bottom: 1px solid #a9abaf;
++}
++
++/* line 977, ../scss/style.scss */
++td {
++  padding-right: 30px;
++  padding-top: 10px;
++}
++
++/* line 982, ../scss/style.scss */
++tr:last-child > td {
++  padding-bottom: 10px;
++}
++
++/* line 987, ../scss/style.scss */
++td.left-col {
++  width: 33%;
++}
++
++/* forms */
++/* line 995, ../scss/style.scss */
++#main form {
++  margin-top: 50px;
++}
++
++/* line 1000, ../scss/style.scss */
++form h2 {
++  max-width: 560px;
++  margin: 0 0 0.75em 0;
++}
++/* line 1004, ../scss/style.scss */
++form h3 {
++  max-width: 560px;
++  margin: 0 0 1.25em 0;
++}
++/* line 1008, ../scss/style.scss */
++form p {
++  max-width: 560px;
++  margin: 0 0 0.75em 0;
++}
++
++/* line 1014, ../scss/style.scss */
++textarea {
++  height: auto;
++  min-height: 100px;
++  height: 180px;
++}
++
++/* line 1020, ../scss/style.scss */
++.label {
++  font-family: "Avenir Next Pro Medium","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 1.375rem;
++  color: #54585f;
++  display: block;
++}
++
++/* line 1028, ../scss/style.scss */
++input, textarea {
++  font-family: "Avenir Next Pro","Helvetica Neue",Roboto,Arial,sans-serif;
++}
++
++/* line 1032, ../scss/style.scss */
++select {
++  font-family: "Avenir Next Pro","Helvetica Neue",Roboto,Arial,sans-serif;
++  -webkit-appearance: none !important;
++  -moz-appearance: none !important;
++  appearance: none !important;
++}
++/* line 1037, ../scss/style.scss */
++select::-ms-expand {
++  display: none;
++}
++/* line 1040, ../scss/style.scss */
++select:focus {
++  outline: none !important;
++}
++
++/* line 1045, ../scss/style.scss */
++:focus {
++  outline: none;
++}
++
++/* line 1049, ../scss/style.scss */
++::-moz-focus-inner {
++  border: 0;
++}
++
++/* line 1053, ../scss/style.scss */
++select:-moz-focusring {
++  color: transparent;
++  text-shadow: 0 0 0 #000;
++}
++
++/* line 1058, ../scss/style.scss */
++option {
++  background: #fff;
++  border-top: 1px solid #eaeaea;
++  padding: 0.25rem 0.25rem 0.25rem 1rem;
++  color: #54585f !important;
++}
++
++/* line 1065, ../scss/style.scss */
++.hinweis {
++  font-size: 0.875em;
++  padding-left: 1.25rem;
++  padding-top: 0px;
++}
++
++/* line 1071, ../scss/style.scss */
++.optional {
++  font-size: 1.25em;
++  opacity: 0.3;
++  top: 1.1rem;
++  right: 0.75rem;
++  position: absolute;
++}
++
++/* line 1079, ../scss/style.scss */
++.alert .hinweis {
++  color: #cf1152;
++}
++
++/* line 1084, ../scss/style.scss */
++form input[type='checkbox'], form input[type='radio'] {
++  display: none;
++}
++
++/* line 1090, ../scss/style.scss */
++input[type='checkbox'] + label, input[type='radio'] + label {
++  cursor: pointer;
++}
++
++/* line 1096, ../scss/style.scss */
++label + input[type='checkbox'], label + input[type='radio'] {
++  cursor: pointer;
++}
++
++/* line 1101, ../scss/style.scss */
++.box {
++  box-sizing: border-box;
++  padding: 6px 6px;
++  width: 26px;
++  height: 26px;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #a9abaf;
++  border-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  margin-right: 0.5em;
++  vertical-align: middle;
++  margin-top: -5px;
++}
++
++/* line 1117, ../scss/style.scss */
++.inline-box {
++  box-sizing: border-box;
++  width: 12px;
++  height: 12px;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #54585f;
++  border-radius: 2px;
++  background-color: #54585f;
++  margin: 0;
++  display: none;
++}
++
++/* line 1130, ../scss/style.scss */
++.box-small {
++  box-sizing: border-box;
++  padding: 3px 3px;
++  width: 14px;
++  height: 14px;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #a9abaf;
++  border-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  margin-right: 0.5em;
++  vertical-align: middle;
++  margin-top: -5px;
++}
++
++/* line 1146, ../scss/style.scss */
++.inline-box-small {
++  box-sizing: border-box;
++  width: 6px;
++  height: 6px;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #54585f;
++  border-radius: 2px;
++  background-color: #54585f;
++  margin: 0;
++  display: none;
++}
++
++/* line 1159, ../scss/style.scss */
++.cir {
++  box-sizing: border-box;
++  padding: 6px 6px;
++  width: 26px;
++  height: 26px;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #a9abaf;
++  border-radius: 26px;
++  display: inline-block;
++  text-align: center;
++  margin-right: 0.5em;
++  vertical-align: middle;
++  margin-top: -5px;
++}
++
++/* line 1175, ../scss/style.scss */
++.inline-cir {
++  box-sizing: border-box;
++  width: 12px;
++  height: 12px;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #54585f;
++  border-radius: 12px;
++  background-color: #54585f;
++  margin: 0;
++  display: none;
++}
++
++/* line 1189, ../scss/style.scss */
++input[type="radio"]:checked + label > .cir > .inline-cir {
++  display: block;
++}
++/* line 1193, ../scss/style.scss */
++input[type="checkbox"]:checked + label > .box > .inline-box, input[type="checkbox"]:checked + label > .box-small > .inline-box-small {
++  display: block;
++}
++
++/* line 1199, ../scss/style.scss */
++.file-icon {
++  padding-left: 32px;
++  background-image: url("../img/antrag.svg");
++  background-position: center left;
++  background-size: 24px 24px;
++  background-repeat: no-repeat;
++  height: 24px;
++  display: block;
++  box-shadow: unset !important;
++}
++/* line 1208, ../scss/style.scss */
++.file-icon:hover {
++  background-image: url("../img/antrag_.svg");
++}
++
++/* line 1213, ../scss/style.scss */
++.form-icon {
++  box-sizing: border-box;
++  width: 23px;
++  height: 23px;
++  border-radius: 23px;
++  margin: 0;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  text-align: center;
++  font-size: 1rem !important;
++}
++
++/* line 1224, ../scss/style.scss */
++.has-float-label > .form-icon {
++  position: absolute;
++  left: -2.75rem;
++  top: 1.2rem;
++}
++
++/* line 1230, ../scss/style.scss */
++.btn-group > .form-icon, p > .form-icon {
++  position: absolute;
++  left: -2.75rem;
++  top: 3px;
++}
++
++/* line 1236, ../scss/style.scss */
++.btn-group > h3 + .form-icon {
++  position: absolute;
++  left: -2.75rem;
++  top: -4px;
++}
++
++/* line 1242, ../scss/style.scss */
++.tooltip {
++  position: absolute;
++  background-color: #54585f;
++  color: #fff;
++  border-radius: 16px;
++  padding: 17px 33px 16px;
++  left: 580px;
++  top: -25px;
++  width: 430px;
++}
++/* line 1251, ../scss/style.scss */
++.tooltip::before {
++  border-color: transparent #54585f transparent transparent;
++  border-style: solid;
++  border-width: 10px;
++  content: " ";
++  display: block;
++  height: 0;
++  width: 0;
++  left: -19px;
++  position: absolute;
++  top: calc(50% - 10px);
++}
++/* line 1263, ../scss/style.scss */
++.tooltip h3 {
++  color: #fff;
++  margin-bottom: 0.5rem;
++  font-size: 1em;
++}
++
++/* line 1270, ../scss/style.scss */
++#zvk, #nfc {
++  margin-left: 80px;
++  display: none;
++}
++
++/*
++#zvk .form-icon {
++    position: static;
++    display: inline-block;
++    vertical-align: text-bottom;
++    margin-left: 0.33em;
++}
++
++#zvk label{
++    display: inline-block;
++}
++*/
++/* line 1288, ../scss/style.scss */
++#zvk .btn-group {
++  margin: 0;
++}
++
++/* sky */
++/* line 1294, ../scss/style.scss */
++#sky {
++  position: absolute;
++  top: 70px;
++  width: 100%;
++  -webkit-animation: FadeIn 3s ease-out;
++  animation: FadeIn 3s ease-out;
++  -webkit-user-select: none;
++  -moz-user-select: none;
++  -ms-user-select: none;
++  user-select: none;
++  overflow: hidden;
++  height: 640px;
++  display: none;
++}
++
++/* line 1309, ../scss/style.scss */
++#cloud1 {
++  height: 100px;
++  position: absolute;
++  top: 230px;
++  left: 85%;
++}
++
++/* line 1316, ../scss/style.scss */
++#cloud2 {
++  height: 80px;
++  position: absolute;
++  left: 20%;
++  top: 420px;
++}
++
++/* line 1323, ../scss/style.scss */
++#cloud3 {
++  height: 100px;
++  position: absolute;
++  left: 800px;
++  top: 100px;
++}
++
++/* line 1330, ../scss/style.scss */
++#cloud4 {
++  height: 160px;
++  position: absolute;
++  right: 90%;
++  top: 40px;
++}
++
++/* line 1337, ../scss/style.scss */
++#bird1 {
++  height: 56px;
++  width: 28px;
++  z-index: 2;
++  position: absolute;
++  left: calc(15% - 145px);
++  top: 100px;
++  display: none;
++}
++
++/* line 1347, ../scss/style.scss */
++#bird2 {
++  height: 30px;
++  z-index: 2;
++  position: absolute;
++  right: 15%;
++  top: 500px;
++  display: none;
++}
++
++/* line 1356, ../scss/style.scss */
++#bird3 {
++  height: 56px;
++  width: 28px;
++  z-index: 2;
++  position: absolute;
++  top: 25px;
++  right: 33%;
++}
++
++/* line 1365, ../scss/style.scss */
++#cloud1, #cloud2, #cloud3, #cloud4 {
++  display: none;
++}
++
++/* responsive behavior */
++@media screen and (max-width: 1400px) {
++  /* line 1372, ../scss/style.scss */
++  #bird1 {
++    display: none;
++  }
++}
++@media screen and (max-width: 1200px) {
++  /* line 1378, ../scss/style.scss */
++  .tooltip {
++    width: 300px;
++  }
++
++  /* line 1381, ../scss/style.scss */
++  td.left-col {
++    width: 40%;
++  }
++
++  /* line 1384, ../scss/style.scss */
++  #bird2 {
++    top: 500px;
++  }
++}
++@media screen and (max-width: 1080px) {
++  /* line 1390, ../scss/style.scss */
++  .tooltip {
++    left: 0px;
++    width: 430px;
++  }
++
++  /* line 1394, ../scss/style.scss */
++  td.left-col {
++    width: 50%;
++  }
++
++  /* line 1397, ../scss/style.scss */
++  #header2 {
++    height: 125px;
++  }
++
++  /* line 1401, ../scss/style.scss */
++  #scanline .typo {
++    width: 100px;
++    line-height: 1.25;
++    font-size: 0.75em;
++  }
++  /* line 1406, ../scss/style.scss */
++  #scanline .circle {
++    margin: 20px auto 0;
++  }
++  /* line 1411, ../scss/style.scss */
++  #scanline > div::before, #scanline > div::after, #scanline > div.active > .progress {
++    top: 45px;
++  }
++  /* line 1415, ../scss/style.scss */
++  #scanline > a.done > .progress {
++    top: 45px;
++  }
++
++  /* line 1420, ../scss/style.scss */
++  h1 {
++    font-size: 3em;
++    line-height: 1.25;
++  }
++  /* line 1423, ../scss/style.scss */
++  h1.large {
++    font-size: 7em;
++    margin-left: -8.8px;
++  }
++
++  /* line 1428, ../scss/style.scss */
++  #logo {
++    margin-top: 63px;
++    margin-bottom: 79px;
++  }
++
++  /* line 1432, ../scss/style.scss */
++  p, ul {
++    line-height: 1.5;
++  }
++
++  /* line 1435, ../scss/style.scss */
++  #main {
++    padding: 0 80px;
++  }
++}
++@media screen and (max-width: 719px) {
++  /* line 1441, ../scss/style.scss */
++  #sky {
++    display: block;
++  }
++
++  /* line 1444, ../scss/style.scss */
++  #cloud1, #cloud2, #cloud3 {
++    display: block;
++    -webkit-animation-duration: 120s;
++    animation-duration: 120s;
++    -webkit-animation-iteration-count: infinite;
++    animation-iteration-count: infinite;
++    -webkit-animation-fill-mode: forwards;
++    animation-fill-mode: forwards;
++    -webkit-animation-timing-function: linear;
++    animation-timing-function: linear;
++    -webkit-animation-name: Float, FadeFloat;
++    animation-name: Float, FadeFloat;
++  }
++
++  /* line 1457, ../scss/style.scss */
++  #cloud4 {
++    display: block;
++    -webkit-animation-duration: 120s;
++    animation-duration: 120s;
++    -webkit-animation-iteration-count: infinite;
++    animation-iteration-count: infinite;
++    -webkit-animation-fill-mode: forwards;
++    animation-fill-mode: forwards;
++    -webkit-animation-timing-function: linear;
++    animation-timing-function: linear;
++    -webkit-animation-name: Float, FadeFloat;
++    animation-name: Float, FadeFloat;
++    height: 160px;
++    position: absolute;
++    right: 60%;
++    top: 50px;
++  }
++
++  @-webkit-keyframes Float {
++    from {
++      -webkit-transform: translateX(100%) translateZ(0);
++      transform: translateX(100%) translateZ(0);
++    }
++    to {
++      -webkit-transform: translateX(-300%) translateZ(0);
++      transform: translateX(-300%) translateZ(0);
++    }
++  }
++  @keyframes Float {
++    from {
++      -webkit-transform: translateX(100%) translateZ(0);
++      transform: translateX(100%) translateZ(0);
++    }
++    to {
++      -webkit-transform: translateX(-300%) translateZ(0);
++      transform: translateX(-300%) translateZ(0);
++    }
++  }
++  /* line 1498, ../scss/style.scss */
++  #bird2 {
++    display: block;
++    height: 30px;
++    right: 12.5%;
++    top: 120px;
++  }
++
++  /* line 1504, ../scss/style.scss */
++  #bird3, #main, #header, #header2, #footer, #scanline {
++    display: none;
++  }
++
++  /* line 1507, ../scss/style.scss */
++  #not_supported {
++    display: block;
++    margin-bottom: 50px;
++    padding: 0 40px;
++    position: relative;
++    z-index: 3;
++  }
++
++  /* line 1514, ../scss/style.scss */
++  #logo {
++    margin-top: 43px;
++    margin-bottom: 46px;
++    margin-left: -1px;
++  }
++
++  /* line 1519, ../scss/style.scss */
++  p, ul {
++    font-size: 0.875;
++    line-height: 1.4;
++  }
++
++  /* line 1523, ../scss/style.scss */
++  h1.large {
++    font-size: 6em;
++    margin-left: -7px;
++    line-height: 1.2;
++  }
++
++  /* line 1528, ../scss/style.scss */
++  h2 {
++    font-size: 1em;
++  }
++}
++@media screen and (max-width: 480px) {
++  /* line 1534, ../scss/style.scss */
++  h1.large {
++    font-size: 4.5em;
++    margin-left: -5.5px;
++    line-height: 1.2;
++    letter-spacing: -0.025rem;
++  }
++}
+Index: webContent/resources/css/abs-sob.css
+===================================================================
+--- webContent/resources/css/abs-sob.css	(revision 153996)
++++ webContent/resources/css/abs-sob.css	(working copy)
+@@ -1,71 +1,1765 @@
+-@CHARSET "UTF-8";
++/* general */
++/* line 3, ../scss/style.scss */
++* {
++  margin: 0;
++}
+ 
+-.has-float-label .ui-outputlabel {
+-	color: inherit;
++/* line 7, ../scss/style.scss */
++html {
++  height: 100%;
+ }
+ 
+-.ui-widget-overlay {
+-    background: #ffffff;
+-    opacity: .33;
++/* line 11, ../scss/style.scss */
++div#mfPreviewBarShow {
++  top: -50px !important;
+ }
+ 
++/* line 15, ../scss/style.scss */
++body {
++  font-family: "Avenir Next Pro Medium","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 1em;
++  line-height: 1.5;
++  color: #54585f;
++  -webkit-font-smoothing: antialiased;
++  -moz-osx-font-smoothing: grayscale;
++  height: 100%;
++}
++
++/* line 26, ../scss/style.scss */
++.top-17 {
++  height: calc(100% - 17px);
++}
++
++/* line 30, ../scss/style.scss */
++img {
++  display: inline-block;
++  vertical-align: middle;
++  max-width: 100%;
++  height: auto;
++  -ms-interpolation-mode: bicubic;
++}
++
++/* line 38, ../scss/style.scss */
++h1 {
++  font-family: "Avenir Next Pro Light","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 4em;
++  line-height: 1.2;
++  color: #cf1152;
++  letter-spacing: -0.5px;
++  word-spacing: 0.125rem;
++  margin: 15px 0;
++  margin-left: -4px;
++}
++/* line 48, ../scss/style.scss */
++h1.large {
++  font-size: 8em;
++  margin: 0;
++  margin-left: -10px;
++  line-height: 0.8;
++  letter-spacing: -0.5px;
++}
++
++/* line 57, ../scss/style.scss */
++h2 {
++  margin: 0;
++  max-width: 720px;
++  line-height: 1.2;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 1.375rem;
++  color: #54585f;
++}
++
++/* line 67, ../scss/style.scss */
++h3 {
++  margin: 1.25em 0;
++  max-width: 640px;
++  line-height: 1.2;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 0.875rem;
++  color: #cf1152;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.033rem;
++}
++
++/* line 80, ../scss/style.scss */
++h4 {
++  font-family: "Avenir Next Pro Light","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 2em;
++  line-height: 1.2;
++  color: #cf1152;
++  letter-spacing: -0.5px;
++  word-spacing: -1px;
++  margin: 15px 0;
++  margin-left: -2px;
++}
++
++/* line 92, ../scss/style.scss */
++a {
++  outline: 0 none !important;
++  text-decoration: none;
++  color: #cf1152;
++}
++/* line 94, ../scss/style.scss */
++a:visited, a:focus, a:active {
++  outline: 0 none !important;
++}
++/* line 97, ../scss/style.scss */
++a:hover {
++  outline: 0 none !important;
++  color: #54585f;
++}
++/* line 103, ../scss/style.scss */
++a:focus {
++  color: #54585f;
++}
++/* line 106, ../scss/style.scss */
++a.white-link {
++  text-decoration: none;
++  color: #ffffff;
++  text-decoration: underline;
++}
++/* line 110, ../scss/style.scss */
++a.white-link:hover, a.white-link:focus {
++  color: #dbdedf;
++}
++
++/* line 116, ../scss/style.scss */
++#header a {
++  color: #54585f;
++}
++
++/* line 120, ../scss/style.scss */
++p a {
++  display: inline-block;
++  line-height: 1.25;
++}
++/* line 123, ../scss/style.scss */
++p a:hover {
++  transition: box-shadow .3s ease;
++  box-shadow: 0 2px 0 0 #cf1152;
++}
++
++/* line 131, ../scss/style.scss */
++#header a:hover, #header a:focus {
++  color: #cf1152;
++}
++/* line 135, ../scss/style.scss */
++#header span.active {
++  color: #cf1152;
++}
++
++/* line 140, ../scss/style.scss */
++.not-active {
++  color: #a9abaf;
++}
++
++/* line 144, ../scss/style.scss */
++p {
++  margin: 0.75em 0;
++  max-width: 640px;
++}
++
++/* line 149, ../scss/style.scss */
++ul {
++  margin: 0.75em 0;
++  max-width: 640px;
++  line-height: 2.5;
++}
++/* line 153, ../scss/style.scss */
++ul.liste {
++  list-style-type: disc;
++  list-style-position: inside;
++  margin-left: 0.25rem;
++  line-height: 1.5;
++  margin: 0;
++}
++
++/* line 162, ../scss/style.scss */
++b {
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  color: #cf1152;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.033rem;
++}
++
++/* line 171, ../scss/style.scss */
++strong {
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  color: #cf1152;
++}
++
++/* line 177, ../scss/style.scss */
++.uc {
++  letter-spacing: 0.033rem;
++  word-spacing: 0.033rem;
++  text-transform: uppercase;
++}
++
++/* line 183, ../scss/style.scss */
++.nb {
++  white-space: nowrap;
++}
++
++/* line 187, ../scss/style.scss */
++.ns {
++  letter-spacing: 0;
++  word-spacing: 0;
++}
++
++/* line 192, ../scss/style.scss */
++#signet {
++  height: 42px;
++  width: 23px;
++  padding-bottom: 2px;
++}
++
++/* line 198, ../scss/style.scss */
++#logo, body.abs #form\:logo {
++  height: 77px;
++  width: 149px;
++  margin-top: 83px;
++  margin-bottom: 99px;
++  margin-left: -1px;
++}
++
++/* line 206, ../scss/style.scss */
++.btn {
++  box-sizing: border-box;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-size: 18px;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  padding: 17px 33px 15px;
++  border: none;
++  box-shadow: none;
++  border-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  margin-right: 0.5em;
++}
++
++/* line 222, ../scss/style.scss */
++.btn-small {
++  box-sizing: border-box;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-size: 18px;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  min-width: 180px;
++  padding: 17px 33px 15px;
++  border: none;
++  box-shadow: none;
++  border-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  margin-right: 0.5em;
++}
++
++/* line 239, ../scss/style.scss */
++input[type='file'] {
++  box-sizing: border-box;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-size: 18px;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  min-width: 180px;
++  padding: 17px 33px 15px;
++  border: none;
++  box-shadow: none;
++  border-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  margin-right: 0.5em;
++  padding: 0;
++}
++
++/* line 257, ../scss/style.scss */
++.btn-large {
++  box-sizing: border-box;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-size: 18px;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  min-width: 280px;
++  padding: 17px 33px 15px;
++  border: none;
++  box-shadow: none;
++  border-radius: 2px;
++  display: inline-block;
++  text-align: center;
++}
++
++/* line 273, ../scss/style.scss */
++.btn-red {
++  color: #fff;
++  background-color: #cf1152;
++}
++/* line 276, ../scss/style.scss */
++.btn-red:hover, .btn-red:focus {
++  color: #fff;
++  background-color: #54585f;
++}
++
++/* line 282, ../scss/style.scss */
++.btn-grey {
++  color: #54585f;
++  background-color: #dbdedf;
++}
++/* line 285, ../scss/style.scss */
++.btn-grey:hover, .btn-grey:focus, .btn-grey.active {
++  color: #fff;
++  background-color: #54585f;
++}
++
++/* line 291, ../scss/style.scss */
++[type="checkbox"], [type="radio"] {
++  margin-right: 5px;
++}
++
++/* line 295, ../scss/style.scss */
++.btn-group {
++  margin: 15px 0;
++  position: relative;
++}
++
++/* line 300, ../scss/style.scss */
++.ghost-btn-left {
++  box-sizing: border-box;
++  font-weight: normal;
++  font-size: 1.125rem;
++  color: #54585f;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #a9abaf;
++  border-top-left-radius: 2px;
++  border-bottom-left-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  min-width: 140px;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  padding: 10px 15px 8px 15px;
++  margin: 0;
++  background-color: #fff;
++}
++
++/* line 320, ../scss/style.scss */
+ .ghost-btn-right {
+-    box-sizing: border-box;
+-    font-weight: normal;
+-    font-size: 1.125rem;
+-    color: #54585f !important;
+-    border-style: solid;
+-    border-width: 1px;
+-    border-color: #a9abaf;
+-    border-top-right-radius: 2px;
+-    border-bottom-right-radius: 2px;
+-    border-left: none;
++  box-sizing: border-box;
++  font-weight: normal;
++  font-size: 1.125rem;
++  color: #54585f;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #a9abaf;
++  border-top-right-radius: 2px;
++  border-bottom-right-radius: 2px;
++  border-left: none;
++  display: inline-block;
++  text-align: center;
++  min-width: 140px;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  padding: 10px 15px 8px 15px;
++  margin: 0;
++  background-color: #fff;
++}
++/* line 339, ../scss/style.scss */
++.ghost-btn-right:hover, .ghost-btn-right:focus {
++  border-color: #54585f;
++  background-color: #54585f;
++  color: #fff;
++}
++
++/* line 347, ../scss/style.scss */
++.ghost-btn-left:hover, .ghost-btn-left:focus {
++  border-color: #54585f;
++  background-color: #54585f;
++  color: #fff;
++}
++
++/* line 354, ../scss/style.scss */
++.ghost-btn-right.active, .ghost-btn-left.active, .down {
++  border-color: #54585f;
++  background-color: #54585f;
++  color: #fff;
++}
++
++/* line 361, ../scss/style.scss */
++.ghost-btn-right.passive:hover, .ghost-btn-right.passive:focus {
++  border-color: #54585f;
++  border-left: 1px solid #fff;
++  background-color: #54585f;
++  color: #fff;
++}
++
++/* line 370, ../scss/style.scss */
++.ghost-btn-left.passive:hover, .ghost-btn-left.passive:focus {
++  border-color: #54585f;
++  border-right-color: #fff;
++  background-color: #54585f;
++  color: #fff;
++}
++
++/* line 378, ../scss/style.scss */
++.x-large {
++  font-size: 1.375rem;
++}
++
++/* line 382, ../scss/style.scss */
++.large {
++  font-size: 1.125rem;
++}
++
++/* line 386, ../scss/style.scss */
++.small {
++  font-size: 0.875rem !important;
++}
++
++/* line 390, ../scss/style.scss */
++.x-small {
++  font-size: 0.75rem !important;
++}
++
++/* line 394, ../scss/style.scss */
++.normal {
++  font-family: "Avenir Next Pro";
++}
++
++/* line 398, ../scss/style.scss */
++.mb0 {
++  margin-bottom: 0px !important;
++}
++
++/* line 402, ../scss/style.scss */
++.mt0 {
++  margin-top: 0px !important;
++}
++
++/* line 406, ../scss/style.scss */
++.mb5 {
++  margin-bottom: 5px;
++}
++
++/* line 410, ../scss/style.scss */
++.mt5 {
++  margin-top: 5px;
++}
++
++/* line 414, ../scss/style.scss */
++.mb10 {
++  margin-bottom: 10px;
++}
++
++/* line 418, ../scss/style.scss */
++.mt10 {
++  margin-top: 10px;
++}
++
++/* line 422, ../scss/style.scss */
++.mb15 {
++  margin-bottom: 15px;
++}
++
++/* line 426, ../scss/style.scss */
++.mt15 {
++  margin-top: 15px;
++}
++
++/* line 430, ../scss/style.scss */
++.mb20 {
++  margin-bottom: 20px;
++}
++
++/* line 434, ../scss/style.scss */
++.mt20 {
++  margin-top: 20px;
++}
++
++/* line 438, ../scss/style.scss */
++.mb25 {
++  margin-bottom: 25px;
++}
++
++/* line 442, ../scss/style.scss */
++.mt25 {
++  margin-top: 25px;
++}
++
++/* line 446, ../scss/style.scss */
++.mb40 {
++  margin-bottom: 40px;
++}
++
++/* line 450, ../scss/style.scss */
++.mt40 {
++  margin-top: 40px;
++}
++
++/* line 454, ../scss/style.scss */
++.mb55 {
++  margin-bottom: 55px;
++}
++
++/* line 458, ../scss/style.scss */
++.mt55 {
++  margin-top: 55px;
++}
++
++/* line 462, ../scss/style.scss */
++.mb60 {
++  margin-bottom: 60px;
++}
++
++/* line 466, ../scss/style.scss */
++.mt60 {
++  margin-top: 60px;
++}
++
++/* line 470, ../scss/style.scss */
++.mb65 {
++  margin-bottom: 65px;
++}
++
++/* line 474, ../scss/style.scss */
++.mt65 {
++  margin-top: 65px;
++}
++
++/* line 478, ../scss/style.scss */
++.mb80 {
++  margin-bottom: 80px;
++}
++
++/* line 482, ../scss/style.scss */
++.mt80 {
++  margin-top: 80px;
++}
++
++/* line 486, ../scss/style.scss */
++.mw800 {
++  max-width: 800px;
++}
++
++/* line 490, ../scss/style.scss */
++.ml5 {
++  margin-left: 5px;
++}
++
++/* line 494, ../scss/style.scss */
++.mr5 {
++  margin-right: 5px;
++}
++
++/* line 498, ../scss/style.scss */
++.ml25 {
++  margin-left: 25px;
++}
++
++/* line 502, ../scss/style.scss */
++.mr25 {
++  margin-right: 25px;
++}
++
++/* line 506, ../scss/style.scss */
++.float-left {
++  float: left !important;
++}
++
++/* line 510, ../scss/style.scss */
++.float-right {
++  float: right !important;
++}
++
++/* line 514, ../scss/style.scss */
++.float-center {
++  display: block;
++  margin-right: auto;
++  margin-left: auto;
++}
++
++/* line 521, ../scss/style.scss */
++.clearfix::before {
++  display: table;
++  content: ' ';
++}
++/* line 525, ../scss/style.scss */
++.clearfix::after {
++  display: table;
++  content: ' ';
++  clear: both;
++}
++
++/* line 532, ../scss/style.scss */
++.w100 {
++  width: 100%;
++}
++
++/* line 536, ../scss/style.scss */
++.w200 {
++  width: 200px;
++}
++
++/* line 540, ../scss/style.scss */
++.align-center {
++  text-align: center;
++}
++
++/* line 544, ../scss/style.scss */
++.align-left {
++  text-align: left;
++}
++
++/* line 548, ../scss/style.scss */
++.align-right {
++  text-align: right;
++}
++
++/* line 552, ../scss/style.scss */
++.di {
++  display: inline;
++}
++
++/* line 556, ../scss/style.scss */
++.dn {
++  display: none;
++}
++
++/* line 560, ../scss/style.scss */
++.db {
++  display: block;
++}
++
++/* line 564, ../scss/style.scss */
++.dib {
++  display: inline-block;
++  display: inline-block;
++}
++
++/* line 569, ../scss/style.scss */
++.dt {
++  display: table;
++}
++
++/* line 573, ../scss/style.scss */
++.dtc {
++  display: table-cell;
++}
++
++/* line 577, ../scss/style.scss */
++.df {
++  display: flex;
++}
++
++/* line 581, ../scss/style.scss */
++.pr {
++  position: relative;
++}
++
++/* line 585, ../scss/style.scss */
++.lh1 {
++  line-height: 1;
++}
++
++/* structural */
++/* line 591, ../scss/style.scss */
++#page-wrap {
++  min-height: 100%;
++  margin-bottom: -53px;
++}
++/* line 594, ../scss/style.scss */
++#page-wrap:after {
++  content: "";
++  display: block;
++  height: 52px;
++}
++
++/* line 601, ../scss/style.scss */
++#main {
++  box-sizing: border-box;
++  max-width: 1320px;
++  margin: 1em auto;
++  padding: 0 120px;
++}
++
++/* line 608, ../scss/style.scss */
++#not_supported {
++  box-sizing: border-box;
++  max-width: 1320px;
++  margin: 1em auto;
++  padding: 0 120px;
++  display: none;
++}
++
++/* line 616, ../scss/style.scss */
++#header {
++  height: 69px;
++  border-bottom: 1px solid #eaeaea;
++  line-height: 72px;
++  font-size: 0.875rem;
++  padding: 0 25px;
++  word-spacing: 0.025rem;
++  overflow: hidden;
++}
++
++/* line 626, ../scss/style.scss */
++#header2 {
++  height: 135px;
++  background-color: #f7f7f8;
++  border-bottom: 1px solid #eaeaea;
++}
++
++/* line 632, ../scss/style.scss */
++#footer {
++  height: 51px;
++  border-top: 1px solid #ddd;
++  line-height: 51px;
++  font-size: 0.75rem;
++  padding: 0 25px;
++  word-spacing: 0.033rem;
++  /*text-align: center;*/
++}
++
++/* line 642, ../scss/style.scss */
++.row-left {
++  width: 520px;
++  float: left;
++  box-sizing: border-box;
++  padding-right: 40px;
++}
++
++/* line 649, ../scss/style.scss */
++.row-right {
++  width: 280px;
++  float: left;
++  box-sizing: border-box;
++}
++
++/* line 655, ../scss/style.scss */
++.col-left {
++  width: 440px;
++  float: left;
++  box-sizing: border-box;
++}
++
++/* line 661, ../scss/style.scss */
++.col-right {
++  width: 480px;
++  float: left;
++  box-sizing: border-box;
++}
++
++/* line 667, ../scss/style.scss */
++.thumbnail {
++  width: 400px;
++  height: 266px;
++  background-color: #777777;
++  margin-right: 12px;
++  margin-bottom: 8px;
++  float: left;
++  margin-top: 5px;
++}
++
++/* scanline */
++/* line 679, ../scss/style.scss */
++#scanline {
++  display: table;
++  width: 100%;
++  max-width: 1232px;
++  margin: 0 auto;
++}
++/* line 685, ../scss/style.scss */
++#scanline > div, #scanline > a {
++  position: relative;
++  display: table-cell;
++  text-align: center;
++  /* vertical-align: middle; */
++}
++/* line 692, ../scss/style.scss */
++#scanline .circle {
++  position: relative;
++  z-index: 2;
++  width: 49px;
++  height: 49px;
++  font-size: 0.875rem;
++  line-height: 50px;
++  margin: 30px auto 0;
++  border-radius: 50px;
++  background-color: #f7f7f8;
++  border: 1px solid #a9abaf;
++  padding-left: 1px;
++  padding-top: 1px;
++}
++/* line 708, ../scss/style.scss */
++#scanline > div::before, #scanline > div::after, #scanline > div.active > .progress {
++  content: '';
++  position: absolute;
++  z-index: 1;
++  display: block;
++  width: 50%;
++  top: 56px;
++  left: 50%;
++  border-bottom: 1px solid #bdbfc1;
++}
++/* line 719, ../scss/style.scss */
++#scanline > a.done > .progress {
++  content: '';
++  position: absolute;
++  z-index: 1;
++  display: block;
++  width: 50%;
++  top: 56px;
++  left: 50%;
++  border-bottom: 1px solid #bdbfc1;
++}
++/* line 730, ../scss/style.scss */
++#scanline > div#step_1 {
++  z-index: 10;
++}
++/* line 733, ../scss/style.scss */
++#scanline > div#step_2 {
++  z-index: 11;
++}
++/* line 736, ../scss/style.scss */
++#scanline > div#step_3 {
++  z-index: 12;
++}
++/* line 739, ../scss/style.scss */
++#scanline > div#step_4 {
++  z-index: 13;
++}
++/* line 745, ../scss/style.scss */
++#scanline div.active .typo {
++  color: #cf1152;
++}
++/* line 748, ../scss/style.scss */
++#scanline div.active .circle {
++  color: #fff;
++}
++/* line 752, ../scss/style.scss */
++#scanline a.done .circle {
++  color: transparent;
++  background-image: url("../img/checkmark.svg");
++  background-position: center center;
++  background-size: 50%;
++  background-repeat: no-repeat;
++}
++/* line 761, ../scss/style.scss */
++#scanline > div.active > .circle, #scanline > div.active > .progress {
++  z-index: 2;
++  border-color: #cf1152;
++  background-color: #cf1152;
++}
++/* line 769, ../scss/style.scss */
++#scanline > a.done > .circle, #scanline > a.done > .progress {
++  z-index: 2;
++  border-color: #cf1152;
++  background-color: #cf1152;
++}
++/* line 776, ../scss/style.scss */
++#scanline > a.done:hover > .typo {
++  color: #54585f;
++}
++/* line 779, ../scss/style.scss */
++#scanline > a.done:hover > .circle {
++  border-color: #54585f;
++  background-color: #54585f;
++}
++/* line 786, ../scss/style.scss */
++#scanline > div::before {
++  left: 0;
++  right: 50%;
++}
++/* line 790, ../scss/style.scss */
++#scanline > div:first-child::before, #scanline > div:last-child::after, #scanline > div.active::before {
++  display: none;
++}
++/* line 795, ../scss/style.scss */
++#scanline .typo {
++  font-family: "Avenir Next Pro","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-size: 0.875rem;
++  letter-spacing: 0.02rem;
++  word-spacing: 0.02rem;
++  text-transform: uppercase;
++  margin: 10px auto;
++  width: 200px;
++  color: #54585f;
++}
++/* line 805, ../scss/style.scss */
++#scanline .done .typo {
++  color: #cf1152;
++}
++
++/* line 810, ../scss/style.scss */
++#scanline-2 {
++  margin: 80px 0 40px 0;
++}
++/* line 813, ../scss/style.scss */
++#scanline-2 > a, #scanline-2 > span {
++  display: inline-block;
++  margin-right: 2.5em;
++  margin-bottom: 1em;
++  line-height: 1;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 0.875rem;
++  color: #a9abaf;
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.033rem;
++  height: 20px;
++  padding: 0;
++  border-bottom: none;
++}
++/* line 829, ../scss/style.scss */
++#scanline-2 > a.done {
++  color: #54585f;
++}
++/* line 831, ../scss/style.scss */
++#scanline-2 > a.done:hover {
++  color: #cf1152;
++}
++/* line 835, ../scss/style.scss */
++#scanline-2 > span.active {
++  color: #cf1152;
++  border-bottom: 1px solid #cf1152;
++}
++
++/* line 842, ../scss/style.scss */
++a.overview.item {
++  box-sizing: border-box;
++  border-bottom: 1px solid #a9abaf;
++  padding: 14px 15px 12px 0px;
++  margin: 0;
++  background-image: url("../img/arrow-down_hover.svg");
++  background-position: right 1em;
++  background-size: 2em 1em;
++  background-repeat: no-repeat;
++  display: block;
++  color: #54585f;
++  cursor: pointer;
++}
++/* line 854, ../scss/style.scss */
++a.overview.item:hover {
++  background-image: url("../img/arrow-down_.svg");
++}
++/* line 857, ../scss/style.scss */
++a.overview.item.open {
++  background-image: url("../img/arrow-up_hover.svg");
++}
++/* line 859, ../scss/style.scss */
++a.overview.item.open:hover {
++  background-image: url("../img/arrow-up_.svg");
++}
++
++/* line 865, ../scss/style.scss */
++h2.overview {
++  box-sizing: border-box;
++  border-bottom: 1px solid #a9abaf;
++  padding: 0 0 8px 0;
++  margin-bottom: 0;
++  max-width: none;
++}
++
++/* line 873, ../scss/style.scss */
++a.overview.edit {
++  margin: 1.25em 0;
++  line-height: 1.2;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 0.875rem;
++  /*color: #54585f;*/
++  text-transform: uppercase;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.033rem;
++  box-sizing: border-box;
++  padding: 0;
++  border: none;
++  box-sizing: border-box;
++  display: inline-block;
++}
++/* line 888, ../scss/style.scss */
++a.overview.edit:hover {
++  /*color: #cf1152;*/
++}
++
++/* line 893, ../scss/style.scss */
++.item-info {
++  margin-top: 20px;
++  margin-bottom: 20px;
++  width: 90%;
++  max-width: 720px;
++  display: none;
++}
++
++/* lightbox */
++/* line 903, ../scss/style.scss */
++.difuse {
++  opacity: 0.33;
++}
++
++/* line 907, ../scss/style.scss */
++div.lightbox {
++  box-sizing: border-box;
++  padding-top: 100px;
++  padding-left: 50px;
++  padding-right: 50px;
++  position: fixed;
++  top: 50%;
++  left: 50%;
++  width: 100%;
++  height: 10%;
++  max-width: 700px;
++  min-width: 420px;
++  min-height: 420px;
++  transform: translate(-50%, -50%);
++  -webkit-transform: translate(-50%, -50%);
++  -moz-transform: translate(-50%, -50%);
++  -o-transform: translate(-50%, -50%);
++  -ms-transform: translate(-50%, -50%);
++  background-color: #54585f;
++  color: #fff;
++  text-align: center;
++  border-radius: 2px;
++}
++
++/* line 932, ../scss/style.scss */
++.lightbox h2 {
++  color: #fff;
++}
++/* line 936, ../scss/style.scss */
++.lightbox .ghost-btn-right:hover, .lightbox .ghost-btn-right:focus {
++  border-color: #cf1152;
++  background-color: #cf1152;
++  color: #fff;
++}
++/* line 943, ../scss/style.scss */
++.lightbox .ghost-btn-left:hover, .lightbox .ghost-btn-left:focus {
++  border-color: #cf1152;
++  background-color: #cf1152;
++  color: #fff;
++}
++
++/* line 951, ../scss/style.scss */
++a.close {
++  position: absolute;
++  top: 25px;
++  right: 25px;
++  width: 32px;
++  height: 32px;
++  background-image: url("../img/close_white.svg");
++  background-position: center center;
++  background-size: 100%;
++  background-repeat: no-repeat;
++}
++/* line 961, ../scss/style.scss */
++a.close:hover {
++  background-image: url("../img/close_hover2.svg");
++  background-position: center center;
++  background-size: 100%;
++  background-repeat: no-repeat;
++}
++
++/* tables */
++/* line 971, ../scss/style.scss */
++table {
++  width: 100%;
++  box-sizing: border-box;
++  border-bottom: 1px solid #a9abaf;
++}
++
++/* line 977, ../scss/style.scss */
++td {
++  padding-right: 30px;
++  padding-top: 10px;
++}
++
++/* line 982, ../scss/style.scss */
++tr:last-child > td {
++  padding-bottom: 10px;
++}
++
++/* line 987, ../scss/style.scss */
++td.left-col {
++  width: 33%;
++}
++
++/* forms */
++/* line 995, ../scss/style.scss */
++#main form {
++  margin-top: 50px;
++}
++
++/* line 1000, ../scss/style.scss */
++form h2 {
++  max-width: 560px;
++  margin: 0 0 0.75em 0;
++}
++/* line 1004, ../scss/style.scss */
++form h3 {
++  max-width: 560px;
++  margin: 0 0 1.25em 0;
++}
++/* line 1008, ../scss/style.scss */
++form p {
++  max-width: 560px;
++  margin: 0 0 0.75em 0;
++}
++
++/* line 1014, ../scss/style.scss */
++textarea {
++  height: auto;
++  min-height: 100px;
++  height: 180px;
++}
++
++/* line 1020, ../scss/style.scss */
++.label {
++  font-family: "Avenir Next Pro Medium","Helvetica Neue",Roboto,Arial,sans-serif;
++  font-weight: normal;
++  font-size: 1.375rem;
++  color: #54585f;
++  display: block;
++}
++
++/* line 1028, ../scss/style.scss */
++input, textarea {
++  font-family: "Avenir Next Pro","Helvetica Neue",Roboto,Arial,sans-serif;
++}
++
++/* line 1032, ../scss/style.scss */
++select {
++  font-family: "Avenir Next Pro","Helvetica Neue",Roboto,Arial,sans-serif;
++  -webkit-appearance: none !important;
++  -moz-appearance: none !important;
++  appearance: none !important;
++}
++/* line 1037, ../scss/style.scss */
++select::-ms-expand {
++  display: none;
++}
++/* line 1040, ../scss/style.scss */
++select:focus {
++  outline: none !important;
++}
++
++/* line 1045, ../scss/style.scss */
++:focus {
++  outline: none;
++}
++
++/* line 1049, ../scss/style.scss */
++::-moz-focus-inner {
++  border: 0;
++}
++
++/* line 1053, ../scss/style.scss */
++select:-moz-focusring {
++  color: transparent;
++  text-shadow: 0 0 0 #000;
++}
++
++/* line 1058, ../scss/style.scss */
++option {
++  background: #fff;
++  border-top: 1px solid #eaeaea;
++  padding: 0.25rem 0.25rem 0.25rem 1rem;
++  color: #54585f !important;
++}
++
++/* line 1065, ../scss/style.scss */
++.hinweis {
++  font-size: 0.875em;
++  padding-left: 1.25rem;
++  padding-top: 0px;
++}
++
++/* line 1071, ../scss/style.scss */
++.optional {
++  font-size: 1.25em;
++  opacity: 0.3;
++  top: 1.1rem;
++  right: 0.75rem;
++  position: absolute;
++}
++
++/* line 1079, ../scss/style.scss */
++.alert .hinweis {
++  color: #cf1152;
++}
++
++/* line 1084, ../scss/style.scss */
++form input[type='checkbox'], form input[type='radio'] {
++  display: none;
++}
++
++/* line 1090, ../scss/style.scss */
++input[type='checkbox'] + label, input[type='radio'] + label {
++  cursor: pointer;
++}
++
++/* line 1096, ../scss/style.scss */
++label + input[type='checkbox'], label + input[type='radio'] {
++  cursor: pointer;
++}
++
++/* line 1101, ../scss/style.scss */
++.box {
++  box-sizing: border-box;
++  padding: 6px 6px;
++  width: 26px;
++  height: 26px;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #a9abaf;
++  border-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  margin-right: 0.5em;
++  vertical-align: middle;
++  margin-top: -5px;
++}
++
++/* line 1117, ../scss/style.scss */
++.inline-box {
++  box-sizing: border-box;
++  width: 12px;
++  height: 12px;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #54585f;
++  border-radius: 2px;
++  background-color: #54585f;
++  margin: 0;
++  display: none;
++}
++
++/* line 1130, ../scss/style.scss */
++.box-small {
++  box-sizing: border-box;
++  padding: 3px 3px;
++  width: 14px;
++  height: 14px;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #a9abaf;
++  border-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  margin-right: 0.5em;
++  vertical-align: middle;
++  margin-top: -5px;
++}
++
++/* line 1146, ../scss/style.scss */
++.inline-box-small {
++  box-sizing: border-box;
++  width: 6px;
++  height: 6px;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #54585f;
++  border-radius: 2px;
++  background-color: #54585f;
++  margin: 0;
++  display: none;
++}
++
++/* line 1159, ../scss/style.scss */
++.cir {
++  box-sizing: border-box;
++  padding: 6px 6px;
++  width: 26px;
++  height: 26px;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #a9abaf;
++  border-radius: 26px;
++  display: inline-block;
++  text-align: center;
++  margin-right: 0.5em;
++  vertical-align: middle;
++  margin-top: -5px;
++}
++
++/* line 1175, ../scss/style.scss */
++.inline-cir {
++  box-sizing: border-box;
++  width: 12px;
++  height: 12px;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #54585f;
++  border-radius: 12px;
++  background-color: #54585f;
++  margin: 0;
++  display: none;
++}
++
++/* line 1189, ../scss/style.scss */
++input[type="radio"]:checked + label > .cir > .inline-cir {
++  display: block;
++}
++/* line 1193, ../scss/style.scss */
++input[type="checkbox"]:checked + label > .box > .inline-box, input[type="checkbox"]:checked + label > .box-small > .inline-box-small {
++  display: block;
++}
++
++/* line 1199, ../scss/style.scss */
++.file-icon {
++  padding-left: 32px;
++  background-image: url("../img/antrag.svg");
++  background-position: center left;
++  background-size: 24px 24px;
++  background-repeat: no-repeat;
++  height: 24px;
++  display: block;
++  box-shadow: unset !important;
++}
++/* line 1208, ../scss/style.scss */
++.file-icon:hover {
++  background-image: url("../img/antrag_.svg");
++}
++
++/* line 1213, ../scss/style.scss */
++.form-icon {
++  box-sizing: border-box;
++  width: 23px;
++  height: 23px;
++  border-radius: 23px;
++  margin: 0;
++  font-family: "Avenir Next Pro Demi","Helvetica Neue",Roboto,Arial,sans-serif;
++  text-align: center;
++  font-size: 1rem !important;
++}
++
++/* line 1224, ../scss/style.scss */
++.has-float-label > .form-icon {
++  position: absolute;
++  left: -2.75rem;
++  top: 1.2rem;
++}
++
++/* line 1230, ../scss/style.scss */
++.btn-group > .form-icon, p > .form-icon {
++  position: absolute;
++  left: -2.75rem;
++  top: 3px;
++}
++
++/* line 1236, ../scss/style.scss */
++.btn-group > h3 + .form-icon {
++  position: absolute;
++  left: -2.75rem;
++  top: -4px;
++}
++
++/* line 1242, ../scss/style.scss */
++.tooltip {
++  position: absolute;
++  background-color: #54585f;
++  color: #fff;
++  border-radius: 16px;
++  padding: 17px 33px 16px;
++  left: 580px;
++  top: -25px;
++  width: 430px;
++}
++/* line 1251, ../scss/style.scss */
++.tooltip::before {
++  border-color: transparent #54585f transparent transparent;
++  border-style: solid;
++  border-width: 10px;
++  content: " ";
++  display: block;
++  height: 0;
++  width: 0;
++  left: -19px;
++  position: absolute;
++  top: calc(50% - 10px);
++}
++/* line 1263, ../scss/style.scss */
++.tooltip h3 {
++  color: #fff;
++  margin-bottom: 0.5rem;
++  font-size: 1em;
++}
++
++/* line 1270, ../scss/style.scss */
++#zvk, #nfc {
++  margin-left: 80px;
++  display: none;
++}
++
++/*
++#zvk .form-icon {
++    position: static;
+     display: inline-block;
+-    text-align: center;
+-    min-width: 140px;
+-    letter-spacing: 0.033rem;
+-    word-spacing: 0.05rem;
+-    padding: 10px 15px 8px 15px;
+-    margin: 0;
+-    background-color: #fff;
++    vertical-align: text-bottom;
++    margin-left: 0.33em;
+ }
+ 
+-.ghost-btn-left {
+-    box-sizing: border-box;
+-    font-weight: normal;
+-    font-size: 1.125rem;
+-    color: #54585f !important;
+-    border-style: solid;
+-    border-width: 1px;
+-    border-color: #a9abaf;
+-    border-top-right-radius: 2px;
+-    border-bottom-right-radius: 2px;
+-    border-left: none;
++#zvk label{
+     display: inline-block;
+-    text-align: center;
+-    min-width: 140px;
+-    letter-spacing: 0.033rem;
+-    word-spacing: 0.05rem;
+-    padding: 10px 15px 8px 15px;
+-    margin: 0;
+-    background-color: #fff;
+ }
++*/
++/* line 1288, ../scss/style.scss */
++#zvk .btn-group {
++  margin: 0;
++}
+ 
+-.lightbox a {
+-	text-decoration: none;
++/* sky */
++/* line 1294, ../scss/style.scss */
++#sky {
++  position: absolute;
++  top: 70px;
++  width: 100%;
++  -webkit-animation: FadeIn 3s ease-out;
++  animation: FadeIn 3s ease-out;
++  -webkit-user-select: none;
++  -moz-user-select: none;
++  -ms-user-select: none;
++  user-select: none;
++  overflow: hidden;
++  height: 640px;
++  display: none;
+ }
+ 
+-.lightbox h2, .lightbox h2 {
+-	margin: 0;
+-	max-width: 720px;
+-	line-height: 1.2;
+-	font-family: "Avenir Next Pro Demi", "Helvetica Neue", Roboto, Arial,
+-		sans-serif;
+-	font-weight: normal;
+-	font-size: 1.375rem;
+-	color: #fff;
++/* line 1309, ../scss/style.scss */
++#cloud1 {
++  height: 100px;
++  position: absolute;
++  top: 230px;
++  left: 85%;
+ }
+ 
+-.lightbox .btn-group {
+-	display: block;
+-}
+\ No newline at end of file
++/* line 1316, ../scss/style.scss */
++#cloud2 {
++  height: 80px;
++  position: absolute;
++  left: 20%;
++  top: 420px;
++}
++
++/* line 1323, ../scss/style.scss */
++#cloud3 {
++  height: 100px;
++  position: absolute;
++  left: 800px;
++  top: 100px;
++}
++
++/* line 1330, ../scss/style.scss */
++#cloud4 {
++  height: 160px;
++  position: absolute;
++  right: 90%;
++  top: 40px;
++}
++
++/* line 1337, ../scss/style.scss */
++#bird1 {
++  height: 56px;
++  width: 28px;
++  z-index: 2;
++  position: absolute;
++  left: calc(15% - 145px);
++  top: 100px;
++  display: none;
++}
++
++/* line 1347, ../scss/style.scss */
++#bird2 {
++  height: 30px;
++  z-index: 2;
++  position: absolute;
++  right: 15%;
++  top: 500px;
++  display: none;
++}
++
++/* line 1356, ../scss/style.scss */
++#bird3 {
++  height: 56px;
++  width: 28px;
++  z-index: 2;
++  position: absolute;
++  top: 25px;
++  right: 33%;
++}
++
++/* line 1365, ../scss/style.scss */
++#cloud1, #cloud2, #cloud3, #cloud4 {
++  display: none;
++}
++
++/* responsive behavior */
++@media screen and (max-width: 1400px) {
++  /* line 1372, ../scss/style.scss */
++  #bird1 {
++    display: none;
++  }
++}
++@media screen and (max-width: 1200px) {
++  /* line 1378, ../scss/style.scss */
++  .tooltip {
++    width: 300px;
++  }
++
++  /* line 1381, ../scss/style.scss */
++  td.left-col {
++    width: 40%;
++  }
++
++  /* line 1384, ../scss/style.scss */
++  #bird2 {
++    top: 500px;
++  }
++}
++@media screen and (max-width: 1080px) {
++  /* line 1390, ../scss/style.scss */
++  .tooltip {
++    left: 0px;
++    width: 430px;
++  }
++
++  /* line 1394, ../scss/style.scss */
++  td.left-col {
++    width: 50%;
++  }
++
++  /* line 1397, ../scss/style.scss */
++  #header2 {
++    height: 125px;
++  }
++
++  /* line 1401, ../scss/style.scss */
++  #scanline .typo {
++    width: 100px;
++    line-height: 1.25;
++    font-size: 0.75em;
++  }
++  /* line 1406, ../scss/style.scss */
++  #scanline .circle {
++    margin: 20px auto 0;
++  }
++  /* line 1411, ../scss/style.scss */
++  #scanline > div::before, #scanline > div::after, #scanline > div.active > .progress {
++    top: 45px;
++  }
++  /* line 1415, ../scss/style.scss */
++  #scanline > a.done > .progress {
++    top: 45px;
++  }
++
++  /* line 1420, ../scss/style.scss */
++  h1 {
++    font-size: 3em;
++    line-height: 1.25;
++  }
++  /* line 1423, ../scss/style.scss */
++  h1.large {
++    font-size: 7em;
++    margin-left: -8.8px;
++  }
++
++  /* line 1428, ../scss/style.scss */
++  #logo, body.abs #form\:logo {
++    margin-top: 63px;
++    margin-bottom: 79px;
++  }
++
++  /* line 1432, ../scss/style.scss */
++  p, ul {
++    line-height: 1.5;
++  }
++
++  /* line 1435, ../scss/style.scss */
++  #main {
++    padding: 0 80px;
++  }
++}
++@media screen and (max-width: 719px) {
++  /* line 1441, ../scss/style.scss */
++  #sky {
++    display: block;
++  }
++
++  /* line 1444, ../scss/style.scss */
++  #cloud1, #cloud2, #cloud3 {
++    display: block;
++    -webkit-animation-duration: 120s;
++    animation-duration: 120s;
++    -webkit-animation-iteration-count: infinite;
++    animation-iteration-count: infinite;
++    -webkit-animation-fill-mode: forwards;
++    animation-fill-mode: forwards;
++    -webkit-animation-timing-function: linear;
++    animation-timing-function: linear;
++    -webkit-animation-name: Float, FadeFloat;
++    animation-name: Float, FadeFloat;
++  }
++
++  /* line 1457, ../scss/style.scss */
++  #cloud4 {
++    display: block;
++    -webkit-animation-duration: 120s;
++    animation-duration: 120s;
++    -webkit-animation-iteration-count: infinite;
++    animation-iteration-count: infinite;
++    -webkit-animation-fill-mode: forwards;
++    animation-fill-mode: forwards;
++    -webkit-animation-timing-function: linear;
++    animation-timing-function: linear;
++    -webkit-animation-name: Float, FadeFloat;
++    animation-name: Float, FadeFloat;
++    height: 160px;
++    position: absolute;
++    right: 60%;
++    top: 50px;
++  }
++
++  @-webkit-keyframes Float {
++    from {
++      -webkit-transform: translateX(100%) translateZ(0);
++      transform: translateX(100%) translateZ(0);
++    }
++    to {
++      -webkit-transform: translateX(-300%) translateZ(0);
++      transform: translateX(-300%) translateZ(0);
++    }
++  }
++  @keyframes Float {
++    from {
++      -webkit-transform: translateX(100%) translateZ(0);
++      transform: translateX(100%) translateZ(0);
++    }
++    to {
++      -webkit-transform: translateX(-300%) translateZ(0);
++      transform: translateX(-300%) translateZ(0);
++    }
++  }
++  /* line 1498, ../scss/style.scss */
++  #bird2 {
++    display: block;
++    height: 30px;
++    right: 12.5%;
++    top: 120px;
++  }
++
++  /* line 1504, ../scss/style.scss */
++  #bird3, #main, #header, #header2, #footer, #scanline {
++    display: none;
++  }
++
++  /* line 1507, ../scss/style.scss */
++  #not_supported {
++    display: block;
++    margin-bottom: 50px;
++    padding: 0 40px;
++    position: relative;
++    z-index: 3;
++  }
++
++  /* line 1514, ../scss/style.scss */
++  #logo, body.abs #form\:logo {
++    margin-top: 43px;
++    margin-bottom: 46px;
++    margin-left: -1px;
++  }
++
++  /* line 1519, ../scss/style.scss */
++  p, ul {
++    font-size: 0.875;
++    line-height: 1.4;
++  }
++
++  /* line 1523, ../scss/style.scss */
++  h1.large {
++    font-size: 6em;
++    margin-left: -7px;
++    line-height: 1.2;
++  }
++
++  /* line 1528, ../scss/style.scss */
++  h2 {
++    font-size: 1em;
++  }
++}
++@media screen and (max-width: 480px) {
++  /* line 1534, ../scss/style.scss */
++  h1.large {
++    font-size: 4.5em;
++    margin-left: -5.5px;
++    line-height: 1.2;
++    letter-spacing: -0.025rem;
++  }
++}
++/* line 8, ../scss/abs-sob.scss */
++body.abs .has-float-label .ui-outputlabel {
++  color: inherit;
++}
++/* line 14, ../scss/abs-sob.scss */
++body.abs .ui-corner-btn-group.ui-state-hover, body.abs .btn-group .ui-state-hover.ui-button.ui-corner-left, body.abs .btn-group .ui-state-hover.ui-button.ui-corner-right, body.abs .ui-corner-btn-group.ui-state-focus, body.abs .btn-group .ui-state-focus.ui-button.ui-corner-left, body.abs .btn-group .ui-state-focus.ui-button.ui-corner-right, body.abs .ui-corner-btn-group.ui-state-active, body.abs .btn-group .ui-state-active.ui-button.ui-corner-left, body.abs .btn-group .ui-state-active.ui-button.ui-corner-right {
++  border-color: #54585f;
++  background-color: #54585f !important;
++  color: #fff;
++}
++/* line 21, ../scss/abs-sob.scss */
++body.abs .btn-group {
++  border-color: transparent;
++}
++/* line 24, ../scss/abs-sob.scss */
++body.abs .btn-group .ui-button.ui-corner-left {
++  box-sizing: border-box;
++  font-weight: normal;
++  font-size: 1.125rem;
++  color: #54585f;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #a9abaf;
++  border-top-left-radius: 2px;
++  border-bottom-left-radius: 2px;
++  display: inline-block;
++  text-align: center;
++  min-width: 140px;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  padding: 10px 15px 8px 15px;
++  margin: 0;
++  background-color: #fff;
++}
++/* line 45, ../scss/abs-sob.scss */
++body.abs .btn-group .ui-button.ui-corner-right {
++  box-sizing: border-box;
++  font-weight: normal;
++  font-size: 1.125rem;
++  color: #54585f;
++  border-style: solid;
++  border-width: 1px;
++  border-color: #a9abaf;
++  border-top-right-radius: 2px;
++  border-bottom-right-radius: 2px;
++  border-left: none;
++  display: inline-block;
++  text-align: center;
++  min-width: 140px;
++  letter-spacing: 0.033rem;
++  word-spacing: 0.05rem;
++  padding: 10px 15px 8px 15px;
++  margin: 0;
++  background-color: #fff;
++}
+Index: webContent/resources/css/normalize.css
+===================================================================
+--- webContent/resources/css/normalize.css	(revision 153996)
++++ webContent/resources/css/normalize.css	(nonexistent)
+@@ -1,427 +0,0 @@
+-/*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
+-
+-/* Document
+-   ========================================================================== */
+-
+-/**
+- * 1. Correct the line height in all browsers.
+- * 2. Prevent adjustments of font size after orientation changes in
+- *    IE on Windows Phone and in iOS.
+- */
+-
+-html {
+-  line-height: 1.15; /* 1 */
+-  -ms-text-size-adjust: 100%; /* 2 */
+-  -webkit-text-size-adjust: 100%; /* 2 */
+-}
+-
+-/* Sections
+-   ========================================================================== */
+-
+-/**
+- * Add the correct display in IE 9-.
+- */
+-
+-article,
+-aside,
+-footer,
+-header,
+-nav,
+-section {
+-  display: block;
+-}
+-
+-/**
+- * Correct the font size and margin on `h1` elements within `section` and
+- * `article` contexts in Chrome, Firefox, and Safari.
+- */
+-
+-h1 {
+-  font-size: 2em;
+-  margin: 0.67em 0;
+-}
+-
+-/* Grouping content
+-   ========================================================================== */
+-
+-/**
+- * Add the correct display in IE 9-.
+- * 1. Add the correct display in IE.
+- */
+-
+-figcaption,
+-figure,
+-main { /* 1 */
+-  display: block;
+-}
+-
+-/**
+- * Add the correct margin in IE 8.
+- */
+-
+-figure {
+-  margin: 1em 40px;
+-}
+-
+-/**
+- * 1. Add the correct box sizing in Firefox.
+- * 2. Show the overflow in Edge and IE.
+- */
+-
+-hr {
+-  box-sizing: content-box; /* 1 */
+-  height: 0; /* 1 */
+-  overflow: visible; /* 2 */
+-}
+-
+-/**
+- * 1. Correct the inheritance and scaling of font size in all browsers.
+- * 2. Correct the odd `em` font sizing in all browsers.
+- */
+-
+-pre {
+-  font-family: monospace, monospace; /* 1 */
+-  font-size: 1em; /* 2 */
+-}
+-
+-/* Text-level semantics
+-   ========================================================================== */
+-
+-/**
+- * 1. Remove the gray background on active links in IE 10.
+- * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+- */
+-
+-a {
+-  background-color: transparent; /* 1 */
+-  -webkit-text-decoration-skip: objects; /* 2 */
+-}
+-
+-/**
+- * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+- * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+- */
+-
+-abbr[title] {
+-  border-bottom: none; /* 1 */
+-  text-decoration: underline; /* 2 */
+-  text-decoration: underline dotted; /* 2 */
+-}
+-
+-/**
+- * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+- */
+-
+-b,
+-strong {
+-  font-weight: inherit;
+-}
+-
+-/**
+- * Add the correct font weight in Chrome, Edge, and Safari.
+- */
+-
+-b,
+-strong {
+-  font-weight: bolder;
+-}
+-
+-/**
+- * 1. Correct the inheritance and scaling of font size in all browsers.
+- * 2. Correct the odd `em` font sizing in all browsers.
+- */
+-
+-code,
+-kbd,
+-samp {
+-  font-family: monospace, monospace; /* 1 */
+-  font-size: 1em; /* 2 */
+-}
+-
+-/**
+- * Add the correct font style in Android 4.3-.
+- */
+-
+-dfn {
+-  font-style: italic;
+-}
+-
+-/**
+- * Add the correct background and color in IE 9-.
+- */
+-
+-mark {
+-  background-color: #ff0;
+-  color: #000;
+-}
+-
+-/**
+- * Add the correct font size in all browsers.
+- */
+-
+-small {
+-  font-size: 80%;
+-}
+-
+-/**
+- * Prevent `sub` and `sup` elements from affecting the line height in
+- * all browsers.
+- */
+-
+-sub,
+-sup {
+-  font-size: 75%;
+-  line-height: 0;
+-  position: relative;
+-  vertical-align: baseline;
+-}
+-
+-sub {
+-  bottom: -0.25em;
+-}
+-
+-sup {
+-  top: -0.5em;
+-}
+-
+-/* Embedded content
+-   ========================================================================== */
+-
+-/**
+- * Add the correct display in IE 9-.
+- */
+-
+-audio,
+-video {
+-  display: inline-block;
+-}
+-
+-/**
+- * Add the correct display in iOS 4-7.
+- */
+-
+-audio:not([controls]) {
+-  display: none;
+-  height: 0;
+-}
+-
+-/**
+- * Remove the border on images inside links in IE 10-.
+- */
+-
+-img {
+-  border-style: none;
+-}
+-
+-/**
+- * Hide the overflow in IE.
+- */
+-
+-svg:not(:root) {
+-  overflow: hidden;
+-}
+-
+-/* Forms
+-   ========================================================================== */
+-
+-/**
+- * Remove the margin in Firefox and Safari.
+- */
+-
+-button,
+-input,
+-optgroup,
+-select,
+-textarea {
+-  margin: 0;
+-}
+-
+-/**
+- * Show the overflow in IE.
+- * 1. Show the overflow in Edge.
+- */
+-
+-button,
+-input { /* 1 */
+-  overflow: visible;
+-}
+-
+-/**
+- * Remove the inheritance of text transform in Edge, Firefox, and IE.
+- * 1. Remove the inheritance of text transform in Firefox.
+- */
+-
+-button,
+-select { /* 1 */
+-  text-transform: none;
+-}
+-
+-/**
+- * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+- *    controls in Android 4.
+- * 2. Correct the inability to style clickable types in iOS and Safari.
+- */
+-
+-button,
+-html [type="button"], /* 1 */
+-[type="reset"],
+-[type="submit"] {
+-  -webkit-appearance: button; /* 2 */
+-}
+-
+-/**
+- * Remove the inner border and padding in Firefox.
+- */
+-
+-button::-moz-focus-inner,
+-[type="button"]::-moz-focus-inner,
+-[type="reset"]::-moz-focus-inner,
+-[type="submit"]::-moz-focus-inner {
+-  border-style: none;
+-  padding: 0;
+-}
+-
+-/**
+- * Restore the focus styles unset by the previous rule.
+- */
+-
+-button:-moz-focusring,
+-[type="button"]:-moz-focusring,
+-[type="reset"]:-moz-focusring,
+-[type="submit"]:-moz-focusring {
+-  outline: 1px dotted ButtonText;
+-}
+-
+-/**
+- * 1. Correct the text wrapping in Edge and IE.
+- * 2. Correct the color inheritance from `fieldset` elements in IE.
+- * 3. Remove the padding so developers are not caught out when they zero out
+- *    `fieldset` elements in all browsers.
+- */
+-
+-legend {
+-  box-sizing: border-box; /* 1 */
+-  color: inherit; /* 2 */
+-  display: table; /* 1 */
+-  max-width: 100%; /* 1 */
+-  padding: 0; /* 3 */
+-  white-space: normal; /* 1 */
+-}
+-
+-/**
+- * 1. Add the correct display in IE 9-.
+- * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+- */
+-
+-progress {
+-  display: inline-block; /* 1 */
+-  vertical-align: baseline; /* 2 */
+-}
+-
+-/**
+- * Remove the default vertical scrollbar in IE.
+- */
+-
+-textarea {
+-  overflow: auto;
+-}
+-
+-/**
+- * 1. Add the correct box sizing in IE 10-.
+- * 2. Remove the padding in IE 10-.
+- */
+-
+-[type="checkbox"],
+-[type="radio"] {
+-  box-sizing: border-box; /* 1 */
+-  padding: 0; /* 2 */
+-}
+-
+-/**
+- * Correct the cursor style of increment and decrement buttons in Chrome.
+- */
+-
+-[type="number"]::-webkit-inner-spin-button,
+-[type="number"]::-webkit-outer-spin-button {
+-  height: auto;
+-}
+-
+-/**
+- * 1. Correct the odd appearance in Chrome and Safari.
+- * 2. Correct the outline style in Safari.
+- */
+-
+-[type="search"] {
+-  -webkit-appearance: textfield; /* 1 */
+-  outline-offset: -2px; /* 2 */
+-}
+-
+-/**
+- * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+- */
+-
+-[type="search"]::-webkit-search-cancel-button,
+-[type="search"]::-webkit-search-decoration {
+-  -webkit-appearance: none;
+-}
+-
+-/**
+- * 1. Correct the inability to style clickable types in iOS and Safari.
+- * 2. Change font properties to `inherit` in Safari.
+- */
+-
+-::-webkit-file-upload-button {
+-  -webkit-appearance: button; /* 1 */
+-  font: inherit; /* 2 */
+-}
+-
+-/* Interactive
+-   ========================================================================== */
+-
+-/*
+- * Add the correct display in IE 9-.
+- * 1. Add the correct display in Edge, IE, and Firefox.
+- */
+-
+-details, /* 1 */
+-menu {
+-  display: block;
+-}
+-
+-/*
+- * Add the correct display in all browsers.
+- */
+-
+-summary {
+-  display: list-item;
+-}
+-
+-/* Scripting
+-   ========================================================================== */
+-
+-/**
+- * Add the correct display in IE 9-.
+- */
+-
+-canvas {
+-  display: inline-block;
+-}
+-
+-/**
+- * Add the correct display in IE.
+- */
+-
+-template {
+-  display: none;
+-}
+-
+-/* Hidden
+-   ========================================================================== */
+-
+-/**
+- * Add the correct display in IE 10-.
+- */
+-
+-[hidden] {
+-  display: none;
+-}
+Index: webContent/resources/css/normalize.css
+===================================================================
+--- webContent/resources/css/normalize.css	(nonexistent)
++++ webContent/resources/css/normalize.css	(working copy)
+@@ -0,0 +1,415 @@
++/*! normalize.css v6.0.0 | MIT License | github.com/necolas/normalize.css */
++/* Document
++   ========================================================================== */
++/**
++ * 1. Correct the line height in all browsers.
++ * 2. Prevent adjustments of font size after orientation changes in
++ *    IE on Windows Phone and in iOS.
++ */
++/* line 12, ../scss/normalize.scss */
++html {
++  line-height: 1.15;
++  /* 1 */
++  -ms-text-size-adjust: 100%;
++  /* 2 */
++  -webkit-text-size-adjust: 100%;
++  /* 2 */
++}
++
++/* Sections
++   ========================================================================== */
++/**
++ * Add the correct display in IE 9-.
++ */
++/* line 28, ../scss/normalize.scss */
++article, aside, footer, header, nav, section {
++  display: block;
++}
++
++/**
++ * Correct the font size and margin on `h1` elements within `section` and
++ * `article` contexts in Chrome, Firefox, and Safari.
++ */
++/* line 37, ../scss/normalize.scss */
++h1 {
++  font-size: 2em;
++  margin: 0.67em 0;
++}
++
++/* Grouping content
++   ========================================================================== */
++/**
++ * Add the correct display in IE 9-.
++ * 1. Add the correct display in IE.
++ */
++/* line 50, ../scss/normalize.scss */
++figcaption, figure, main {
++  /* 1 */
++  display: block;
++}
++
++/**
++ * Add the correct margin in IE 8.
++ */
++/* line 59, ../scss/normalize.scss */
++figure {
++  margin: 1em 40px;
++}
++
++/**
++ * 1. Add the correct box sizing in Firefox.
++ * 2. Show the overflow in Edge and IE.
++ */
++/* line 68, ../scss/normalize.scss */
++hr {
++  box-sizing: content-box;
++  /* 1 */
++  height: 0;
++  /* 1 */
++  overflow: visible;
++  /* 2 */
++}
++
++/**
++ * 1. Correct the inheritance and scaling of font size in all browsers.
++ * 2. Correct the odd `em` font sizing in all browsers.
++ */
++/* line 82, ../scss/normalize.scss */
++pre {
++  font-family: monospace, monospace;
++  /* 1 */
++  font-size: 1em;
++  /* 2 */
++}
++
++/* Text-level semantics
++   ========================================================================== */
++/**
++ * 1. Remove the gray background on active links in IE 10.
++ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
++ */
++/* line 97, ../scss/normalize.scss */
++a {
++  background-color: transparent;
++  /* 1 */
++  -webkit-text-decoration-skip: objects;
++  /* 2 */
++}
++
++/**
++ * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
++ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
++ */
++/* line 109, ../scss/normalize.scss */
++abbr[title] {
++  border-bottom: none;
++  /* 1 */
++  text-decoration: underline;
++  /* 2 */
++  text-decoration: underline dotted;
++  /* 2 */
++}
++
++/**
++ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
++ */
++/* line 122, ../scss/normalize.scss */
++b, strong {
++  font-weight: inherit;
++}
++
++/**
++ * Add the correct font weight in Chrome, Edge, and Safari.
++ */
++/* line 130, ../scss/normalize.scss */
++b, strong {
++  font-weight: bolder;
++}
++
++/**
++ * 1. Correct the inheritance and scaling of font size in all browsers.
++ * 2. Correct the odd `em` font sizing in all browsers.
++ */
++/* line 139, ../scss/normalize.scss */
++code, kbd, samp {
++  font-family: monospace, monospace;
++  /* 1 */
++  font-size: 1em;
++  /* 2 */
++}
++
++/**
++ * Add the correct font style in Android 4.3-.
++ */
++/* line 150, ../scss/normalize.scss */
++dfn {
++  font-style: italic;
++}
++
++/**
++ * Add the correct background and color in IE 9-.
++ */
++/* line 158, ../scss/normalize.scss */
++mark {
++  background-color: #ff0;
++  color: #000;
++}
++
++/**
++ * Add the correct font size in all browsers.
++ */
++/* line 167, ../scss/normalize.scss */
++small {
++  font-size: 80%;
++}
++
++/**
++ * Prevent `sub` and `sup` elements from affecting the line height in
++ * all browsers.
++ */
++/* line 176, ../scss/normalize.scss */
++sub, sup {
++  font-size: 75%;
++  line-height: 0;
++  position: relative;
++  vertical-align: baseline;
++}
++
++/* line 183, ../scss/normalize.scss */
++sub {
++  bottom: -0.25em;
++}
++
++/* line 187, ../scss/normalize.scss */
++sup {
++  top: -0.5em;
++}
++
++/* Embedded content
++   ========================================================================== */
++/**
++ * Add the correct display in IE 9-.
++ */
++/* line 198, ../scss/normalize.scss */
++audio, video {
++  display: inline-block;
++}
++
++/**
++ * Add the correct display in iOS 4-7.
++ */
++/* line 206, ../scss/normalize.scss */
++audio:not([controls]) {
++  display: none;
++  height: 0;
++}
++
++/**
++ * Remove the border on images inside links in IE 10-.
++ */
++/* line 215, ../scss/normalize.scss */
++img {
++  border-style: none;
++}
++
++/**
++ * Hide the overflow in IE.
++ */
++/* line 223, ../scss/normalize.scss */
++svg:not(:root) {
++  overflow: hidden;
++}
++
++/* Forms
++   ========================================================================== */
++/**
++ * Remove the margin in Firefox and Safari.
++ */
++/* line 234, ../scss/normalize.scss */
++button, input, optgroup, select, textarea {
++  margin: 0;
++}
++
++/**
++ * Show the overflow in IE.
++ * 1. Show the overflow in Edge.
++ */
++/* line 243, ../scss/normalize.scss */
++button, input {
++  /* 1 */
++  overflow: visible;
++}
++
++/**
++ * Remove the inheritance of text transform in Edge, Firefox, and IE.
++ * 1. Remove the inheritance of text transform in Firefox.
++ */
++/* line 253, ../scss/normalize.scss */
++button, select {
++  /* 1 */
++  text-transform: none;
++}
++
++/**
++ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
++ *    controls in Android 4.
++ * 2. Correct the inability to style clickable types in iOS and Safari.
++ */
++/* line 264, ../scss/normalize.scss */
++button, html [type="button"], [type="reset"], [type="submit"] {
++  -webkit-appearance: button;
++  /* 2 */
++}
++
++/**
++ * Remove the inner border and padding in Firefox.
++ */
++/* line 273, ../scss/normalize.scss */
++button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
++  border-style: none;
++  padding: 0;
++}
++
++/**
++ * Restore the focus styles unset by the previous rule.
++ */
++/* line 282, ../scss/normalize.scss */
++button:-moz-focusring, [type="button"]:-moz-focusring, [type="reset"]:-moz-focusring, [type="submit"]:-moz-focusring {
++  outline: 1px dotted ButtonText;
++}
++
++/**
++ * 1. Correct the text wrapping in Edge and IE.
++ * 2. Correct the color inheritance from `fieldset` elements in IE.
++ * 3. Remove the padding so developers are not caught out when they zero out
++ *    `fieldset` elements in all browsers.
++ */
++/* line 293, ../scss/normalize.scss */
++legend {
++  box-sizing: border-box;
++  /* 1 */
++  color: inherit;
++  /* 2 */
++  display: table;
++  /* 1 */
++  max-width: 100%;
++  /* 1 */
++  padding: 0;
++  /* 3 */
++  white-space: normal;
++  /* 1 */
++}
++
++/**
++ * 1. Add the correct display in IE 9-.
++ * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
++ */
++/* line 313, ../scss/normalize.scss */
++progress {
++  display: inline-block;
++  /* 1 */
++  vertical-align: baseline;
++  /* 2 */
++}
++
++/**
++ * Remove the default vertical scrollbar in IE.
++ */
++/* line 324, ../scss/normalize.scss */
++textarea {
++  overflow: auto;
++}
++
++/**
++ * 1. Add the correct box sizing in IE 10-.
++ * 2. Remove the padding in IE 10-.
++ */
++/* line 333, ../scss/normalize.scss */
++[type="checkbox"], [type="radio"] {
++  box-sizing: border-box;
++  /* 1 */
++  padding: 0;
++  /* 2 */
++}
++
++/**
++ * Correct the cursor style of increment and decrement buttons in Chrome.
++ */
++/* line 345, ../scss/normalize.scss */
++[type="number"]::-webkit-inner-spin-button, [type="number"]::-webkit-outer-spin-button {
++  height: auto;
++}
++
++/**
++ * 1. Correct the odd appearance in Chrome and Safari.
++ * 2. Correct the outline style in Safari.
++ */
++/* line 355, ../scss/normalize.scss */
++[type="search"] {
++  -webkit-appearance: textfield;
++  /* 1 */
++  outline-offset: -2px;
++  /* 2 */
++}
++/* line 360, ../scss/normalize.scss */
++[type="search"]::-webkit-search-cancel-button, [type="search"]::-webkit-search-decoration {
++  -webkit-appearance: none;
++}
++
++/**
++ * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
++ */
++/**
++ * 1. Correct the inability to style clickable types in iOS and Safari.
++ * 2. Change font properties to `inherit` in Safari.
++ */
++/* line 374, ../scss/normalize.scss */
++::-webkit-file-upload-button {
++  -webkit-appearance: button;
++  /* 1 */
++  font: inherit;
++  /* 2 */
++}
++
++/* Interactive
++   ========================================================================== */
++/*
++ * Add the correct display in IE 9-.
++ * 1. Add the correct display in Edge, IE, and Firefox.
++ */
++/* line 389, ../scss/normalize.scss */
++details, menu {
++  display: block;
++}
++
++/*
++ * Add the correct display in all browsers.
++ */
++/* line 397, ../scss/normalize.scss */
++summary {
++  display: list-item;
++}
++
++/* Scripting
++   ========================================================================== */
++/**
++ * Add the correct display in IE 9-.
++ */
++/* line 408, ../scss/normalize.scss */
++canvas {
++  display: inline-block;
++}
++
++/**
++ * Add the correct display in IE.
++ */
++/* line 416, ../scss/normalize.scss */
++template, [hidden] {
++  display: none;
++}
++
++/* Hidden
++   ========================================================================== */
++/**
++ * Add the correct display in IE 10-.
++ */
