@@ -10,16 +10,16 @@
                     <div class="demo col-xs-4 fragment" no-slide="true">
                         <h4>Requirement</h4>
                         <div class="form-group-lg">
-                            <label><input style="    width: 30px;    height: 30px;" type="checkbox"  ng-model="isShow"/>Change visibility</label>
-                            <div ng-show="isShow">Content here</div>
+                            <label><input style="    width: 30px;    height: 30px;" type="checkbox"  ng-model="isShown"/>Change visibility</label>
+                            <div ng-show="isShown">Content here</div>
                         </div>
                     </div>
                     <div class="code col-xs-8 fragment" no-slide="true">
                         <h3>How to do</h3>
                         <pre>
 <code data-trim data-noescape class="html">
-    &lt;input type=&quot;checkbox&quot;  ng-model=&quot;isShow&quot;/&gt;
-    &lt;div ng-if=&quot;isShow&quot;&gt;Content here&lt;/div&gt;
+    &lt;input type=&quot;checkbox&quot;  ng-model=&quot;isShown&quot;/&gt;
+    &lt;div ng-if=&quot;isShown&quot;&gt;Content here&lt;/div&gt;
 </code>
                         </pre>
                     </div>
@@ -52,7 +52,7 @@ I'm at least 18 years old
 &lt;input type=&quot;radio&quot; ng-model=&quot;canRegister&quot;  ng-value=&quot;false&quot;&gt;
 I'm younger than 18 years old
 
-&lt;button ng-disabled=&quot;canRegister&quot; ng-click=&quot;register()&quot; &gt;Register&lt;/button&gt;
+&lt;button ng-disabled=&quot;!canRegister&quot; ng-click=&quot;register()&quot; &gt;Register&lt;/button&gt;
 </code>
                         
                         </pre>
