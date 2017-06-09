@@ -1,0 +1,48 @@
+<div ng-controller="directiveAdvance" class="live-code-directive-advance">
+<h2>Directive - Advance</h2>
+<h3>How to pass value from outside into a directive</h3>
+<div class="swiper-container fragment"  swiper-id="liveCodeDirectiveAdvance">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide fragment alway-visible-fragment">
+                <div class="text">1. Defined scope option with param name
+                <br/>
+<pre>
+<code data-trim data-noescape > 
+     app.directive("searchField",function(){
+     return {
+            scope:{
+                modelName:"="
+            },
+            templateUrl : &quot;search-field.html&quot;,
+            controller : function ($scope){
+                 $scope.getValue = function(){
+                    alert($scope.modelName)
+                }
+            }
+        }  
+    })
+</code>
+</pre></div>
+            </div>
+
+            <div class="swiper-slide fragment">
+                <div class="text">2.Pass value from outside into the directive
+                    <pre style="width: 900px">
+<code data-trim  data-noescape>
+    <b class="text-danger">index.html</b>
+    &ltsearch-field model-name="parentModelName" &gt&lt/search-field&gt   
+</code>
+
+                    </pre></div>
+            </div>
+            
+
+        </div>
+
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+    </div>
+</div>

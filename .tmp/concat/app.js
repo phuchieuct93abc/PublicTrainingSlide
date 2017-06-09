@@ -6,13 +6,13 @@ app.config(function ($mdThemingProvider, $routeProvider, $compileProvider) {
     $mdThemingProvider.theme('default')
             .primaryPalette('blue');
     $routeProvider
-            .when('/26/', {
+            .when('/27/', {
                 templateUrl: 'slides/main.html'
             })
-            .when('/26/showOrders', {
+            .when('/27/showOrders', {
                 templateUrl: 'slides/red.html'
             })
-            .when('/26/addNewOrders', {
+            .when('/27/addNewOrders', {
                 templateUrl: 'slides/green.html'
             })
             .when('/19/', {
@@ -108,6 +108,10 @@ app.controller("ctr", function ($scope, $timeout,$location) {
             return "/$"
         }
         return link.replace("#","")+"$";
+    }
+    $scope.goto =function(link){
+        console.log(link)
+        $location.path($scope.getLink(link))
     }
     
     $scope.nav = [
@@ -544,6 +548,34 @@ app.controller("liveCodeDirective", function ($scope,$timeout,$element) {
     });
 
 })
+app.controller("directiveAdvance", function ($scope,$timeout,$element) {
+    var mySwiper;
+     $scope.model={};
+    
+    
+    Reveal.addEventListener('liveCodeDirectiveAdvance', function () {
+        if (mySwiper == null) {
+            $timeout(function () {
+                mySwiper = new Swiper($($element).find('.swiper-container'), {
+                    speed: 1000,
+                    spaceBetween: 100,
+                    nextButton: ".live-code-directive-advance .swiper-button-next",
+                    prevButton: ".live-code-directive-advance .swiper-button-prev",
+
+                })
+            }, 1000);
+            $('.live-code-directive-advance pre code').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });
+        }
+    }, false);
+   document.addEventListener("liveCodeDirectiveAdvance", function (e) {
+        if(e.detail!=null && mySwiper!=null){
+          mySwiper.slideTo(e.detail, 500, true); 
+        }
+    });
+
+})
 app.directive('directiveDemo',function(){
     return {
         template:'<form class=" form-inline" style="white-space: nowrap;">'
@@ -654,6 +686,31 @@ app.controller("liveCodeRouting", function ($scope,$timeout,$element) {
         }
     }, false);
     document.addEventListener("liveCodeRouting", function (e) {
+        if(e.detail!=null && mySwiper!=null){
+            mySwiper.slideTo(e.detail, 500, true);
+        }
+    });
+
+})
+app.controller("liveCodeRoutingAdvance", function ($scope,$timeout,$element) {
+    var mySwiper;      
+    Reveal.addEventListener('liveCodeRoutingAdvance', function () {
+        if (mySwiper == null) {
+            $timeout(function () {
+                mySwiper = new Swiper($($element).find('.swiper-container'), {
+                    speed: 1000,
+                    spaceBetween: 100,
+                    nextButton: ".live-code-routing .swiper-button-next",
+                    prevButton: ".live-code-routing .swiper-button-prev",
+
+                })
+            }, 1000);
+            $('.live-code-routing pre code').each(function (i, block) {
+                hljs.highlightBlock(block);
+            });
+        }
+    }, false);
+    document.addEventListener("liveCodeRoutingAdvance", function (e) {
         if(e.detail!=null && mySwiper!=null){
             mySwiper.slideTo(e.detail, 500, true);
         }

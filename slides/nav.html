@@ -8,7 +8,7 @@
                 <nav class="navbar navbar-default" bs-navbar>
                  
                     <ul class="nav navbar-nav" style="width: 100%">
-                        <li ng-click="$hide()" ng-class="{'sub-nav':item.isSub}" data-match-route="{{getLink(item.link)}}" ng-repeat="item in nav"><a ng-href="{{item.link}}">{{item.name}}</a></li>
+                        <li ng-click="goto(item.link)"  ng-class="{'sub-nav':item.isSub}" data-match-route="{{getLink(item.link)}}" ng-repeat="item in nav"><a>{{item.name}}</a></li>
                  
                     </ul>
                 </nav>

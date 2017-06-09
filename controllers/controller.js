@@ -6,13 +6,13 @@ app.config(function ($mdThemingProvider, $routeProvider, $compileProvider) {
     $mdThemingProvider.theme('default')
             .primaryPalette('blue');
     $routeProvider
-            .when('/26/', {
+            .when('/27/', {
                 templateUrl: 'slides/main.html'
             })
-            .when('/26/showOrders', {
+            .when('/27/showOrders', {
                 templateUrl: 'slides/red.html'
             })
-            .when('/26/addNewOrders', {
+            .when('/27/addNewOrders', {
                 templateUrl: 'slides/green.html'
             })
             .when('/19/', {
@@ -108,6 +108,10 @@ app.controller("ctr", function ($scope, $timeout,$location) {
             return "/$"
         }
         return link.replace("#","")+"$";
+    }
+    $scope.goto =function(link){
+        console.log(link)
+        $location.path($scope.getLink(link))
     }
     
     $scope.nav = [

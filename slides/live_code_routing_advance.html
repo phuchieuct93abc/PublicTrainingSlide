@@ -1,0 +1,57 @@
+<h2>Routing - Advance</h2>
+<h3>How to pass data from one view to others</h3>
+<div class="live-code-routing fragment" ng-controller="liveCodeRoutingAdvance">
+     
+      <div class="swiper-container fragment "   swiper-id="liveCodeRoutingAdvance">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide fragment alway-visible-fragment">
+                <div class="text">1. Create a service to be able to share data between controllers.
+                    <pre>
+<code data-trim  data-noescape>
+app.factory('myService', function() {
+    var savedData = {}  
+    return {
+        set: function(data) {
+             savedData = data;
+        },
+        get:  function () {
+            return savedData;
+        }
+    }
+});
+</code>
+                    </pre>
+                </div>
+            </div>
+            <div class="swiper-slide fragment">
+                <div class="text">2. In controller A
+                    <pre style="width:800px">
+<code data-trim class="js" data-noescape>
+app.controller("controllerA",function($scope,myService){
+    myService.set("data")
+
+})
+</code>
+                    </pre>
+                </div>
+            </div>
+                     <div class="swiper-slide fragment">
+                <div class="text">2. In controller A
+                    <pre style="width:800px">
+<code data-trim class="js" data-noescape>
+app.controller("controllerB",function($scope,myService){
+    $scope.savedData = myService.get()
+
+})
+</code>
+                    </pre>
+                </div>
+            </div>
+            
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</div>
