@@ -11,7 +11,7 @@ app.controller("liveCodeDom", function ($scope,$timeout,$element) {
             className:"text-primary"}
     ]
 
-    $scope.submit=function(){alert('submit')}
+    $scope.submit=function(){alert('Register successfully!')}
     Reveal.addEventListener('liveCodeDom', function () {
         if (mySwiper == null) {
             $timeout(function () {

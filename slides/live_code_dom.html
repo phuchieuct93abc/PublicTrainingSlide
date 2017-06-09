@@ -31,24 +31,28 @@
                     <div class="col-xs-12">Ability manipulation by using <b>ng-disable</b></div>
                     <div class="demo col-xs-3 fragment" no-slide="true">
                         <h4>Requirement</h4>
-                        <div class="form-group-lg" style="font-size: 30px">
+                        <div class="form-group-lg text-left" style="font-size: 30px">
                             <label class="radio-inline">
-                             <input type="radio" ng-model="isMale"  ng-value="true"> Male
+                             <input type="radio" ng-model="canRegister"  ng-value="true"> I'm at least 18
                            </label>
-                           <label class="radio-inline">
-                             <input type="radio" ng-model="isMale"  ng-value="false"> Female
+                            <label class="radio-inline" style="margin:0">
+                             <input type="radio" ng-model="canRegister"  ng-value="false"> I'm younger than 18 
                            </label>
                             
                         </div>
-                        <button class="btn btn-primary" ng-disabled="isMale" ng-click="submit()" >Submit</button>
+                        <button class="btn btn-primary" ng-disabled="!canRegister" ng-click="submit()" >Submit</button>
                     </div>
                     <div class="code col-xs-9 fragment" no-slide="true">
                          <h3>How to do it</h3>
                         <pre style="width: 100%;margin:0">
 <code class="html">
-&lt;input type=&quot;radio&quot; ng-model=&quot;isMale&quot;  ng-value=&quot;true&quot;&gt; Male
-&lt;input type=&quot;radio&quot; ng-model=&quot;isMale&quot;  ng-value=&quot;false&quot;&gt; Female
-&lt;button ng-disabled=&quot;isMale&quot; ng-click=&quot;submit()&quot; &gt;Submit&lt;/button&gt;
+&lt;input type=&quot;radio&quot; ng-model=&quot;canRegister&quot;  ng-value=&quot;true&quot;&gt;
+I'm at least 18 years old
+
+&lt;input type=&quot;radio&quot; ng-model=&quot;canRegister&quot;  ng-value=&quot;false&quot;&gt;
+I'm younger than 18 years old
+
+&lt;button ng-disabled=&quot;!canRegister&quot; ng-click=&quot;register()&quot; &gt;Register&lt;/button&gt;
 </code>
                         
                         </pre>
