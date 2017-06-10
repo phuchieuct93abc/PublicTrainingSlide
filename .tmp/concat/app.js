@@ -5144,7 +5144,7 @@ app.directive('directiveDemo',function(){
         scope:true,
         controller:function($scope){
              $scope.getValue = function(){
-                alert($scope.modelName)
+                alert("Result: " +$scope.modelName)
             }
         }
     }
@@ -5172,6 +5172,7 @@ app.controller("liveCodeDom", function ($scope,$timeout,$element) {
                     spaceBetween: 100,
                     nextButton: ".live-code-dom .swiper-button-next",
                     prevButton: ".live-code-dom .swiper-button-prev",
+             
 
                 })
             }, 1000);

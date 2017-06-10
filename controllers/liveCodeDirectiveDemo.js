@@ -8,7 +8,7 @@ app.directive('directiveDemo',function(){
         scope:true,
         controller:function($scope){
              $scope.getValue = function(){
-                alert($scope.modelName)
+                alert("Result: " +$scope.modelName)
             }
         }
     }
