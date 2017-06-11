@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'hello-app',
-    template: '<h3>{{message}}</h3>'
+    template: '&lt;h3&gt<span ng-non-bindable>{{message}}</span>&lt;/h3&gt;'
 })
 
 export class HelloComponent {
