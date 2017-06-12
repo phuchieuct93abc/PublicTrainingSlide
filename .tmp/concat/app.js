@@ -5180,7 +5180,7 @@ app.controller("liveCodeDom", function ($scope,$timeout,$element) {
                     prevButton: ".live-code-dom .swiper-button-prev",
                   
                 })
-                mySwiper.disableTouchControl();	
+                
             }, 1000);
             $('.live-code-dom pre code').each(function (i, block) {
                 hljs.highlightBlock(block);
