@@ -1,8 +1,6 @@
 var app = angular.module("app", ['ngRoute', 'ngAnimate', 'ngMessages', 'angular-carousel', 'frapontillo.bootstrap-switch', 'ngMaterial', 'mgcrea.ngStrap']);
 app.config(function ($mdThemingProvider, $routeProvider, $compileProvider) {
     $compileProvider.debugInfoEnabled(false);
-//$compileProvider.commentDirectivesEnabled(false);
-//$compileProvider.cssClassDirectivesEnabled(false);
     $mdThemingProvider.theme('default')
             .primaryPalette('blue');
     $routeProvider
@@ -40,7 +38,6 @@ app.directive('search', function () {
                 $timeout(function () {
                     $($element).find("input").focus()
                 }, 1000);
-
 
             }
 

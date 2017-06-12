@@ -1,0 +1,19 @@
+<div ng-controller="angular2Controller" class="angular-2">
+    <pre style="height:550px;">
+<code data-noescape  data-trim class="hljs" style="max-height: 550px;">
+import { Component } from '@angular/core';
+
+@Component({
+    selector: 'hello-app',
+    template: '&lt;h3&gt<span ng-non-bindable>{{message}}</span>&lt;/h3&gt;'
+})
+
+export class HelloComponent {
+    constructor(service: MyService) {
+        this.service = service;
+        this.message = service.getMessage();
+      }
+}
+</code>
+    </pre>
+</div>
