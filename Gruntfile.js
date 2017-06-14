@@ -227,7 +227,7 @@ module.exports = function (grunt) {
             
             dynamic: {
                 options: {                       // Target options
-                   optimizationLevel: 7
+                   optimizationLevel: 1
                  
                  },
                 files: [{
@@ -287,6 +287,7 @@ module.exports = function (grunt) {
         'concat:generated',
         'cssmin:generated',
         'uglify:generated',
+        'imagemin',
         'usemin'
     ]);
 
